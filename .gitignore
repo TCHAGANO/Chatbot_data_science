@@ -216,3 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+chatbot_data.csv
+data/chatbot_data.csv

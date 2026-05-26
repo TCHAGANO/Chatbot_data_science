@@ -11,6 +11,8 @@ print(df.columns)
 
 print("\n===== TYPES =====")
 print(df.info())
-
+print("\n===== VALEURS MANQUANTES =====")
+print(df.isnull().sum())
 print("\n===== STATISTIQUES =====")
 print(df.describe())
+
