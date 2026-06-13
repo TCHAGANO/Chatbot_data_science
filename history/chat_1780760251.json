@@ -1,0 +1,433 @@
+{
+    "titre": "2e  session",
+    "date": "2026-06-06 17:41",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les clients dont l'âge est compris entre 25 et 40 ans"
+        },
+        {
+            "role": "assistant",
+            "content": "Voici la liste des clients d'âge comprise entre 25 et 40 ans :",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "nom_client": "Bahissou TCHAGNAO",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Xavier Michel",
+                    "age_client": 37
+                },
+                {
+                    "nom_client": "Alfred Grondin",
+                    "age_client": 29
+                },
+                {
+                    "nom_client": "Gidelcia",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Juliette Gay de Labbé",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Marcel Diallo",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "François du Delannoy",
+                    "age_client": 26
+                },
+                {
+                    "nom_client": "Gilles Diaz",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Élodie Ribeiro",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Aimé Georges",
+                    "age_client": 29
+                },
+                {
+                    "nom_client": "Gilbert Imbert",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Clémence Traore-Cordier",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Maurice Ferreira",
+                    "age_client": 27
+                },
+                {
+                    "nom_client": "Clémence Godard-Martel",
+                    "age_client": 26
+                },
+                {
+                    "nom_client": "Dominique Voisin",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Timothée Camus",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Anouk Le Brunel",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Guillaume Lamy",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Thérèse Julien",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Noémi Fournier",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Aimé Mercier",
+                    "age_client": 37
+                },
+                {
+                    "nom_client": "Véronique Coste",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Michelle Mendès-Lejeune",
+                    "age_client": 29
+                },
+                {
+                    "nom_client": "Suzanne Perez",
+                    "age_client": 31
+                },
+                {
+                    "nom_client": "Adélaïde Bertrand",
+                    "age_client": 36
+                },
+                {
+                    "nom_client": "Michel Da Silva de Raynaud",
+                    "age_client": 37
+                },
+                {
+                    "nom_client": "Pierre-Édouard Labbé",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "François Masse",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "Alexandrie Schmitt",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Catherine-Corinne Le Roux",
+                    "age_client": 27
+                },
+                {
+                    "nom_client": "Henriette Bouvet",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Olivie Dupuy-Gay",
+                    "age_client": 31
+                },
+                {
+                    "nom_client": "Simone Nguyen",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Gilles Hoarau du Mace",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Emmanuel-Thibault Ferreira",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Patrick Carre",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Alphonse Garnier",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Alex Hervé",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Richard Le Lecoq",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Hugues Labbé",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Marcelle Teixeira",
+                    "age_client": 29
+                },
+                {
+                    "nom_client": "Frédérique du Bousquet",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Isabelle Roger de la Reynaud",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Gilles François",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Jérôme Goncalves",
+                    "age_client": 36
+                },
+                {
+                    "nom_client": "Marthe Laporte",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Pénélope Guilbert",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "Julie Brun",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Sébastien Goncalves",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Paul Becker",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Lorraine-Adélaïde Barbier",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Henri Denis-Thomas",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Diane Valentin",
+                    "age_client": 37
+                },
+                {
+                    "nom_client": "Maurice Bertin",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Émile Marion Le Riou",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Michelle Munoz",
+                    "age_client": 35
+                },
+                {
+                    "nom_client": "Dorothée Masse",
+                    "age_client": 31
+                },
+                {
+                    "nom_client": "Élisabeth Le Hoareau",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Gérard Dos Santos Le Rousseau",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Noémi Fabre",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Nicolas Masse-Vallée",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Hugues Morel",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Marcel Loiseau",
+                    "age_client": 27
+                },
+                {
+                    "nom_client": "Alphonse Diallo du Lefebvre",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Jeanne-Lucy Coste",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Jules Langlois",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Jérôme Maillet",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Patricia Maillot",
+                    "age_client": 37
+                },
+                {
+                    "nom_client": "Anastasie Vallée",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Catherine Allard",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Simone Ferrand",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Julien Barbe",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Antoine Carre",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Joséphine Lacroix",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Alix Michaud",
+                    "age_client": 29
+                },
+                {
+                    "nom_client": "Paul Guyon de Rodrigues",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "Tristan Petitjean",
+                    "age_client": 38
+                },
+                {
+                    "nom_client": "Élise Hebert de Bazin",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Corinne Richard du Marie",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Sabine Grenier de la Rodriguez",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Alexandre Besnard",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Nicolas Marion de Martineau",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Guy Humbert",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Marc Louis",
+                    "age_client": 26
+                },
+                {
+                    "nom_client": "Laurent Paris",
+                    "age_client": 27
+                },
+                {
+                    "nom_client": "Frédérique Maillard",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Adèle Perret",
+                    "age_client": 28
+                },
+                {
+                    "nom_client": "Anastasie de la Lenoir",
+                    "age_client": 30
+                },
+                {
+                    "nom_client": "Susan Barbier",
+                    "age_client": 26
+                },
+                {
+                    "nom_client": "Thierry-Michel Martel",
+                    "age_client": 33
+                },
+                {
+                    "nom_client": "Grégoire de la Royer",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Raymond Rodrigues-Pottier",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "Cécile-Michelle Masson",
+                    "age_client": 32
+                },
+                {
+                    "nom_client": "Laurence Colas",
+                    "age_client": 34
+                },
+                {
+                    "nom_client": "Thierry de la Delmas",
+                    "age_client": 39
+                },
+                {
+                    "nom_client": "Joseph-Tristan Guillot",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Thibault Pages de la Rocher",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Juliette Martin",
+                    "age_client": 40
+                },
+                {
+                    "nom_client": "Aimé-Jacques Muller",
+                    "age_client": 25
+                },
+                {
+                    "nom_client": "Christophe Payet",
+                    "age_client": 26
+                }
+            ],
+            "query_sql": "SELECT nom_client, age_client FROM clients WHERE age_client BETWEEN 25 AND 40 LIMIT 100;",
+            "analytics_text": "Génération SQL : 24.5s | Base de données : 0.1s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les magasins situés en Europe."
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution de la requête SQL.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Erreur système interceptée : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

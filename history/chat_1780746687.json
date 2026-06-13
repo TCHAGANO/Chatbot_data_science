@@ -1,0 +1,32 @@
+{
+    "titre": "Afficher les produits apparten...",
+    "date": "2026-06-06 14:20",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Électronique \""
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Veuillez reformuler votre question ou poser une autre question.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Erreur système interceptée : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par carte bancaire"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Veuillez reformuler votre question ou poser une autre question.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Erreur système interceptée : Execution failed on sql 'SELECT c.id, c.client_id, m.nom_magasin, EXTRACT(YEAR FROM c.date_commande) as annee, EXTRACT(MONTH FROM c.date_commande) as mois, p.nom_produit, SUM(v.quantite) as total_ventes FROM commandes c JOIN magasins m ON c.magasin_id = m.id JOIN ventes v ON c.id = v.commande_id JOIN produits p ON v.produit_id = p.id WHERE m.pays = 'France' AND mode_paiement = 'Carte bancaire' GROUP BY c.id, m.nom_magasin, p.nom_produit ORDER BY total_ventes DESC LIMIT 100;': (psycopg2.errors.UndefinedColumn) ERREUR:  la colonne c.magasin_id n'existe pas\nLINE 1: ... total_ventes FROM commandes c JOIN magasins m ON c.magasin_...\n                                                             ^\n\n[SQL: SELECT c.id, c.client_id, m.nom_magasin, EXTRACT(YEAR FROM c.date_commande) as annee, EXTRACT(MONTH FROM c.date_commande) as mois, p.nom_produit, SUM(v.quantite) as total_ventes FROM commandes c JOIN magasins m ON c.magasin_id = m.id JOIN ventes v ON c.id = v.commande_id JOIN produits p ON v.produit_id = p.id WHERE m.pays = 'France' AND mode_paiement = 'Carte bancaire' GROUP BY c.id, m.nom_magasin, p.nom_produit ORDER BY total_ventes DESC LIMIT 100;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+            "status_ok": false
+        }
+    ]
+}

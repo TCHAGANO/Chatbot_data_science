@@ -1,0 +1,917 @@
+{
+    "titre": "1ere session",
+    "date": "2026-06-05 17:34",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Électronique\""
+        },
+        {
+            "role": "assistant",
+            "content": "Résultat extrait avec succès.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "nom_produit": "Louis Chargeur herbe"
+                },
+                {
+                    "nom_produit": "Pineau S.A Chargeur rideau"
+                },
+                {
+                    "nom_produit": "Nike Casque défaut"
+                },
+                {
+                    "nom_produit": "Decathlon Ordinateur est"
+                },
+                {
+                    "nom_produit": "Sony Chargeur dent"
+                },
+                {
+                    "nom_produit": "Nike Chargeur rentrer"
+                },
+                {
+                    "nom_produit": "Adidas Ordinateur théâtre"
+                },
+                {
+                    "nom_produit": "Sony Chargeur enfin"
+                },
+                {
+                    "nom_produit": "Sony Ordinateur manier"
+                },
+                {
+                    "nom_produit": "Sony Casque besoin"
+                },
+                {
+                    "nom_produit": "François Chargeur ministre"
+                },
+                {
+                    "nom_produit": "Samsung Chargeur mais"
+                },
+                {
+                    "nom_produit": "Roux et Fi Smartphone vague"
+                },
+                {
+                    "nom_produit": "Philips Chargeur seuil"
+                },
+                {
+                    "nom_produit": "Apple Chargeur mériter"
+                },
+                {
+                    "nom_produit": "Samsung Chargeur celui"
+                },
+                {
+                    "nom_produit": "Sony Ordinateur lendemain"
+                },
+                {
+                    "nom_produit": "Dyson Casque charge"
+                },
+                {
+                    "nom_produit": "Descamps Smartphone puis"
+                },
+                {
+                    "nom_produit": "Leconte Tablette gouvernement"
+                },
+                {
+                    "nom_produit": "Decathlon Tablette arrêter"
+                },
+                {
+                    "nom_produit": "Philips Ordinateur tache"
+                },
+                {
+                    "nom_produit": "Jean Smartphone gagner"
+                },
+                {
+                    "nom_produit": "Pons Ordinateur précéder"
+                },
+                {
+                    "nom_produit": "Apple Smartphone lourd"
+                },
+                {
+                    "nom_produit": "Maillet et Tablette pas"
+                },
+                {
+                    "nom_produit": "Apple Casque désert"
+                },
+                {
+                    "nom_produit": "Puma Casque suivre"
+                },
+                {
+                    "nom_produit": "Nike Smartphone marcher"
+                },
+                {
+                    "nom_produit": "Guillot Smartphone idée"
+                },
+                {
+                    "nom_produit": "Philips Ordinateur douceur"
+                },
+                {
+                    "nom_produit": "Adidas Smartphone bientôt"
+                },
+                {
+                    "nom_produit": "Dupont Tablette porter"
+                },
+                {
+                    "nom_produit": "Sony Chargeur circonstance"
+                },
+                {
+                    "nom_produit": "Reynaud Smartphone accrocher"
+                },
+                {
+                    "nom_produit": "L'Oréal Chargeur joindre"
+                },
+                {
+                    "nom_produit": "Delaunay S Tablette preuve"
+                },
+                {
+                    "nom_produit": "Rocher Per Smartphone peur"
+                },
+                {
+                    "nom_produit": "Peltier Ge Ordinateur mieux"
+                },
+                {
+                    "nom_produit": "Dyson Smartphone vie"
+                },
+                {
+                    "nom_produit": "Philips Ordinateur derrière"
+                },
+                {
+                    "nom_produit": "Brunel Smartphone enlever"
+                },
+                {
+                    "nom_produit": "Rodriguez  Ordinateur avoir"
+                },
+                {
+                    "nom_produit": "Sony Casque commencement"
+                },
+                {
+                    "nom_produit": "Clément SA Tablette manger"
+                },
+                {
+                    "nom_produit": "Dyson Casque éteindre"
+                },
+                {
+                    "nom_produit": "Collet Casque bout"
+                },
+                {
+                    "nom_produit": "Adidas Smartphone quelque"
+                },
+                {
+                    "nom_produit": "Apple Chargeur cacher"
+                },
+                {
+                    "nom_produit": "Decathlon Ordinateur tirer"
+                },
+                {
+                    "nom_produit": "Puma Casque fuir"
+                },
+                {
+                    "nom_produit": "Samsung Ordinateur printemps"
+                },
+                {
+                    "nom_produit": "Dyson Smartphone hasard"
+                },
+                {
+                    "nom_produit": "Decathlon Chargeur flamme"
+                },
+                {
+                    "nom_produit": "Decathlon Chargeur intérieur"
+                },
+                {
+                    "nom_produit": "Sony Casque science"
+                },
+                {
+                    "nom_produit": "Philips Casque vieillard"
+                },
+                {
+                    "nom_produit": "Apple Chargeur religion"
+                },
+                {
+                    "nom_produit": "Nike Chargeur sombre"
+                },
+                {
+                    "nom_produit": "Duhamel Smartphone apparaître"
+                },
+                {
+                    "nom_produit": "Lecoq Casque beauté"
+                },
+                {
+                    "nom_produit": "L'Oréal Chargeur difficile"
+                },
+                {
+                    "nom_produit": "Vidal S.A. Casque chaque"
+                },
+                {
+                    "nom_produit": "Samsung Smartphone raconter"
+                },
+                {
+                    "nom_produit": "Dyson Casque société"
+                },
+                {
+                    "nom_produit": "Samsung Chargeur apporter"
+                },
+                {
+                    "nom_produit": "Samsung Smartphone santé"
+                },
+                {
+                    "nom_produit": "Nike Chargeur séparer"
+                },
+                {
+                    "nom_produit": "Clément Ne Casque creuser"
+                },
+                {
+                    "nom_produit": "Joubert et Chargeur étudier"
+                },
+                {
+                    "nom_produit": "Puma Casque titre"
+                },
+                {
+                    "nom_produit": "Philips Smartphone céder"
+                },
+                {
+                    "nom_produit": "Dyson Smartphone interrompre"
+                },
+                {
+                    "nom_produit": "Apple Ordinateur terrible"
+                },
+                {
+                    "nom_produit": "Lesage SAR Chargeur apparaître"
+                },
+                {
+                    "nom_produit": "Ribeiro SA Chargeur public"
+                },
+                {
+                    "nom_produit": "Joseph et  Smartphone même"
+                },
+                {
+                    "nom_produit": "Sony Casque titre"
+                },
+                {
+                    "nom_produit": "L'Oréal Casque même"
+                },
+                {
+                    "nom_produit": "Apple Ordinateur saluer"
+                },
+                {
+                    "nom_produit": "Puma Smartphone ramener"
+                },
+                {
+                    "nom_produit": "Lemaire Chargeur colère"
+                },
+                {
+                    "nom_produit": "Legrand Ga Casque bien"
+                },
+                {
+                    "nom_produit": "Legrand S. Tablette mêler"
+                },
+                {
+                    "nom_produit": "Sony Casque sentir"
+                },
+                {
+                    "nom_produit": "Decathlon Smartphone meilleur"
+                },
+                {
+                    "nom_produit": "Sony Casque son"
+                },
+                {
+                    "nom_produit": "Adidas Ordinateur joue"
+                },
+                {
+                    "nom_produit": "Puma Casque acheter"
+                },
+                {
+                    "nom_produit": "Petit Ordinateur champ"
+                },
+                {
+                    "nom_produit": "Maury Desc Smartphone plante"
+                },
+                {
+                    "nom_produit": "Couturier Tablette il"
+                },
+                {
+                    "nom_produit": "L'Oréal Smartphone conversation"
+                },
+                {
+                    "nom_produit": "Becker Chargeur retour"
+                },
+                {
+                    "nom_produit": "Moreno Dos Chargeur enfoncer"
+                },
+                {
+                    "nom_produit": "L'Oréal Tablette résultat"
+                },
+                {
+                    "nom_produit": "Muller Gau Casque fou"
+                },
+                {
+                    "nom_produit": "Dyson Smartphone beau"
+                },
+                {
+                    "nom_produit": "Apple Tablette besoin"
+                },
+                {
+                    "nom_produit": "Decathlon Casque beauté"
+                }
+            ],
+            "query_sql": "SELECT DISTINCT nom_produit FROM produits WHERE categorie = 'Électronique' LIMIT 100;",
+            "analytics_text": "Génération SQL : 48.63s | Base de données : 0.14s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par carte bancaire"
+        },
+        {
+            "role": "assistant",
+            "content": "Résultat extrait avec succès.",
+            "is_sql": true,
+            "df_resultat": [],
+            "query_sql": "SELECT commandes.*\nFROM commandes\nJOIN ventes ON commandes.id_commande = ventes.id_commande\nWHERE methode_paiement = 'Carte Bancaire' LIMIT 100;",
+            "analytics_text": "Génération SQL : 44.5s | Base de données : 0.57s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les magasins situés en Europe."
+        },
+        {
+            "role": "assistant",
+            "content": "Résultat extrait avec succès.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_magasin": 21,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 16,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 24,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 19,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 44,
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 3,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 7,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 49,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 8,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 74,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 71,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 61,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 46,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 87,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 60,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 34,
+                    "nom_magasin": "Store LeleuBourg",
+                    "ville_magasin": "LeleuBourg",
+                    "pays_magasin": "Royaume-Uni",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "44"
+                },
+                {
+                    "id_magasin": 4,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 31,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 9,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 54,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 90,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 65,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 84,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 18,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 29,
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 35,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 79,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 52,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 73,
+                    "nom_magasin": "Store Da Silvadan",
+                    "ville_magasin": "Da Silvadan",
+                    "pays_magasin": "Espagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "34"
+                },
+                {
+                    "id_magasin": 40,
+                    "nom_magasin": "Store Da Silva",
+                    "ville_magasin": "Da Silva",
+                    "pays_magasin": "Allemagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "49"
+                },
+                {
+                    "id_magasin": 99,
+                    "nom_magasin": "Store Saint Manon-sur-Mer",
+                    "ville_magasin": "Saint Manon-sur-Mer",
+                    "pays_magasin": "Allemagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "49"
+                },
+                {
+                    "id_magasin": 10,
+                    "nom_magasin": "Store Pierre",
+                    "ville_magasin": "Pierre",
+                    "pays_magasin": "Italie",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "39"
+                }
+            ],
+            "query_sql": "SELECT * FROM magasins WHERE continent_magasin = 'Europe' LIMIT 100;",
+            "analytics_text": "Génération SQL : 33.38s | Base de données : 0.01s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les clients vivant en France ou en Belgique"
+        },
+        {
+            "role": "assistant",
+            "content": "Résultat extrait avec succès.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "ville_client": "Saint Tristan"
+                },
+                {
+                    "ville_client": "Saint DominiqueBourg"
+                },
+                {
+                    "ville_client": "Saint Arnaudeboeuf"
+                },
+                {
+                    "ville_client": "Mendès"
+                },
+                {
+                    "ville_client": "Sanchezboeuf"
+                },
+                {
+                    "ville_client": "Costa"
+                },
+                {
+                    "ville_client": "Robin-sur-Chauvet"
+                },
+                {
+                    "ville_client": "Rousseaunec"
+                },
+                {
+                    "ville_client": "Gallet"
+                },
+                {
+                    "ville_client": "Bourdon"
+                },
+                {
+                    "ville_client": "CaronVille"
+                },
+                {
+                    "ville_client": "CousinVille"
+                },
+                {
+                    "ville_client": "Sainte Jacques"
+                },
+                {
+                    "ville_client": "Texier-sur-Lefèvre"
+                },
+                {
+                    "ville_client": "Nguyen-sur-Poirier"
+                },
+                {
+                    "ville_client": "Lerouxnec"
+                },
+                {
+                    "ville_client": "Ollivier"
+                },
+                {
+                    "ville_client": "Simon-sur-Jacques"
+                },
+                {
+                    "ville_client": "Tanguy-la-Forêt"
+                },
+                {
+                    "ville_client": "CosteBourg"
+                },
+                {
+                    "ville_client": "MullerBourg"
+                },
+                {
+                    "ville_client": "Sainte Thibault"
+                },
+                {
+                    "ville_client": "Leroux-sur-Henry"
+                },
+                {
+                    "ville_client": "Laine-sur-Mer"
+                },
+                {
+                    "ville_client": "Sainte Antoinettedan"
+                },
+                {
+                    "ville_client": "Pereznec"
+                },
+                {
+                    "ville_client": "Saint Élisabethnec"
+                },
+                {
+                    "ville_client": "Ponsnec"
+                },
+                {
+                    "ville_client": "Ruiz"
+                },
+                {
+                    "ville_client": "Robertdan"
+                },
+                {
+                    "ville_client": "Fouquet"
+                },
+                {
+                    "ville_client": "Martel"
+                },
+                {
+                    "ville_client": "Guérin"
+                },
+                {
+                    "ville_client": "Gomez-les-Bains"
+                },
+                {
+                    "ville_client": "Duhamelnec"
+                },
+                {
+                    "ville_client": "Renault-les-Bains"
+                },
+                {
+                    "ville_client": "Lemaire"
+                },
+                {
+                    "ville_client": "Lebon"
+                },
+                {
+                    "ville_client": "Diaz"
+                },
+                {
+                    "ville_client": "Seguin"
+                },
+                {
+                    "ville_client": "Saint SuzanneVille"
+                },
+                {
+                    "ville_client": "Rollandnec"
+                },
+                {
+                    "ville_client": "Laurent"
+                },
+                {
+                    "ville_client": "Sainte Christiane"
+                },
+                {
+                    "ville_client": "Hardy-sur-Paris"
+                },
+                {
+                    "ville_client": "Lopes"
+                },
+                {
+                    "ville_client": "Faure-la-Forêt"
+                },
+                {
+                    "ville_client": "Goncalves"
+                },
+                {
+                    "ville_client": "Gauthier"
+                },
+                {
+                    "ville_client": "Sainte Margot-les-Bains"
+                },
+                {
+                    "ville_client": "Sainte Véronique"
+                },
+                {
+                    "ville_client": "Morvan-les-Bains"
+                },
+                {
+                    "ville_client": "Lebreton-sur-Millet"
+                },
+                {
+                    "ville_client": "Baudry"
+                },
+                {
+                    "ville_client": "Gaillarddan"
+                },
+                {
+                    "ville_client": "Dupuy-sur-Didier"
+                },
+                {
+                    "ville_client": "GautierVille"
+                },
+                {
+                    "ville_client": "Petit-la-Forêt"
+                },
+                {
+                    "ville_client": "Ruiz-sur-Langlois"
+                },
+                {
+                    "ville_client": "Saint Claudine-la-Forêt"
+                },
+                {
+                    "ville_client": "Saint Robert"
+                },
+                {
+                    "ville_client": "Pascal-sur-Mer"
+                },
+                {
+                    "ville_client": "Saint Richard-les-Bains"
+                },
+                {
+                    "ville_client": "Caron"
+                },
+                {
+                    "ville_client": "Munoz"
+                },
+                {
+                    "ville_client": "Sainte Denise"
+                },
+                {
+                    "ville_client": "Huet"
+                },
+                {
+                    "ville_client": "Lejeune"
+                },
+                {
+                    "ville_client": "Couturier"
+                },
+                {
+                    "ville_client": "Vasseur"
+                },
+                {
+                    "ville_client": "Perez"
+                },
+                {
+                    "ville_client": "Sanchez"
+                },
+                {
+                    "ville_client": "Chauveau-la-Forêt"
+                },
+                {
+                    "ville_client": "Lambert"
+                },
+                {
+                    "ville_client": "Saint Nicoleboeuf"
+                },
+                {
+                    "ville_client": "Tessier"
+                },
+                {
+                    "ville_client": "Vallée"
+                },
+                {
+                    "ville_client": "Berger-sur-Barbier"
+                },
+                {
+                    "ville_client": "Saint Raymond"
+                },
+                {
+                    "ville_client": "Vincentdan"
+                },
+                {
+                    "ville_client": "Grenier"
+                },
+                {
+                    "ville_client": "Grenier-sur-Mer"
+                },
+                {
+                    "ville_client": "Brun-sur-Bègue"
+                },
+                {
+                    "ville_client": "Pierre"
+                },
+                {
+                    "ville_client": "Maurice-sur-Courtois"
+                },
+                {
+                    "ville_client": "Pires"
+                },
+                {
+                    "ville_client": "Chauvet"
+                },
+                {
+                    "ville_client": "AntoineBourg"
+                },
+                {
+                    "ville_client": "LeclercqBourg"
+                },
+                {
+                    "ville_client": "Blot"
+                },
+                {
+                    "ville_client": "MarquesBourg"
+                },
+                {
+                    "ville_client": "Teixeiranec"
+                },
+                {
+                    "ville_client": "Monnier"
+                },
+                {
+                    "ville_client": "Lopez-sur-Petitjean"
+                },
+                {
+                    "ville_client": "Sainte Élise"
+                },
+                {
+                    "ville_client": "Sainte ClaudeBourg"
+                },
+                {
+                    "ville_client": "Sainte Sébastienboeuf"
+                },
+                {
+                    "ville_client": "Sainte Pierre"
+                },
+                {
+                    "ville_client": "Durand"
+                },
+                {
+                    "ville_client": "Bonninboeuf"
+                }
+            ],
+            "query_sql": "SELECT DISTINCT ville_client FROM clients WHERE pays_client IN ('France', 'Belgique') LIMIT 100;",
+            "analytics_text": "Génération SQL : 32.87s | Base de données : 0.01s.",
+            "status_ok": true
+        }
+    ]
+}

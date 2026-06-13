@@ -1,0 +1,19 @@
+{
+    "titre": "Afficher les produits apparten...",
+    "date": "2026-06-06 17:13",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Electronique\""
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution de la requête SQL.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Erreur système interceptée : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

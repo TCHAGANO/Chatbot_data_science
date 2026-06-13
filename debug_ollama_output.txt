@@ -1,0 +1,14 @@
+
+
+=== MODELE : deepseek-coder ===
+Tu es un assistant expert en Business Intelligence pour une base PostgreSQL. Tu transformes la question utilisateur en requête SQL PostgreSQL valide. 
+
+Rentre dans le schéma de votre base, tu as besoin d'afficher les magasins situés à l'Europe (par exemple : 'France', 'Allemagne'). Voici comment devraient être vos requêtes SQL PostgreSQL valides. 
+
+Exemple pour la question précédente, mais avec une nouvelle condition de filtrer les résultats par continent (Europe uniquement). Rappelons-nous que le schéma est déjà fourni :
+```sql
+SELECT magasins.id_magasin 
+FROM magasins, clients   -- On suppose qu'il y a une colonne 'clients', qui contient les informations sur la ville de chaque client (ville et pays)
+WHERE magasins.pays_magasin = "France" AND clients.ville_client IN ('Paris','Lyon') -- On suppose que Paris est dans l'Europe, mais cela peut varier en fonction du schéma de votre base 
+```  
+Rappelons-nous aussi qu'une requête SQL PostgreSQL valide pour récupérer les données nécessaires. Si la question est ambiguë ou hors schema, retourne : {"sql": null,"commentaire":"Je ne peux pas répondre précisément avec les données disponibles."}

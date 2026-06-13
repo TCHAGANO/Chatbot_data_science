@@ -1,0 +1,19 @@
+{
+    "titre": "Afficher les clients vivant en...",
+    "date": "2026-06-05 19:14",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les clients vivant en France ou en Belgique et les magasins dans lesquels ils achètent le plus souvent"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur technique est survenue lors de l'exécution de la requête en base.",
+            "is_sql": true,
+            "df_resultat": null,
+            "query_sql": "SELECT c.nom, c.prenom, m.nom_magasin FROM clients c\nJOIN commandes co ON c.id = co.client_id\nJOIN magasins m ON co.magasin_id = m.id\nWHERE (c.ville ILIKE '%France%' OR c.pays ILIKE 'France') OR (c.ville ILIKE '%Belgique%' AND c.pays ILIKE 'Belgique') GROUP BY co.client_id, m.nom_magasin\nORDER BY COUNT(co.id) DESC LIMIT 100;",
+            "analytics_text": "Détails du plantage système : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

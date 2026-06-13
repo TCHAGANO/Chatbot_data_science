@@ -1,0 +1,959 @@
+{
+    "titre": "Afficher les produits apparten...",
+    "date": "2026-06-05 18:23",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Électronique\""
+        },
+        {
+            "role": "assistant",
+            "content": "Voici la liste des produits appartenant à la catégorie Électronique.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_produit": 5511,
+                    "nom_produit": "Apple Tablette espace",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 107,
+                    "nom_fournisseur": "Thomas SARL"
+                },
+                {
+                    "id_produit": 7395,
+                    "nom_produit": "Blot et Fi Ordinateur choix",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Blot et Fi",
+                    "id_fournisseur": 176,
+                    "nom_fournisseur": "Lambert SA"
+                },
+                {
+                    "id_produit": 7145,
+                    "nom_produit": "Carpentier Tablette emporter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Carpentier",
+                    "id_fournisseur": 227,
+                    "nom_fournisseur": "Ribeiro"
+                },
+                {
+                    "id_produit": 11970,
+                    "nom_produit": "Decathlon Casque conclure",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 244,
+                    "nom_fournisseur": "Rolland"
+                },
+                {
+                    "id_produit": 13220,
+                    "nom_produit": "Dyson Smartphone hasard",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Dyson",
+                    "id_fournisseur": 56,
+                    "nom_fournisseur": "Jacques S.A.S."
+                },
+                {
+                    "id_produit": 5100,
+                    "nom_produit": "Apple Tablette fait",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 104,
+                    "nom_fournisseur": "Pereira"
+                },
+                {
+                    "id_produit": 8753,
+                    "nom_produit": "Dyson Chargeur creuser",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Dyson",
+                    "id_fournisseur": 149,
+                    "nom_fournisseur": "Gérard"
+                },
+                {
+                    "id_produit": 12497,
+                    "nom_produit": "Dyson Tablette tranquille",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 123,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 8634,
+                    "nom_produit": "L'Oréal Casque quant à",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 146,
+                    "nom_fournisseur": "Meyer et Fils"
+                },
+                {
+                    "id_produit": 11049,
+                    "nom_produit": "Nike Ordinateur mur",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 170,
+                    "nom_fournisseur": "Chauvin SA"
+                },
+                {
+                    "id_produit": 10962,
+                    "nom_produit": "Samsung Casque dieu",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Samsung",
+                    "id_fournisseur": 39,
+                    "nom_fournisseur": "Lebon"
+                },
+                {
+                    "id_produit": 13632,
+                    "nom_produit": "Apple Chargeur mort",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Apple",
+                    "id_fournisseur": 119,
+                    "nom_fournisseur": "Perez Thierry et Fils"
+                },
+                {
+                    "id_produit": 5595,
+                    "nom_produit": "Nike Tablette autre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 133,
+                    "nom_fournisseur": "Sauvage Traore SA"
+                },
+                {
+                    "id_produit": 9229,
+                    "nom_produit": "Samsung Smartphone hors",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Samsung",
+                    "id_fournisseur": 122,
+                    "nom_fournisseur": "Diallo"
+                },
+                {
+                    "id_produit": 8807,
+                    "nom_produit": "Bonnet Ger Chargeur guerre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Bonnet Ger",
+                    "id_fournisseur": 27,
+                    "nom_fournisseur": "Lenoir Pasquier SA"
+                },
+                {
+                    "id_produit": 9416,
+                    "nom_produit": "Chrétien C Chargeur être",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Chrétien C",
+                    "id_fournisseur": 212,
+                    "nom_fournisseur": "Morin"
+                },
+                {
+                    "id_produit": 2845,
+                    "nom_produit": "Puma Chargeur apparaître",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 13,
+                    "nom_fournisseur": "Samson"
+                },
+                {
+                    "id_produit": 3952,
+                    "nom_produit": "Brunet Ordinateur de",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Brunet",
+                    "id_fournisseur": 86,
+                    "nom_fournisseur": "Grégoire S.A.S."
+                },
+                {
+                    "id_produit": 1464,
+                    "nom_produit": "Decathlon Tablette inspirer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 266,
+                    "nom_fournisseur": "Torres SARL"
+                },
+                {
+                    "id_produit": 10111,
+                    "nom_produit": "Puma Chargeur expérience",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 247,
+                    "nom_fournisseur": "Grenier"
+                },
+                {
+                    "id_produit": 1492,
+                    "nom_produit": "Samsung Tablette cependant",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Samsung",
+                    "id_fournisseur": 223,
+                    "nom_fournisseur": "Samson Giraud SARL"
+                },
+                {
+                    "id_produit": 13964,
+                    "nom_produit": "Grégoire S Smartphone résistance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Grégoire S",
+                    "id_fournisseur": 160,
+                    "nom_fournisseur": "Mahe"
+                },
+                {
+                    "id_produit": 13962,
+                    "nom_produit": "Adidas Casque pauvre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Adidas",
+                    "id_fournisseur": 13,
+                    "nom_fournisseur": "Samson"
+                },
+                {
+                    "id_produit": 6192,
+                    "nom_produit": "Blanchet M Ordinateur élever",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Blanchet M",
+                    "id_fournisseur": 42,
+                    "nom_fournisseur": "Rossi"
+                },
+                {
+                    "id_produit": 14821,
+                    "nom_produit": "Dyson Chargeur moitié",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Dyson",
+                    "id_fournisseur": 211,
+                    "nom_fournisseur": "Blanchard"
+                },
+                {
+                    "id_produit": 9015,
+                    "nom_produit": "L'Oréal Casque quelque",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 22,
+                    "nom_fournisseur": "Gomez SARL"
+                },
+                {
+                    "id_produit": 6259,
+                    "nom_produit": "Puma Smartphone lequel",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Puma",
+                    "id_fournisseur": 262,
+                    "nom_fournisseur": "Gaudin"
+                },
+                {
+                    "id_produit": 3164,
+                    "nom_produit": "Nike Casque veiller",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 61,
+                    "nom_fournisseur": "Pereira"
+                },
+                {
+                    "id_produit": 5400,
+                    "nom_produit": "Apple Ordinateur qualité",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Apple",
+                    "id_fournisseur": 259,
+                    "nom_fournisseur": "Lambert Mary SA"
+                },
+                {
+                    "id_produit": 8057,
+                    "nom_produit": "Allard Bai Tablette cent",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Allard Bai",
+                    "id_fournisseur": 73,
+                    "nom_fournisseur": "Boyer Devaux et Fils"
+                },
+                {
+                    "id_produit": 8849,
+                    "nom_produit": "Nike Smartphone mentir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Nike",
+                    "id_fournisseur": 161,
+                    "nom_fournisseur": "Bonnet S.A.S."
+                },
+                {
+                    "id_produit": 2462,
+                    "nom_produit": "Puma Chargeur ville",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 181,
+                    "nom_fournisseur": "Chauveau Torres et Fils"
+                },
+                {
+                    "id_produit": 13378,
+                    "nom_produit": "Samsung Smartphone pousser",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Samsung",
+                    "id_fournisseur": 157,
+                    "nom_fournisseur": "Masse"
+                },
+                {
+                    "id_produit": 5675,
+                    "nom_produit": "Noël Casque coûter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Noël",
+                    "id_fournisseur": 232,
+                    "nom_fournisseur": "Martinez"
+                },
+                {
+                    "id_produit": 841,
+                    "nom_produit": "Evrard Tablette troubler",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Evrard",
+                    "id_fournisseur": 268,
+                    "nom_fournisseur": "Rey"
+                },
+                {
+                    "id_produit": 11311,
+                    "nom_produit": "Guichard Ordinateur résistance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Guichard",
+                    "id_fournisseur": 136,
+                    "nom_fournisseur": "Cohen Martin et Fils"
+                },
+                {
+                    "id_produit": 8422,
+                    "nom_produit": "Decathlon Tablette connaissance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 91,
+                    "nom_fournisseur": "Guilbert"
+                },
+                {
+                    "id_produit": 11003,
+                    "nom_produit": "Dyson Smartphone soldat",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Dyson",
+                    "id_fournisseur": 224,
+                    "nom_fournisseur": "Goncalves Perret et Fils"
+                },
+                {
+                    "id_produit": 1450,
+                    "nom_produit": "Nike Ordinateur effacer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 43,
+                    "nom_fournisseur": "Pasquier"
+                },
+                {
+                    "id_produit": 3487,
+                    "nom_produit": "Nike Ordinateur dehors",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 174,
+                    "nom_fournisseur": "Sanchez"
+                },
+                {
+                    "id_produit": 14482,
+                    "nom_produit": "Nike Casque nombre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 14,
+                    "nom_fournisseur": "Daniel Deschamps S.A.R.L."
+                },
+                {
+                    "id_produit": 11378,
+                    "nom_produit": "Puma Tablette charger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Puma",
+                    "id_fournisseur": 74,
+                    "nom_fournisseur": "Marty"
+                },
+                {
+                    "id_produit": 2909,
+                    "nom_produit": "L'Oréal Casque travers",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 210,
+                    "nom_fournisseur": "Meunier S.A.S."
+                },
+                {
+                    "id_produit": 36,
+                    "nom_produit": "Adidas Ordinateur monter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Adidas",
+                    "id_fournisseur": 95,
+                    "nom_fournisseur": "Perez"
+                },
+                {
+                    "id_produit": 4540,
+                    "nom_produit": "Philips Tablette travail",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Philips",
+                    "id_fournisseur": 258,
+                    "nom_fournisseur": "Millet"
+                },
+                {
+                    "id_produit": 7252,
+                    "nom_produit": "Decathlon Tablette victime",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 106,
+                    "nom_fournisseur": "Lacroix S.A.R.L."
+                },
+                {
+                    "id_produit": 2404,
+                    "nom_produit": "Jean Cordi Smartphone pas",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Jean Cordi",
+                    "id_fournisseur": 191,
+                    "nom_fournisseur": "Tanguy"
+                },
+                {
+                    "id_produit": 10375,
+                    "nom_produit": "Apple Ordinateur madame",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Apple",
+                    "id_fournisseur": 89,
+                    "nom_fournisseur": "Lévêque Lévêque S.A."
+                },
+                {
+                    "id_produit": 6190,
+                    "nom_produit": "Dyson Tablette ce",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 299,
+                    "nom_fournisseur": "Hardy Garcia SARL"
+                },
+                {
+                    "id_produit": 14706,
+                    "nom_produit": "Hubert Ordinateur côté",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Hubert",
+                    "id_fournisseur": 41,
+                    "nom_fournisseur": "Baudry S.A."
+                },
+                {
+                    "id_produit": 11506,
+                    "nom_produit": "Philips Casque placer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 78,
+                    "nom_fournisseur": "Léger"
+                },
+                {
+                    "id_produit": 13765,
+                    "nom_produit": "Foucher Na Chargeur droit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Foucher Na",
+                    "id_fournisseur": 196,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 5542,
+                    "nom_produit": "Nike Tablette marcher",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 181,
+                    "nom_fournisseur": "Chauveau Torres et Fils"
+                },
+                {
+                    "id_produit": 12177,
+                    "nom_produit": "Puma Ordinateur vent",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Puma",
+                    "id_fournisseur": 153,
+                    "nom_fournisseur": "Baudry"
+                },
+                {
+                    "id_produit": 647,
+                    "nom_produit": "Sony Smartphone son",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Sony",
+                    "id_fournisseur": 9,
+                    "nom_fournisseur": "Bouvet"
+                },
+                {
+                    "id_produit": 6308,
+                    "nom_produit": "Samsung Casque rapide",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Samsung",
+                    "id_fournisseur": 32,
+                    "nom_fournisseur": "Fischer"
+                },
+                {
+                    "id_produit": 1240,
+                    "nom_produit": "Philips Casque demain",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 275,
+                    "nom_fournisseur": "Mallet Lombard S.A.R.L."
+                },
+                {
+                    "id_produit": 9823,
+                    "nom_produit": "Nike Chargeur paysan",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Nike",
+                    "id_fournisseur": 2,
+                    "nom_fournisseur": "Godard"
+                },
+                {
+                    "id_produit": 223,
+                    "nom_produit": "Puma Ordinateur représenter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Puma",
+                    "id_fournisseur": 105,
+                    "nom_fournisseur": "Leclerc SARL"
+                },
+                {
+                    "id_produit": 1390,
+                    "nom_produit": "Bonnet S.A Tablette abattre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Bonnet S.A",
+                    "id_fournisseur": 215,
+                    "nom_fournisseur": "Marin"
+                },
+                {
+                    "id_produit": 7786,
+                    "nom_produit": "Philips Casque politique",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 21,
+                    "nom_fournisseur": "Godard Legrand SARL"
+                },
+                {
+                    "id_produit": 6728,
+                    "nom_produit": "Apple Smartphone dans",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 26,
+                    "nom_fournisseur": "Jacob"
+                },
+                {
+                    "id_produit": 7915,
+                    "nom_produit": "L'Oréal Smartphone poussière",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 251,
+                    "nom_fournisseur": "Da Costa S.A.R.L."
+                },
+                {
+                    "id_produit": 8646,
+                    "nom_produit": "Nike Smartphone tombe",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Nike",
+                    "id_fournisseur": 26,
+                    "nom_fournisseur": "Jacob"
+                },
+                {
+                    "id_produit": 13350,
+                    "nom_produit": "Labbé Bouv Casque inquiéter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Labbé Bouv",
+                    "id_fournisseur": 151,
+                    "nom_fournisseur": "Monnier"
+                },
+                {
+                    "id_produit": 3634,
+                    "nom_produit": "Apple Smartphone tuer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 38,
+                    "nom_fournisseur": "Leclerc"
+                },
+                {
+                    "id_produit": 13485,
+                    "nom_produit": "Allain SA Smartphone passer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Allain SA",
+                    "id_fournisseur": 285,
+                    "nom_fournisseur": "Martins"
+                },
+                {
+                    "id_produit": 14054,
+                    "nom_produit": "Gilbert Hu Ordinateur dernier",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Gilbert Hu",
+                    "id_fournisseur": 24,
+                    "nom_fournisseur": "Mallet et Fils"
+                },
+                {
+                    "id_produit": 14393,
+                    "nom_produit": "Roux et Fi Smartphone vague",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Roux et Fi",
+                    "id_fournisseur": 199,
+                    "nom_fournisseur": "Collet"
+                },
+                {
+                    "id_produit": 14236,
+                    "nom_produit": "Samsung Chargeur prévoir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 199,
+                    "nom_fournisseur": "Collet"
+                },
+                {
+                    "id_produit": 7516,
+                    "nom_produit": "Nike Tablette côté",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 189,
+                    "nom_fournisseur": "Lefort Roy S.A."
+                },
+                {
+                    "id_produit": 2583,
+                    "nom_produit": "Sony Smartphone d'abord",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Sony",
+                    "id_fournisseur": 264,
+                    "nom_fournisseur": "Perrin Guérin et Fils"
+                },
+                {
+                    "id_produit": 999,
+                    "nom_produit": "Dyson Tablette fête",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 99,
+                    "nom_fournisseur": "Marion Lucas S.A.R.L."
+                },
+                {
+                    "id_produit": 11658,
+                    "nom_produit": "Bousquet e Smartphone puis",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Bousquet e",
+                    "id_fournisseur": 52,
+                    "nom_fournisseur": "Maillot"
+                },
+                {
+                    "id_produit": 10287,
+                    "nom_produit": "Mallet Tablette danger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Mallet",
+                    "id_fournisseur": 94,
+                    "nom_fournisseur": "Bruneau S.A."
+                },
+                {
+                    "id_produit": 11803,
+                    "nom_produit": "Nike Casque petit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 184,
+                    "nom_fournisseur": "Moreno S.A.S."
+                },
+                {
+                    "id_produit": 10398,
+                    "nom_produit": "Ollivier D Chargeur étude",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Ollivier D",
+                    "id_fournisseur": 248,
+                    "nom_fournisseur": "Fleury"
+                },
+                {
+                    "id_produit": 9281,
+                    "nom_produit": "Apple Smartphone prince",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 129,
+                    "nom_fournisseur": "Blanc SARL"
+                },
+                {
+                    "id_produit": 2430,
+                    "nom_produit": "Guyon Ordinateur serrer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Guyon",
+                    "id_fournisseur": 123,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 14177,
+                    "nom_produit": "Decathlon Chargeur rêve",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 78,
+                    "nom_fournisseur": "Léger"
+                },
+                {
+                    "id_produit": 10257,
+                    "nom_produit": "Philips Chargeur léger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Philips",
+                    "id_fournisseur": 122,
+                    "nom_fournisseur": "Diallo"
+                },
+                {
+                    "id_produit": 8994,
+                    "nom_produit": "Adidas Casque voiture",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Adidas",
+                    "id_fournisseur": 228,
+                    "nom_fournisseur": "Leleu S.A."
+                },
+                {
+                    "id_produit": 9129,
+                    "nom_produit": "Chevallier Chargeur guère",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Chevallier",
+                    "id_fournisseur": 155,
+                    "nom_fournisseur": "Marques Moreno S.A.R.L."
+                },
+                {
+                    "id_produit": 6385,
+                    "nom_produit": "Philips Casque phrase",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 86,
+                    "nom_fournisseur": "Grégoire S.A.S."
+                },
+                {
+                    "id_produit": 1122,
+                    "nom_produit": "Decathlon Tablette droit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 136,
+                    "nom_fournisseur": "Cohen Martin et Fils"
+                },
+                {
+                    "id_produit": 127,
+                    "nom_produit": "Samsung Tablette réunir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Samsung",
+                    "id_fournisseur": 132,
+                    "nom_fournisseur": "Bernier Seguin S.A."
+                },
+                {
+                    "id_produit": 401,
+                    "nom_produit": "L'Oréal Tablette accepter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 4,
+                    "nom_fournisseur": "Louis Renaud et Fils"
+                },
+                {
+                    "id_produit": 12495,
+                    "nom_produit": "Decathlon Ordinateur épaule",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 158,
+                    "nom_fournisseur": "Langlois Ramos S.A."
+                },
+                {
+                    "id_produit": 9471,
+                    "nom_produit": "Fischer Smartphone lire",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Fischer",
+                    "id_fournisseur": 118,
+                    "nom_fournisseur": "Georges"
+                },
+                {
+                    "id_produit": 4308,
+                    "nom_produit": "Samsung Ordinateur lèvre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 145,
+                    "nom_fournisseur": "Parent"
+                },
+                {
+                    "id_produit": 4666,
+                    "nom_produit": "Julien Dij Casque soumettre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Julien Dij",
+                    "id_fournisseur": 262,
+                    "nom_fournisseur": "Gaudin"
+                },
+                {
+                    "id_produit": 10913,
+                    "nom_produit": "Samsung Ordinateur printemps",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 46,
+                    "nom_fournisseur": "Raynaud S.A."
+                },
+                {
+                    "id_produit": 699,
+                    "nom_produit": "Sony Ordinateur vendre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Sony",
+                    "id_fournisseur": 238,
+                    "nom_fournisseur": "Dupuis"
+                },
+                {
+                    "id_produit": 5886,
+                    "nom_produit": "Decathlon Casque cher",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 292,
+                    "nom_fournisseur": "Bigot"
+                },
+                {
+                    "id_produit": 4769,
+                    "nom_produit": "Apple Tablette retourner",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 263,
+                    "nom_fournisseur": "Paul"
+                },
+                {
+                    "id_produit": 3458,
+                    "nom_produit": "Decathlon Smartphone meilleur",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 17,
+                    "nom_fournisseur": "Hervé S.A.S."
+                },
+                {
+                    "id_produit": 5768,
+                    "nom_produit": "Philips Casque chant",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 213,
+                    "nom_fournisseur": "Godard SARL"
+                },
+                {
+                    "id_produit": 6886,
+                    "nom_produit": "Philips Smartphone couche",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Philips",
+                    "id_fournisseur": 248,
+                    "nom_fournisseur": "Fleury"
+                },
+                {
+                    "id_produit": 307,
+                    "nom_produit": "Dyson Tablette désigner",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 68,
+                    "nom_fournisseur": "Sanchez S.A.R.L."
+                },
+                {
+                    "id_produit": 13392,
+                    "nom_produit": "Puma Tablette dégager",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Puma",
+                    "id_fournisseur": 235,
+                    "nom_fournisseur": "Lagarde"
+                }
+            ],
+            "query_sql": "SELECT * FROM produits WHERE categorie = 'Électronique' LIMIT 100;",
+            "analytics_text": "Analyse : 55.83s | Base de données : 0.25s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits dont la marque commence par \"A\""
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur technique est survenue lors de l'exécution de la requête en base.",
+            "is_sql": true,
+            "df_resultat": null,
+            "query_sql": "SELECT nom_produit FROM produits WHERE marque ILIKE 'A%' LIMIT 100;",
+            "analytics_text": "Détails du plantage : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Quels  sot les produits  les plus  vendus e 2022"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur technique est survenue lors de l'exécution de la requête en base.",
+            "is_sql": true,
+            "df_resultat": null,
+            "query_sql": "SELECT produits.nom_produit, SUM(ventes.quantite) as total_ventes FROM ventes JOIN commandes ON ventes.commande_id = commandes.id JOIN produits ON ventes.produit_id = produits.id WHERE YEAR(commandes.date_commande) = 2022 GROUP BY produits.nom_produit ORDER BY total_ventes DESC LIMIT 100;",
+            "analytics_text": "Détails du plantage : Execution failed on sql 'SELECT produits.nom_produit, SUM(ventes.quantite) as total_ventes FROM ventes JOIN commandes ON ventes.commande_id = commandes.id JOIN produits ON ventes.produit_id = produits.id WHERE YEAR(commandes.date_commande) = 2022 GROUP BY produits.nom_produit ORDER BY total_ventes DESC LIMIT 100;': (psycopg2.errors.UndefinedColumn) ERREUR:  la colonne ventes.commande_id n'existe pas\nLINE 1: ...te) as total_ventes FROM ventes JOIN commandes ON ventes.com...\n                                                             ^\n\n[SQL: SELECT produits.nom_produit, SUM(ventes.quantite) as total_ventes FROM ventes JOIN commandes ON ventes.commande_id = commandes.id JOIN produits ON ventes.produit_id = produits.id WHERE YEAR(commandes.date_commande) = 2022 GROUP BY produits.nom_produit ORDER BY total_ventes DESC LIMIT 100;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Quels sont les produits les plus vendus en 2022"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur technique est survenue lors de l'exécution de la requête en base.",
+            "is_sql": true,
+            "df_resultat": null,
+            "query_sql": "SELECT p.nom_produit, SUM(v.quantite) as quantite_totale FROM ventes v JOIN produits p ON v.produit_id = p.id JOIN commandes c ON v.commande_id = c.id WHERE EXTRACT(YEAR FROM c.date_commande) = 2022 GROUP BY p.nom_produit ORDER BY quantite_totale DESC LIMIT 100;",
+            "analytics_text": "Détails du plantage : Execution failed on sql 'SELECT p.nom_produit, SUM(v.quantite) as quantite_totale FROM ventes v JOIN produits p ON v.produit_id = p.id JOIN commandes c ON v.commande_id = c.id WHERE EXTRACT(YEAR FROM c.date_commande) = 2022 GROUP BY p.nom_produit ORDER BY quantite_totale DESC LIMIT 100;': (psycopg2.errors.UndefinedColumn) ERREUR:  la colonne v.produit_id n'existe pas\nLINE 1: ... quantite_totale FROM ventes v JOIN produits p ON v.produit_...\n                                                             ^\n\n[SQL: SELECT p.nom_produit, SUM(v.quantite) as quantite_totale FROM ventes v JOIN produits p ON v.produit_id = p.id JOIN commandes c ON v.commande_id = c.id WHERE EXTRACT(YEAR FROM c.date_commande) = 2022 GROUP BY p.nom_produit ORDER BY quantite_totale DESC LIMIT 100;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+            "status_ok": false
+        }
+    ]
+}

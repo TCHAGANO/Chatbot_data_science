@@ -1,0 +1,19 @@
+{
+    "titre": "Afficher les magasins situés e...",
+    "date": "2026-06-07 00:52",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les magasins situés en Europe."
+        },
+        {
+            "role": "assistant",
+            "content": "Désolé Bahissou, j'ai rencontré une difficulté lors de l'analyse de votre demande. (Détails : model 'phi3:mini' not found (status code: 404))",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Aucune requête SQL nécessaire.",
+            "status_ok": true
+        }
+    ]
+}
