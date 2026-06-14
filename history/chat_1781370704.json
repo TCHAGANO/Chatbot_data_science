@@ -1,0 +1,19 @@
+{
+    "titre": "Afficher les commandes payées ...",
+    "date": "2026-06-13 19:11",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par carte"
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne toutes les commandes où la méthode de paiement est 'carte', ce qui correspond aux commandes payées par carte.",
+            "is_sql": true,
+            "df_resultat": [],
+            "query_sql": "SELECT * FROM commandes WHERE methode_paiement = 'carte' LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.49s | Base de données : 0.43s.",
+            "status_ok": true
+        }
+    ]
+}

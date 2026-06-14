@@ -1,0 +1,19 @@
+{
+    "titre": "Nombre de clients dans l base",
+    "date": "2026-06-13 12:39",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Nombre de clients dans l base"
+        },
+        {
+            "role": "assistant",
+            "content": "Désolé Bahissou, je rencontre des difficultés techniques avec l'API DeepSeek-Coder. (Détails : Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}})",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Aucune requête SQL nécessaire.",
+            "status_ok": true
+        }
+    ]
+}

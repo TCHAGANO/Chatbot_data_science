@@ -1,0 +1,933 @@
+{
+    "titre": "Afficher les clients vivant en...",
+    "date": "2026-06-13 20:32",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les clients vivant en France ou en Belgique"
+        },
+        {
+            "role": "assistant",
+            "content": "Voici les clients vivant en France ou en Belgique.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_client": 386,
+                    "nom_client": "Valentine Mathieu",
+                    "age_client": 22,
+                    "sexe_client": "F",
+                    "ville_client": "Saint SusanVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2957,
+                    "nom_client": "Marcel Diallo",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Goncalves",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2000,
+                    "nom_client": "Xavier de Hardy",
+                    "age_client": 58,
+                    "sexe_client": "F",
+                    "ville_client": "Tessier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 893,
+                    "nom_client": "Claude Lenoir",
+                    "age_client": 61,
+                    "sexe_client": "F",
+                    "ville_client": "Dupuis-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4,
+                    "nom_client": "Gilbert Imbert",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Leroux-sur-Henry",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1143,
+                    "nom_client": "Clémence Traore-Cordier",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Michelle-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1775,
+                    "nom_client": "Élisabeth Maury",
+                    "age_client": 54,
+                    "sexe_client": "F",
+                    "ville_client": "Fischer",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1474,
+                    "nom_client": "Michelle Thomas",
+                    "age_client": 42,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Bertrand",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1132,
+                    "nom_client": "Benjamin Grégoire",
+                    "age_client": 60,
+                    "sexe_client": "F",
+                    "ville_client": "Saint AnastasieVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2807,
+                    "nom_client": "Nicolas Couturier",
+                    "age_client": 42,
+                    "sexe_client": "M",
+                    "ville_client": "Cordier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2974,
+                    "nom_client": "Margot Tessier de Morin",
+                    "age_client": 67,
+                    "sexe_client": "M",
+                    "ville_client": "Moreau",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1529,
+                    "nom_client": "Véronique Coste",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Evrard-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4111,
+                    "nom_client": "Suzanne Perez",
+                    "age_client": 31,
+                    "sexe_client": "M",
+                    "ville_client": "Hamon",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3965,
+                    "nom_client": "Adélaïde Bertrand",
+                    "age_client": 36,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Raymond",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1573,
+                    "nom_client": "Valérie du Mendès",
+                    "age_client": 62,
+                    "sexe_client": "M",
+                    "ville_client": "Devaux-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4752,
+                    "nom_client": "Paul Da Costa",
+                    "age_client": 65,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Adélaïde",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1807,
+                    "nom_client": "Alexandrie Schmitt",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Poiriernec",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3146,
+                    "nom_client": "Odette Robin",
+                    "age_client": 18,
+                    "sexe_client": "F",
+                    "ville_client": "Reynaud-sur-Ramos",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4140,
+                    "nom_client": "Éric Fontaine",
+                    "age_client": 61,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Françoisedan",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4470,
+                    "nom_client": "Olivie Dupuy-Gay",
+                    "age_client": 31,
+                    "sexe_client": "F",
+                    "ville_client": "CaronBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1074,
+                    "nom_client": "Emmanuel-Thibault Ferreira",
+                    "age_client": 40,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Élisabeth-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3943,
+                    "nom_client": "Renée du Delaunay",
+                    "age_client": 56,
+                    "sexe_client": "F",
+                    "ville_client": "Guillet",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2238,
+                    "nom_client": "Jacqueline Daniel",
+                    "age_client": 49,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Isaac",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1572,
+                    "nom_client": "Alex Hervé",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Leduc",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1670,
+                    "nom_client": "Marcelle Teixeira",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Dupuis",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4453,
+                    "nom_client": "Eugène Fontaine de Delaunay",
+                    "age_client": 75,
+                    "sexe_client": "M",
+                    "ville_client": "Gilles",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2442,
+                    "nom_client": "Jérôme Goncalves",
+                    "age_client": 36,
+                    "sexe_client": "F",
+                    "ville_client": "Hernandez",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1344,
+                    "nom_client": "Alain Auger",
+                    "age_client": 22,
+                    "sexe_client": "F",
+                    "ville_client": "Sanchez",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3729,
+                    "nom_client": "Richard-Philippe Blot",
+                    "age_client": 46,
+                    "sexe_client": "F",
+                    "ville_client": "Normand",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 582,
+                    "nom_client": "Adélaïde de la Vasseur",
+                    "age_client": 46,
+                    "sexe_client": "M",
+                    "ville_client": "VincentBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3013,
+                    "nom_client": "Alexandre Lagarde",
+                    "age_client": 20,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Marguerite-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 646,
+                    "nom_client": "Valentine Bourdon",
+                    "age_client": 64,
+                    "sexe_client": "M",
+                    "ville_client": "Hernandezdan",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 901,
+                    "nom_client": "Anne Charles",
+                    "age_client": 68,
+                    "sexe_client": "M",
+                    "ville_client": "Robin-sur-Chauvet",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 431,
+                    "nom_client": "Manon Menard",
+                    "age_client": 58,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Caroline-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3478,
+                    "nom_client": "Sébastien Goncalves",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Dias",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3049,
+                    "nom_client": "Anne Pires",
+                    "age_client": 59,
+                    "sexe_client": "F",
+                    "ville_client": "Diaz",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2858,
+                    "nom_client": "Lorraine-Adélaïde Barbier",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Descamps-sur-Pinto",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 390,
+                    "nom_client": "Stéphane Morel-Lefebvre",
+                    "age_client": 64,
+                    "sexe_client": "M",
+                    "ville_client": "Laine",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 703,
+                    "nom_client": "Éléonore Da Silva",
+                    "age_client": 73,
+                    "sexe_client": "M",
+                    "ville_client": "Ruiz-sur-Langlois",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3225,
+                    "nom_client": "Éric Charles",
+                    "age_client": 67,
+                    "sexe_client": "F",
+                    "ville_client": "Hamel",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2135,
+                    "nom_client": "Marcel Loiseau",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Bernardboeuf",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 87,
+                    "nom_client": "Sylvie Delattre-Munoz",
+                    "age_client": 69,
+                    "sexe_client": "M",
+                    "ville_client": "Pierre",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2917,
+                    "nom_client": "Henriette Jourdan",
+                    "age_client": 49,
+                    "sexe_client": "M",
+                    "ville_client": "Cordier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4961,
+                    "nom_client": "Joséphine Lacroix",
+                    "age_client": 25,
+                    "sexe_client": "F",
+                    "ville_client": "Nguyen",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 298,
+                    "nom_client": "Laetitia Guillet",
+                    "age_client": 21,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Louise-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3482,
+                    "nom_client": "Eugène Dumont",
+                    "age_client": 53,
+                    "sexe_client": "F",
+                    "ville_client": "Bourgeois",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 299,
+                    "nom_client": "Benoît Ollivier",
+                    "age_client": 77,
+                    "sexe_client": "M",
+                    "ville_client": "RocherVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3611,
+                    "nom_client": "Françoise Salmon",
+                    "age_client": 63,
+                    "sexe_client": "F",
+                    "ville_client": "Chevallier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2965,
+                    "nom_client": "Émilie Girard",
+                    "age_client": 44,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Corinne",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1930,
+                    "nom_client": "Nath Vincent",
+                    "age_client": 53,
+                    "sexe_client": "F",
+                    "ville_client": "LefortVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2694,
+                    "nom_client": "Sylvie Cohen",
+                    "age_client": 59,
+                    "sexe_client": "M",
+                    "ville_client": "Grégoirenec",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4442,
+                    "nom_client": "Sabine Grenier de la Rodriguez",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Dupré",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1433,
+                    "nom_client": "Alexandre Besnard",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Mace",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4121,
+                    "nom_client": "Bernadette Hernandez",
+                    "age_client": 78,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Arthur-sur-Mer",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4189,
+                    "nom_client": "Michelle Ollivier de la Lefort",
+                    "age_client": 48,
+                    "sexe_client": "F",
+                    "ville_client": "Pinto",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3355,
+                    "nom_client": "Claire Imbert",
+                    "age_client": 45,
+                    "sexe_client": "M",
+                    "ville_client": "Paul-sur-Guillon",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2549,
+                    "nom_client": "Pénélope Gomez",
+                    "age_client": 61,
+                    "sexe_client": "F",
+                    "ville_client": "Gros",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2279,
+                    "nom_client": "Thierry Diaz",
+                    "age_client": 42,
+                    "sexe_client": "F",
+                    "ville_client": "Ferrandboeuf",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 564,
+                    "nom_client": "Anastasie de la Lenoir",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Riou",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3921,
+                    "nom_client": "Mathilde de la Baron",
+                    "age_client": 72,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Christine-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1999,
+                    "nom_client": "Richard Munoz",
+                    "age_client": 79,
+                    "sexe_client": "M",
+                    "ville_client": "Brunet-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2575,
+                    "nom_client": "Laure du Andre",
+                    "age_client": 73,
+                    "sexe_client": "F",
+                    "ville_client": "LegrosVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1666,
+                    "nom_client": "Joseph Morin",
+                    "age_client": 49,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Auguste",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2115,
+                    "nom_client": "Thierry-Michel Martel",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Pierre",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3364,
+                    "nom_client": "Raymond Marie",
+                    "age_client": 24,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Lucy",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1710,
+                    "nom_client": "Grégoire de la Royer",
+                    "age_client": 25,
+                    "sexe_client": "F",
+                    "ville_client": "MonnierVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 108,
+                    "nom_client": "Noël Thomas-Gimenez",
+                    "age_client": 73,
+                    "sexe_client": "M",
+                    "ville_client": "Rolland-sur-Martinez",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2294,
+                    "nom_client": "Marcel du Boyer",
+                    "age_client": 67,
+                    "sexe_client": "F",
+                    "ville_client": "Lacombe",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3526,
+                    "nom_client": "Laurence Colas",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Aurélie",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2903,
+                    "nom_client": "Thibault Pages de la Rocher",
+                    "age_client": 25,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Thibault",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1192,
+                    "nom_client": "Virginie Coste",
+                    "age_client": 41,
+                    "sexe_client": "M",
+                    "ville_client": "Faure-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3810,
+                    "nom_client": "Robert Loiseau",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "LambertBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4279,
+                    "nom_client": "Nicole Blanchet",
+                    "age_client": 57,
+                    "sexe_client": "F",
+                    "ville_client": "Bazin-sur-Robin",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2338,
+                    "nom_client": "Hélène Guyot",
+                    "age_client": 53,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Anaïs-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2339,
+                    "nom_client": "Bertrand Roux",
+                    "age_client": 49,
+                    "sexe_client": "F",
+                    "ville_client": "Lefebvre",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3233,
+                    "nom_client": "Brigitte Meyer-Pereira",
+                    "age_client": 73,
+                    "sexe_client": "F",
+                    "ville_client": "Payet",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 792,
+                    "nom_client": "Virginie-Zoé Antoine",
+                    "age_client": 73,
+                    "sexe_client": "M",
+                    "ville_client": "AndreBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3598,
+                    "nom_client": "Isabelle Delmas",
+                    "age_client": 73,
+                    "sexe_client": "F",
+                    "ville_client": "Coste",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 67,
+                    "nom_client": "Christophe Payet",
+                    "age_client": 26,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Sophiedan",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3270,
+                    "nom_client": "Thérèse Lagarde-Bourdon",
+                    "age_client": 71,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Robert",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4983,
+                    "nom_client": "Claude Boyer",
+                    "age_client": 59,
+                    "sexe_client": "F",
+                    "ville_client": "Wagner",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1137,
+                    "nom_client": "Michel Marin",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Hubert",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 385,
+                    "nom_client": "Martin Léger du Dubois",
+                    "age_client": 77,
+                    "sexe_client": "M",
+                    "ville_client": "Legendre-sur-Lebreton",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1260,
+                    "nom_client": "Manon Chevalier",
+                    "age_client": 59,
+                    "sexe_client": "F",
+                    "ville_client": "Barbe",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4032,
+                    "nom_client": "René Marin",
+                    "age_client": 59,
+                    "sexe_client": "M",
+                    "ville_client": "Guillaume",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3039,
+                    "nom_client": "Lucie Lemaître",
+                    "age_client": 41,
+                    "sexe_client": "F",
+                    "ville_client": "Becker",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1135,
+                    "nom_client": "Théodore Guillon",
+                    "age_client": 36,
+                    "sexe_client": "M",
+                    "ville_client": "Lopes",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3913,
+                    "nom_client": "Antoinette Thomas",
+                    "age_client": 20,
+                    "sexe_client": "M",
+                    "ville_client": "Raynaud",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2667,
+                    "nom_client": "Charles Lecoq de Leroy",
+                    "age_client": 78,
+                    "sexe_client": "F",
+                    "ville_client": "Martinez",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3317,
+                    "nom_client": "Eugène Legros",
+                    "age_client": 31,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Patrick",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3001,
+                    "nom_client": "Claire-Marcelle Marion",
+                    "age_client": 69,
+                    "sexe_client": "M",
+                    "ville_client": "Leconte",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3834,
+                    "nom_client": "Astrid Raymond",
+                    "age_client": 78,
+                    "sexe_client": "M",
+                    "ville_client": "Pascal",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2033,
+                    "nom_client": "Nicole Le Munoz",
+                    "age_client": 65,
+                    "sexe_client": "F",
+                    "ville_client": "Costa",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4731,
+                    "nom_client": "Élodie Da Silva",
+                    "age_client": 45,
+                    "sexe_client": "F",
+                    "ville_client": "Cousin-sur-Perrin",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1429,
+                    "nom_client": "Charles Bernier",
+                    "age_client": 64,
+                    "sexe_client": "M",
+                    "ville_client": "Renault-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1437,
+                    "nom_client": "Raymond Bernard",
+                    "age_client": 57,
+                    "sexe_client": "M",
+                    "ville_client": "Gros-sur-Vincent",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3695,
+                    "nom_client": "Noël Valette",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Maillet-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2252,
+                    "nom_client": "Daniel de la Renard",
+                    "age_client": 20,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Rémy",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4305,
+                    "nom_client": "Marianne Gonzalez",
+                    "age_client": 19,
+                    "sexe_client": "M",
+                    "ville_client": "Morenonec",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4389,
+                    "nom_client": "Thomas Morvan du Bigot",
+                    "age_client": 28,
+                    "sexe_client": "M",
+                    "ville_client": "Couturier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                }
+            ],
+            "query_sql": "SELECT * FROM clients WHERE pays_client IN ('France', 'Belgique') LIMIT 100",
+            "analytics_text": "Génération SQL (Groq) : 3.11s | Base de données : 0.1s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits dont la marque commence par A"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

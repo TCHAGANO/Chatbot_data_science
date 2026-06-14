@@ -1,0 +1,19 @@
+{
+    "titre": "Afficher les produits dont la ...",
+    "date": "2026-06-13 20:36",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les produits dont la marque commence par A"
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

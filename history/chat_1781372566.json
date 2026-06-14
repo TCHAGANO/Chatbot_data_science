@@ -1,0 +1,193 @@
+{
+    "titre": "Afficher les magasins situés e...",
+    "date": "2026-06-13 19:43",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les magasins situés en Europe."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne les noms, villes et pays des magasins situés en Europe en filtrant sur la colonne continent_magasin de la table magasins.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store LeleuBourg",
+                    "ville_magasin": "LeleuBourg",
+                    "pays_magasin": "Royaume-Uni"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France"
+                },
+                {
+                    "nom_magasin": "Store Da Silvadan",
+                    "ville_magasin": "Da Silvadan",
+                    "pays_magasin": "Espagne"
+                },
+                {
+                    "nom_magasin": "Store Da Silva",
+                    "ville_magasin": "Da Silva",
+                    "pays_magasin": "Allemagne"
+                },
+                {
+                    "nom_magasin": "Store Saint Manon-sur-Mer",
+                    "ville_magasin": "Saint Manon-sur-Mer",
+                    "pays_magasin": "Allemagne"
+                },
+                {
+                    "nom_magasin": "Store Pierre",
+                    "ville_magasin": "Pierre",
+                    "pays_magasin": "Italie"
+                }
+            ],
+            "query_sql": "SELECT nom_magasin, ville_magasin, pays_magasin FROM magasins WHERE continent_magasin = 'Europe' LIMIT 100",
+            "analytics_text": "Génération SQL (Groq) : 4.96s | Base de données : 0.18s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits dont la marque commence par \"A\"."
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        }
+    ]
+}

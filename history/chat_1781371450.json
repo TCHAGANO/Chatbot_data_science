@@ -1,0 +1,2393 @@
+{
+    "titre": "Afficher les magasins situés e...",
+    "date": "2026-06-13 19:28",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Afficher les magasins situés en Europe."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne toutes les lignes de la table magasins où le continent est Europe, permettant ainsi d'afficher les magasins situés en Europe.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_magasin": 21,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 16,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 24,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 19,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 44,
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 3,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 7,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 49,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 8,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 74,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 71,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 61,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 46,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 87,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 60,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 34,
+                    "nom_magasin": "Store LeleuBourg",
+                    "ville_magasin": "LeleuBourg",
+                    "pays_magasin": "Royaume-Uni",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "44"
+                },
+                {
+                    "id_magasin": 4,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 31,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 9,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 54,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 90,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 65,
+                    "nom_magasin": "Store Lille",
+                    "ville_magasin": "Lille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 84,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 18,
+                    "nom_magasin": "Store Bordeaux",
+                    "ville_magasin": "Bordeaux",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 29,
+                    "nom_magasin": "Store Paris",
+                    "ville_magasin": "Paris",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 35,
+                    "nom_magasin": "Store Toulouse",
+                    "ville_magasin": "Toulouse",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 79,
+                    "nom_magasin": "Store Marseille",
+                    "ville_magasin": "Marseille",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 52,
+                    "nom_magasin": "Store Lyon",
+                    "ville_magasin": "Lyon",
+                    "pays_magasin": "France",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "33"
+                },
+                {
+                    "id_magasin": 73,
+                    "nom_magasin": "Store Da Silvadan",
+                    "ville_magasin": "Da Silvadan",
+                    "pays_magasin": "Espagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "34"
+                },
+                {
+                    "id_magasin": 40,
+                    "nom_magasin": "Store Da Silva",
+                    "ville_magasin": "Da Silva",
+                    "pays_magasin": "Allemagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "49"
+                },
+                {
+                    "id_magasin": 99,
+                    "nom_magasin": "Store Saint Manon-sur-Mer",
+                    "ville_magasin": "Saint Manon-sur-Mer",
+                    "pays_magasin": "Allemagne",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "49"
+                },
+                {
+                    "id_magasin": 10,
+                    "nom_magasin": "Store Pierre",
+                    "ville_magasin": "Pierre",
+                    "pays_magasin": "Italie",
+                    "continent_magasin": "Europe",
+                    "code_iso_magasin": "39"
+                }
+            ],
+            "query_sql": "SELECT * FROM magasins WHERE continent_magasin = 'Europe' LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 4.01s | Base de données : 0.18s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher la liste des pays clients sans doublons."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête utilise l'opérateur DISTINCT pour sélectionner les pays clients uniques de la table clients.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "pays_client": "Cameroun"
+                },
+                {
+                    "pays_client": "Sénégal"
+                },
+                {
+                    "pays_client": "Togo"
+                },
+                {
+                    "pays_client": "Inde"
+                },
+                {
+                    "pays_client": "Nigeria"
+                },
+                {
+                    "pays_client": "Burkina Faso"
+                },
+                {
+                    "pays_client": "Espagne"
+                },
+                {
+                    "pays_client": "Australie"
+                },
+                {
+                    "pays_client": "Bénin"
+                },
+                {
+                    "pays_client": "Italie"
+                },
+                {
+                    "pays_client": "Côte d'Ivoire"
+                },
+                {
+                    "pays_client": "Liban"
+                },
+                {
+                    "pays_client": "Brésil"
+                },
+                {
+                    "pays_client": "Qatar"
+                },
+                {
+                    "pays_client": "Argentine"
+                },
+                {
+                    "pays_client": "Canada"
+                },
+                {
+                    "pays_client": "Arabie Saoudite"
+                },
+                {
+                    "pays_client": "Afrique du Sud"
+                },
+                {
+                    "pays_client": "Niger"
+                },
+                {
+                    "pays_client": "Chine"
+                },
+                {
+                    "pays_client": "RDC"
+                },
+                {
+                    "pays_client": "Mali"
+                },
+                {
+                    "pays_client": "Congo"
+                },
+                {
+                    "pays_client": "Tchad"
+                },
+                {
+                    "pays_client": "Japon"
+                },
+                {
+                    "pays_client": "Allemagne"
+                },
+                {
+                    "pays_client": "Royaume-Uni"
+                },
+                {
+                    "pays_client": "Maroc"
+                },
+                {
+                    "pays_client": "France"
+                },
+                {
+                    "pays_client": "Koweït"
+                },
+                {
+                    "pays_client": "Ghana"
+                },
+                {
+                    "pays_client": "États-Unis"
+                }
+            ],
+            "query_sql": "SELECT DISTINCT pays_client FROM clients LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.46s | Base de données : 0.02s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les 10 clients les plus âgés."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête trie les clients par âge dans l'ordre descendant et sélectionne les 10 premiers, ce qui correspond aux clients les plus âgés.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_client": 3819,
+                    "nom_client": "Martin Aubert",
+                    "age_client": 79,
+                    "sexe_client": "M",
+                    "ville_client": "Neveuboeuf",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2144,
+                    "nom_client": "Nicolas Imbert",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Danielle-la-Forêt",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3810,
+                    "nom_client": "Robert Loiseau",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "LambertBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 946,
+                    "nom_client": "Sylvie Guibert",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Da Silva",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3532,
+                    "nom_client": "Louise de Albert",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Potier-sur-Boulanger",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 3441,
+                    "nom_client": "Marianne Le Roux",
+                    "age_client": 79,
+                    "sexe_client": "M",
+                    "ville_client": "Perret-sur-Blanc",
+                    "pays_client": "Australie",
+                    "code_iso_client": "61"
+                },
+                {
+                    "id_client": 1999,
+                    "nom_client": "Richard Munoz",
+                    "age_client": 79,
+                    "sexe_client": "M",
+                    "ville_client": "Brunet-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4609,
+                    "nom_client": "Isabelle Renard",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Leblanc-les-Bains",
+                    "pays_client": "Ghana",
+                    "code_iso_client": "233"
+                },
+                {
+                    "id_client": 303,
+                    "nom_client": "Margot Ferreira",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Rodrigues",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1379,
+                    "nom_client": "David Reynaud",
+                    "age_client": 79,
+                    "sexe_client": "M",
+                    "ville_client": "Lamy-sur-Imbert",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                }
+            ],
+            "query_sql": "SELECT * FROM clients ORDER BY age_client DESC LIMIT 10",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.52s | Base de données : 0.01s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Electronics\"."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne tous les produits de la table produits où la catégorie est 'Electronics', permettant ainsi d'afficher les produits appartenant à cette catégorie.",
+            "is_sql": true,
+            "df_resultat": [],
+            "query_sql": "SELECT * FROM produits WHERE categorie = 'Electronics' LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.51s | Base de données : 0.03s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits appartenant à la catégorie \"Électronique \""
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne tous les produits de la table produits où la catégorie est 'Électronique', permettant ainsi d'afficher les produits appartenant à cette catégorie.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_produit": 5511,
+                    "nom_produit": "Apple Tablette espace",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 107,
+                    "nom_fournisseur": "Thomas SARL"
+                },
+                {
+                    "id_produit": 7395,
+                    "nom_produit": "Blot et Fi Ordinateur choix",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Blot et Fi",
+                    "id_fournisseur": 176,
+                    "nom_fournisseur": "Lambert SA"
+                },
+                {
+                    "id_produit": 7145,
+                    "nom_produit": "Carpentier Tablette emporter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Carpentier",
+                    "id_fournisseur": 227,
+                    "nom_fournisseur": "Ribeiro"
+                },
+                {
+                    "id_produit": 11970,
+                    "nom_produit": "Decathlon Casque conclure",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 244,
+                    "nom_fournisseur": "Rolland"
+                },
+                {
+                    "id_produit": 13220,
+                    "nom_produit": "Dyson Smartphone hasard",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Dyson",
+                    "id_fournisseur": 56,
+                    "nom_fournisseur": "Jacques S.A.S."
+                },
+                {
+                    "id_produit": 5100,
+                    "nom_produit": "Apple Tablette fait",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 104,
+                    "nom_fournisseur": "Pereira"
+                },
+                {
+                    "id_produit": 8753,
+                    "nom_produit": "Dyson Chargeur creuser",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Dyson",
+                    "id_fournisseur": 149,
+                    "nom_fournisseur": "Gérard"
+                },
+                {
+                    "id_produit": 12497,
+                    "nom_produit": "Dyson Tablette tranquille",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 123,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 8634,
+                    "nom_produit": "L'Oréal Casque quant à",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 146,
+                    "nom_fournisseur": "Meyer et Fils"
+                },
+                {
+                    "id_produit": 11049,
+                    "nom_produit": "Nike Ordinateur mur",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 170,
+                    "nom_fournisseur": "Chauvin SA"
+                },
+                {
+                    "id_produit": 10962,
+                    "nom_produit": "Samsung Casque dieu",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Samsung",
+                    "id_fournisseur": 39,
+                    "nom_fournisseur": "Lebon"
+                },
+                {
+                    "id_produit": 13632,
+                    "nom_produit": "Apple Chargeur mort",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Apple",
+                    "id_fournisseur": 119,
+                    "nom_fournisseur": "Perez Thierry et Fils"
+                },
+                {
+                    "id_produit": 5595,
+                    "nom_produit": "Nike Tablette autre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 133,
+                    "nom_fournisseur": "Sauvage Traore SA"
+                },
+                {
+                    "id_produit": 9229,
+                    "nom_produit": "Samsung Smartphone hors",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Samsung",
+                    "id_fournisseur": 122,
+                    "nom_fournisseur": "Diallo"
+                },
+                {
+                    "id_produit": 8807,
+                    "nom_produit": "Bonnet Ger Chargeur guerre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Bonnet Ger",
+                    "id_fournisseur": 27,
+                    "nom_fournisseur": "Lenoir Pasquier SA"
+                },
+                {
+                    "id_produit": 9416,
+                    "nom_produit": "Chrétien C Chargeur être",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Chrétien C",
+                    "id_fournisseur": 212,
+                    "nom_fournisseur": "Morin"
+                },
+                {
+                    "id_produit": 2845,
+                    "nom_produit": "Puma Chargeur apparaître",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 13,
+                    "nom_fournisseur": "Samson"
+                },
+                {
+                    "id_produit": 3952,
+                    "nom_produit": "Brunet Ordinateur de",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Brunet",
+                    "id_fournisseur": 86,
+                    "nom_fournisseur": "Grégoire S.A.S."
+                },
+                {
+                    "id_produit": 1464,
+                    "nom_produit": "Decathlon Tablette inspirer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 266,
+                    "nom_fournisseur": "Torres SARL"
+                },
+                {
+                    "id_produit": 10111,
+                    "nom_produit": "Puma Chargeur expérience",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 247,
+                    "nom_fournisseur": "Grenier"
+                },
+                {
+                    "id_produit": 1492,
+                    "nom_produit": "Samsung Tablette cependant",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Samsung",
+                    "id_fournisseur": 223,
+                    "nom_fournisseur": "Samson Giraud SARL"
+                },
+                {
+                    "id_produit": 13964,
+                    "nom_produit": "Grégoire S Smartphone résistance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Grégoire S",
+                    "id_fournisseur": 160,
+                    "nom_fournisseur": "Mahe"
+                },
+                {
+                    "id_produit": 13962,
+                    "nom_produit": "Adidas Casque pauvre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Adidas",
+                    "id_fournisseur": 13,
+                    "nom_fournisseur": "Samson"
+                },
+                {
+                    "id_produit": 6192,
+                    "nom_produit": "Blanchet M Ordinateur élever",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Blanchet M",
+                    "id_fournisseur": 42,
+                    "nom_fournisseur": "Rossi"
+                },
+                {
+                    "id_produit": 14821,
+                    "nom_produit": "Dyson Chargeur moitié",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Dyson",
+                    "id_fournisseur": 211,
+                    "nom_fournisseur": "Blanchard"
+                },
+                {
+                    "id_produit": 9015,
+                    "nom_produit": "L'Oréal Casque quelque",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 22,
+                    "nom_fournisseur": "Gomez SARL"
+                },
+                {
+                    "id_produit": 6259,
+                    "nom_produit": "Puma Smartphone lequel",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Puma",
+                    "id_fournisseur": 262,
+                    "nom_fournisseur": "Gaudin"
+                },
+                {
+                    "id_produit": 3164,
+                    "nom_produit": "Nike Casque veiller",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 61,
+                    "nom_fournisseur": "Pereira"
+                },
+                {
+                    "id_produit": 5400,
+                    "nom_produit": "Apple Ordinateur qualité",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Apple",
+                    "id_fournisseur": 259,
+                    "nom_fournisseur": "Lambert Mary SA"
+                },
+                {
+                    "id_produit": 8057,
+                    "nom_produit": "Allard Bai Tablette cent",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Allard Bai",
+                    "id_fournisseur": 73,
+                    "nom_fournisseur": "Boyer Devaux et Fils"
+                },
+                {
+                    "id_produit": 8849,
+                    "nom_produit": "Nike Smartphone mentir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Nike",
+                    "id_fournisseur": 161,
+                    "nom_fournisseur": "Bonnet S.A.S."
+                },
+                {
+                    "id_produit": 2462,
+                    "nom_produit": "Puma Chargeur ville",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Puma",
+                    "id_fournisseur": 181,
+                    "nom_fournisseur": "Chauveau Torres et Fils"
+                },
+                {
+                    "id_produit": 13378,
+                    "nom_produit": "Samsung Smartphone pousser",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Samsung",
+                    "id_fournisseur": 157,
+                    "nom_fournisseur": "Masse"
+                },
+                {
+                    "id_produit": 5675,
+                    "nom_produit": "Noël Casque coûter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Noël",
+                    "id_fournisseur": 232,
+                    "nom_fournisseur": "Martinez"
+                },
+                {
+                    "id_produit": 841,
+                    "nom_produit": "Evrard Tablette troubler",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Evrard",
+                    "id_fournisseur": 268,
+                    "nom_fournisseur": "Rey"
+                },
+                {
+                    "id_produit": 11311,
+                    "nom_produit": "Guichard Ordinateur résistance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Guichard",
+                    "id_fournisseur": 136,
+                    "nom_fournisseur": "Cohen Martin et Fils"
+                },
+                {
+                    "id_produit": 8422,
+                    "nom_produit": "Decathlon Tablette connaissance",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 91,
+                    "nom_fournisseur": "Guilbert"
+                },
+                {
+                    "id_produit": 11003,
+                    "nom_produit": "Dyson Smartphone soldat",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Dyson",
+                    "id_fournisseur": 224,
+                    "nom_fournisseur": "Goncalves Perret et Fils"
+                },
+                {
+                    "id_produit": 1450,
+                    "nom_produit": "Nike Ordinateur effacer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 43,
+                    "nom_fournisseur": "Pasquier"
+                },
+                {
+                    "id_produit": 3487,
+                    "nom_produit": "Nike Ordinateur dehors",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Nike",
+                    "id_fournisseur": 174,
+                    "nom_fournisseur": "Sanchez"
+                },
+                {
+                    "id_produit": 14482,
+                    "nom_produit": "Nike Casque nombre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 14,
+                    "nom_fournisseur": "Daniel Deschamps S.A.R.L."
+                },
+                {
+                    "id_produit": 11378,
+                    "nom_produit": "Puma Tablette charger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Puma",
+                    "id_fournisseur": 74,
+                    "nom_fournisseur": "Marty"
+                },
+                {
+                    "id_produit": 2909,
+                    "nom_produit": "L'Oréal Casque travers",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 210,
+                    "nom_fournisseur": "Meunier S.A.S."
+                },
+                {
+                    "id_produit": 36,
+                    "nom_produit": "Adidas Ordinateur monter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Adidas",
+                    "id_fournisseur": 95,
+                    "nom_fournisseur": "Perez"
+                },
+                {
+                    "id_produit": 4540,
+                    "nom_produit": "Philips Tablette travail",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Philips",
+                    "id_fournisseur": 258,
+                    "nom_fournisseur": "Millet"
+                },
+                {
+                    "id_produit": 7252,
+                    "nom_produit": "Decathlon Tablette victime",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 106,
+                    "nom_fournisseur": "Lacroix S.A.R.L."
+                },
+                {
+                    "id_produit": 2404,
+                    "nom_produit": "Jean Cordi Smartphone pas",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Jean Cordi",
+                    "id_fournisseur": 191,
+                    "nom_fournisseur": "Tanguy"
+                },
+                {
+                    "id_produit": 10375,
+                    "nom_produit": "Apple Ordinateur madame",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Apple",
+                    "id_fournisseur": 89,
+                    "nom_fournisseur": "Lévêque Lévêque S.A."
+                },
+                {
+                    "id_produit": 6190,
+                    "nom_produit": "Dyson Tablette ce",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 299,
+                    "nom_fournisseur": "Hardy Garcia SARL"
+                },
+                {
+                    "id_produit": 14706,
+                    "nom_produit": "Hubert Ordinateur côté",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Hubert",
+                    "id_fournisseur": 41,
+                    "nom_fournisseur": "Baudry S.A."
+                },
+                {
+                    "id_produit": 11506,
+                    "nom_produit": "Philips Casque placer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 78,
+                    "nom_fournisseur": "Léger"
+                },
+                {
+                    "id_produit": 13765,
+                    "nom_produit": "Foucher Na Chargeur droit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Foucher Na",
+                    "id_fournisseur": 196,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 5542,
+                    "nom_produit": "Nike Tablette marcher",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 181,
+                    "nom_fournisseur": "Chauveau Torres et Fils"
+                },
+                {
+                    "id_produit": 12177,
+                    "nom_produit": "Puma Ordinateur vent",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Puma",
+                    "id_fournisseur": 153,
+                    "nom_fournisseur": "Baudry"
+                },
+                {
+                    "id_produit": 647,
+                    "nom_produit": "Sony Smartphone son",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Sony",
+                    "id_fournisseur": 9,
+                    "nom_fournisseur": "Bouvet"
+                },
+                {
+                    "id_produit": 6308,
+                    "nom_produit": "Samsung Casque rapide",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Samsung",
+                    "id_fournisseur": 32,
+                    "nom_fournisseur": "Fischer"
+                },
+                {
+                    "id_produit": 1240,
+                    "nom_produit": "Philips Casque demain",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 275,
+                    "nom_fournisseur": "Mallet Lombard S.A.R.L."
+                },
+                {
+                    "id_produit": 9823,
+                    "nom_produit": "Nike Chargeur paysan",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Nike",
+                    "id_fournisseur": 2,
+                    "nom_fournisseur": "Godard"
+                },
+                {
+                    "id_produit": 223,
+                    "nom_produit": "Puma Ordinateur représenter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Puma",
+                    "id_fournisseur": 105,
+                    "nom_fournisseur": "Leclerc SARL"
+                },
+                {
+                    "id_produit": 1390,
+                    "nom_produit": "Bonnet S.A Tablette abattre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Bonnet S.A",
+                    "id_fournisseur": 215,
+                    "nom_fournisseur": "Marin"
+                },
+                {
+                    "id_produit": 7786,
+                    "nom_produit": "Philips Casque politique",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 21,
+                    "nom_fournisseur": "Godard Legrand SARL"
+                },
+                {
+                    "id_produit": 6728,
+                    "nom_produit": "Apple Smartphone dans",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 26,
+                    "nom_fournisseur": "Jacob"
+                },
+                {
+                    "id_produit": 7915,
+                    "nom_produit": "L'Oréal Smartphone poussière",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 251,
+                    "nom_fournisseur": "Da Costa S.A.R.L."
+                },
+                {
+                    "id_produit": 8646,
+                    "nom_produit": "Nike Smartphone tombe",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Nike",
+                    "id_fournisseur": 26,
+                    "nom_fournisseur": "Jacob"
+                },
+                {
+                    "id_produit": 13350,
+                    "nom_produit": "Labbé Bouv Casque inquiéter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Labbé Bouv",
+                    "id_fournisseur": 151,
+                    "nom_fournisseur": "Monnier"
+                },
+                {
+                    "id_produit": 3634,
+                    "nom_produit": "Apple Smartphone tuer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 38,
+                    "nom_fournisseur": "Leclerc"
+                },
+                {
+                    "id_produit": 13485,
+                    "nom_produit": "Allain SA Smartphone passer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Allain SA",
+                    "id_fournisseur": 285,
+                    "nom_fournisseur": "Martins"
+                },
+                {
+                    "id_produit": 14054,
+                    "nom_produit": "Gilbert Hu Ordinateur dernier",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Gilbert Hu",
+                    "id_fournisseur": 24,
+                    "nom_fournisseur": "Mallet et Fils"
+                },
+                {
+                    "id_produit": 14393,
+                    "nom_produit": "Roux et Fi Smartphone vague",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Roux et Fi",
+                    "id_fournisseur": 199,
+                    "nom_fournisseur": "Collet"
+                },
+                {
+                    "id_produit": 14236,
+                    "nom_produit": "Samsung Chargeur prévoir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 199,
+                    "nom_fournisseur": "Collet"
+                },
+                {
+                    "id_produit": 7516,
+                    "nom_produit": "Nike Tablette côté",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Nike",
+                    "id_fournisseur": 189,
+                    "nom_fournisseur": "Lefort Roy S.A."
+                },
+                {
+                    "id_produit": 2583,
+                    "nom_produit": "Sony Smartphone d'abord",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Sony",
+                    "id_fournisseur": 264,
+                    "nom_fournisseur": "Perrin Guérin et Fils"
+                },
+                {
+                    "id_produit": 999,
+                    "nom_produit": "Dyson Tablette fête",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 99,
+                    "nom_fournisseur": "Marion Lucas S.A.R.L."
+                },
+                {
+                    "id_produit": 11658,
+                    "nom_produit": "Bousquet e Smartphone puis",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Bousquet e",
+                    "id_fournisseur": 52,
+                    "nom_fournisseur": "Maillot"
+                },
+                {
+                    "id_produit": 10287,
+                    "nom_produit": "Mallet Tablette danger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Mallet",
+                    "id_fournisseur": 94,
+                    "nom_fournisseur": "Bruneau S.A."
+                },
+                {
+                    "id_produit": 11803,
+                    "nom_produit": "Nike Casque petit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Nike",
+                    "id_fournisseur": 184,
+                    "nom_fournisseur": "Moreno S.A.S."
+                },
+                {
+                    "id_produit": 10398,
+                    "nom_produit": "Ollivier D Chargeur étude",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Ollivier D",
+                    "id_fournisseur": 248,
+                    "nom_fournisseur": "Fleury"
+                },
+                {
+                    "id_produit": 9281,
+                    "nom_produit": "Apple Smartphone prince",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Apple",
+                    "id_fournisseur": 129,
+                    "nom_fournisseur": "Blanc SARL"
+                },
+                {
+                    "id_produit": 2430,
+                    "nom_produit": "Guyon Ordinateur serrer",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Guyon",
+                    "id_fournisseur": 123,
+                    "nom_fournisseur": "Duval"
+                },
+                {
+                    "id_produit": 14177,
+                    "nom_produit": "Decathlon Chargeur rêve",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 78,
+                    "nom_fournisseur": "Léger"
+                },
+                {
+                    "id_produit": 10257,
+                    "nom_produit": "Philips Chargeur léger",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Philips",
+                    "id_fournisseur": 122,
+                    "nom_fournisseur": "Diallo"
+                },
+                {
+                    "id_produit": 8994,
+                    "nom_produit": "Adidas Casque voiture",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Adidas",
+                    "id_fournisseur": 228,
+                    "nom_fournisseur": "Leleu S.A."
+                },
+                {
+                    "id_produit": 9129,
+                    "nom_produit": "Chevallier Chargeur guère",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Chargeur",
+                    "marque": "Chevallier",
+                    "id_fournisseur": 155,
+                    "nom_fournisseur": "Marques Moreno S.A.R.L."
+                },
+                {
+                    "id_produit": 6385,
+                    "nom_produit": "Philips Casque phrase",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 86,
+                    "nom_fournisseur": "Grégoire S.A.S."
+                },
+                {
+                    "id_produit": 1122,
+                    "nom_produit": "Decathlon Tablette droit",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 136,
+                    "nom_fournisseur": "Cohen Martin et Fils"
+                },
+                {
+                    "id_produit": 127,
+                    "nom_produit": "Samsung Tablette réunir",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Samsung",
+                    "id_fournisseur": 132,
+                    "nom_fournisseur": "Bernier Seguin S.A."
+                },
+                {
+                    "id_produit": 401,
+                    "nom_produit": "L'Oréal Tablette accepter",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "L'Oréal",
+                    "id_fournisseur": 4,
+                    "nom_fournisseur": "Louis Renaud et Fils"
+                },
+                {
+                    "id_produit": 12495,
+                    "nom_produit": "Decathlon Ordinateur épaule",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 158,
+                    "nom_fournisseur": "Langlois Ramos S.A."
+                },
+                {
+                    "id_produit": 9471,
+                    "nom_produit": "Fischer Smartphone lire",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Fischer",
+                    "id_fournisseur": 118,
+                    "nom_fournisseur": "Georges"
+                },
+                {
+                    "id_produit": 4308,
+                    "nom_produit": "Samsung Ordinateur lèvre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 145,
+                    "nom_fournisseur": "Parent"
+                },
+                {
+                    "id_produit": 4666,
+                    "nom_produit": "Julien Dij Casque soumettre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Julien Dij",
+                    "id_fournisseur": 262,
+                    "nom_fournisseur": "Gaudin"
+                },
+                {
+                    "id_produit": 10913,
+                    "nom_produit": "Samsung Ordinateur printemps",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Samsung",
+                    "id_fournisseur": 46,
+                    "nom_fournisseur": "Raynaud S.A."
+                },
+                {
+                    "id_produit": 699,
+                    "nom_produit": "Sony Ordinateur vendre",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Ordinateur",
+                    "marque": "Sony",
+                    "id_fournisseur": 238,
+                    "nom_fournisseur": "Dupuis"
+                },
+                {
+                    "id_produit": 5886,
+                    "nom_produit": "Decathlon Casque cher",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 292,
+                    "nom_fournisseur": "Bigot"
+                },
+                {
+                    "id_produit": 4769,
+                    "nom_produit": "Apple Tablette retourner",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Apple",
+                    "id_fournisseur": 263,
+                    "nom_fournisseur": "Paul"
+                },
+                {
+                    "id_produit": 3458,
+                    "nom_produit": "Decathlon Smartphone meilleur",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Decathlon",
+                    "id_fournisseur": 17,
+                    "nom_fournisseur": "Hervé S.A.S."
+                },
+                {
+                    "id_produit": 5768,
+                    "nom_produit": "Philips Casque chant",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Casque",
+                    "marque": "Philips",
+                    "id_fournisseur": 213,
+                    "nom_fournisseur": "Godard SARL"
+                },
+                {
+                    "id_produit": 6886,
+                    "nom_produit": "Philips Smartphone couche",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Smartphone",
+                    "marque": "Philips",
+                    "id_fournisseur": 248,
+                    "nom_fournisseur": "Fleury"
+                },
+                {
+                    "id_produit": 307,
+                    "nom_produit": "Dyson Tablette désigner",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Dyson",
+                    "id_fournisseur": 68,
+                    "nom_fournisseur": "Sanchez S.A.R.L."
+                },
+                {
+                    "id_produit": 13392,
+                    "nom_produit": "Puma Tablette dégager",
+                    "categorie": "Électronique",
+                    "sous_categorie": "Tablette",
+                    "marque": "Puma",
+                    "id_fournisseur": 235,
+                    "nom_fournisseur": "Lagarde"
+                }
+            ],
+            "query_sql": "SELECT * FROM produits WHERE categorie = 'Électronique' LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.5s | Base de données : 0.01s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les clients dont l'âge est compris entre 25 et 40 ans."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne tous les clients dont l'âge est compris entre 25 et 40 ans inclus, en utilisant l'opérateur BETWEEN pour spécifier la plage d'âge.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_client": 1,
+                    "nom_client": "Bahissou TCHAGNAO",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Berthelotnec",
+                    "pays_client": "Koweït",
+                    "code_iso_client": "965"
+                },
+                {
+                    "id_client": 936,
+                    "nom_client": "Xavier Michel",
+                    "age_client": 37,
+                    "sexe_client": "M",
+                    "ville_client": "Lemonnier",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 4238,
+                    "nom_client": "Alfred Grondin",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Valette",
+                    "pays_client": "Afrique du Sud",
+                    "code_iso_client": "27"
+                },
+                {
+                    "id_client": 2,
+                    "nom_client": "Gidelcia",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Sanchez",
+                    "pays_client": "Qatar",
+                    "code_iso_client": "974"
+                },
+                {
+                    "id_client": 2125,
+                    "nom_client": "Juliette Gay de Labbé",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "David",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2957,
+                    "nom_client": "Marcel Diallo",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Goncalves",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4538,
+                    "nom_client": "François du Delannoy",
+                    "age_client": 26,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Roland-la-Forêt",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2163,
+                    "nom_client": "Gilles Diaz",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Dupuis",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 2410,
+                    "nom_client": "Élodie Ribeiro",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Pierre",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4966,
+                    "nom_client": "Aimé Georges",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Denis",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 4,
+                    "nom_client": "Gilbert Imbert",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Leroux-sur-Henry",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1143,
+                    "nom_client": "Clémence Traore-Cordier",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Michelle-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3846,
+                    "nom_client": "Maurice Ferreira",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Dufour",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4465,
+                    "nom_client": "Clémence Godard-Martel",
+                    "age_client": 26,
+                    "sexe_client": "M",
+                    "ville_client": "Meyer",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 1218,
+                    "nom_client": "Dominique Voisin",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Gauthier",
+                    "pays_client": "Argentine",
+                    "code_iso_client": "54"
+                },
+                {
+                    "id_client": 3851,
+                    "nom_client": "Timothée Camus",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Prévost-la-Forêt",
+                    "pays_client": "Sénégal",
+                    "code_iso_client": "221"
+                },
+                {
+                    "id_client": 3176,
+                    "nom_client": "Anouk Le Brunel",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Meyer-sur-Mer",
+                    "pays_client": "Argentine",
+                    "code_iso_client": "54"
+                },
+                {
+                    "id_client": 1628,
+                    "nom_client": "Guillaume Lamy",
+                    "age_client": 28,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Victordan",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2368,
+                    "nom_client": "Thérèse Julien",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Saint HuguesVille",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 1001,
+                    "nom_client": "Noémi Fournier",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Couturier-sur-Mer",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3035,
+                    "nom_client": "Aimé Mercier",
+                    "age_client": 37,
+                    "sexe_client": "F",
+                    "ville_client": "Weiss",
+                    "pays_client": "Cameroun",
+                    "code_iso_client": "237"
+                },
+                {
+                    "id_client": 1529,
+                    "nom_client": "Véronique Coste",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Evrard-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1644,
+                    "nom_client": "Michelle Mendès-Lejeune",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Saint XavierVille",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 4111,
+                    "nom_client": "Suzanne Perez",
+                    "age_client": 31,
+                    "sexe_client": "M",
+                    "ville_client": "Hamon",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3965,
+                    "nom_client": "Adélaïde Bertrand",
+                    "age_client": 36,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Raymond",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2016,
+                    "nom_client": "Michel Da Silva de Raynaud",
+                    "age_client": 37,
+                    "sexe_client": "M",
+                    "ville_client": "Bouchet-sur-Lopez",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 2383,
+                    "nom_client": "Pierre-Édouard Labbé",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "LamyVille",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 3648,
+                    "nom_client": "François Masse",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "JoubertVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1807,
+                    "nom_client": "Alexandrie Schmitt",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Poiriernec",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2882,
+                    "nom_client": "Catherine-Corinne Le Roux",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Jacqueline-sur-Mer",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 204,
+                    "nom_client": "Henriette Bouvet",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "RenaultVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4470,
+                    "nom_client": "Olivie Dupuy-Gay",
+                    "age_client": 31,
+                    "sexe_client": "F",
+                    "ville_client": "CaronBourg",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 632,
+                    "nom_client": "Simone Nguyen",
+                    "age_client": 34,
+                    "sexe_client": "M",
+                    "ville_client": "Besson",
+                    "pays_client": "Koweït",
+                    "code_iso_client": "965"
+                },
+                {
+                    "id_client": 3091,
+                    "nom_client": "Gilles Hoarau du Mace",
+                    "age_client": 32,
+                    "sexe_client": "M",
+                    "ville_client": "Leblanc-sur-Hamon",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1074,
+                    "nom_client": "Emmanuel-Thibault Ferreira",
+                    "age_client": 40,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Élisabeth-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1624,
+                    "nom_client": "Patrick Carre",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Moreno",
+                    "pays_client": "Ghana",
+                    "code_iso_client": "233"
+                },
+                {
+                    "id_client": 840,
+                    "nom_client": "Alphonse Garnier",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "LefèvreVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1572,
+                    "nom_client": "Alex Hervé",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Leduc",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1185,
+                    "nom_client": "Richard Le Lecoq",
+                    "age_client": 34,
+                    "sexe_client": "M",
+                    "ville_client": "Costa",
+                    "pays_client": "Inde",
+                    "code_iso_client": "91"
+                },
+                {
+                    "id_client": 597,
+                    "nom_client": "Hugues Labbé",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Pires",
+                    "pays_client": "Togo",
+                    "code_iso_client": "228"
+                },
+                {
+                    "id_client": 1670,
+                    "nom_client": "Marcelle Teixeira",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Dupuis",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 43,
+                    "nom_client": "Frédérique du Bousquet",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Pichon",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4919,
+                    "nom_client": "Isabelle Roger de la Reynaud",
+                    "age_client": 38,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Camille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4788,
+                    "nom_client": "Gilles François",
+                    "age_client": 32,
+                    "sexe_client": "M",
+                    "ville_client": "Letellier-la-Forêt",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 2442,
+                    "nom_client": "Jérôme Goncalves",
+                    "age_client": 36,
+                    "sexe_client": "F",
+                    "ville_client": "Hernandez",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 468,
+                    "nom_client": "Marthe Laporte",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Mallet-sur-Boutin",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4682,
+                    "nom_client": "Pénélope Guilbert",
+                    "age_client": 39,
+                    "sexe_client": "M",
+                    "ville_client": "BaudryVille",
+                    "pays_client": "Togo",
+                    "code_iso_client": "228"
+                },
+                {
+                    "id_client": 2797,
+                    "nom_client": "Julie Brun",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Mendès",
+                    "pays_client": "Qatar",
+                    "code_iso_client": "974"
+                },
+                {
+                    "id_client": 3478,
+                    "nom_client": "Sébastien Goncalves",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Dias",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3139,
+                    "nom_client": "Paul Becker",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Aubry-sur-Mer",
+                    "pays_client": "Allemagne",
+                    "code_iso_client": "49"
+                },
+                {
+                    "id_client": 2858,
+                    "nom_client": "Lorraine-Adélaïde Barbier",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Descamps-sur-Pinto",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2523,
+                    "nom_client": "Henri Denis-Thomas",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Renaud",
+                    "pays_client": "RDC",
+                    "code_iso_client": "243"
+                },
+                {
+                    "id_client": 2752,
+                    "nom_client": "Diane Valentin",
+                    "age_client": 37,
+                    "sexe_client": "M",
+                    "ville_client": "Roche",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 3534,
+                    "nom_client": "Maurice Bertin",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Becker",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3824,
+                    "nom_client": "Émile Marion Le Riou",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Turpin",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 4988,
+                    "nom_client": "Michelle Munoz",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Christine",
+                    "pays_client": "Royaume-Uni",
+                    "code_iso_client": "44"
+                },
+                {
+                    "id_client": 3338,
+                    "nom_client": "Dorothée Masse",
+                    "age_client": 31,
+                    "sexe_client": "F",
+                    "ville_client": "Brunetboeuf",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2781,
+                    "nom_client": "Élisabeth Le Hoareau",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Meunier",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 1407,
+                    "nom_client": "Gérard Dos Santos Le Rousseau",
+                    "age_client": 38,
+                    "sexe_client": "F",
+                    "ville_client": "Dufour-la-Forêt",
+                    "pays_client": "Mali",
+                    "code_iso_client": "223"
+                },
+                {
+                    "id_client": 1945,
+                    "nom_client": "Noémi Fabre",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Normand-sur-Mer",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2946,
+                    "nom_client": "Nicolas Masse-Vallée",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Bertrand",
+                    "pays_client": "Brésil",
+                    "code_iso_client": "55"
+                },
+                {
+                    "id_client": 490,
+                    "nom_client": "Hugues Morel",
+                    "age_client": 25,
+                    "sexe_client": "M",
+                    "ville_client": "Fouquet-sur-Guérin",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 2135,
+                    "nom_client": "Marcel Loiseau",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Bernardboeuf",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1979,
+                    "nom_client": "Alphonse Diallo du Lefebvre",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Jean-la-Forêt",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2363,
+                    "nom_client": "Jeanne-Lucy Coste",
+                    "age_client": 38,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Françoise",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3238,
+                    "nom_client": "Jules Langlois",
+                    "age_client": 34,
+                    "sexe_client": "M",
+                    "ville_client": "Carpentier",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3634,
+                    "nom_client": "Jérôme Maillet",
+                    "age_client": 28,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Josephboeuf",
+                    "pays_client": "Canada",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3822,
+                    "nom_client": "Patricia Maillot",
+                    "age_client": 37,
+                    "sexe_client": "F",
+                    "ville_client": "Saint AmélieBourg",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4439,
+                    "nom_client": "Anastasie Vallée",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Marchand-sur-Barbe",
+                    "pays_client": "RDC",
+                    "code_iso_client": "243"
+                },
+                {
+                    "id_client": 1017,
+                    "nom_client": "Catherine Allard",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Édith-les-Bains",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1239,
+                    "nom_client": "Simone Ferrand",
+                    "age_client": 32,
+                    "sexe_client": "M",
+                    "ville_client": "Dumont",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1276,
+                    "nom_client": "Julien Barbe",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Lecoq",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 789,
+                    "nom_client": "Antoine Carre",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Jacob",
+                    "pays_client": "Brésil",
+                    "code_iso_client": "55"
+                },
+                {
+                    "id_client": 4961,
+                    "nom_client": "Joséphine Lacroix",
+                    "age_client": 25,
+                    "sexe_client": "F",
+                    "ville_client": "Nguyen",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3392,
+                    "nom_client": "Alix Michaud",
+                    "age_client": 29,
+                    "sexe_client": "M",
+                    "ville_client": "Aubertdan",
+                    "pays_client": "Afrique du Sud",
+                    "code_iso_client": "27"
+                },
+                {
+                    "id_client": 1863,
+                    "nom_client": "Paul Guyon de Rodrigues",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "Bretonboeuf",
+                    "pays_client": "Allemagne",
+                    "code_iso_client": "49"
+                },
+                {
+                    "id_client": 3340,
+                    "nom_client": "Tristan Petitjean",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Clémence",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1562,
+                    "nom_client": "Élise Hebert de Bazin",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "DuboisBourg",
+                    "pays_client": "Togo",
+                    "code_iso_client": "228"
+                },
+                {
+                    "id_client": 371,
+                    "nom_client": "Corinne Richard du Marie",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Joubert",
+                    "pays_client": "Royaume-Uni",
+                    "code_iso_client": "44"
+                },
+                {
+                    "id_client": 4442,
+                    "nom_client": "Sabine Grenier de la Rodriguez",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Dupré",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1433,
+                    "nom_client": "Alexandre Besnard",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Mace",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1717,
+                    "nom_client": "Nicolas Marion de Martineau",
+                    "age_client": 25,
+                    "sexe_client": "M",
+                    "ville_client": "Evrard",
+                    "pays_client": "Italie",
+                    "code_iso_client": "39"
+                },
+                {
+                    "id_client": 3086,
+                    "nom_client": "Guy Humbert",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Saint ChristineVille",
+                    "pays_client": "Mali",
+                    "code_iso_client": "223"
+                },
+                {
+                    "id_client": 3251,
+                    "nom_client": "Marc Louis",
+                    "age_client": 26,
+                    "sexe_client": "M",
+                    "ville_client": "Pinto-sur-Léger",
+                    "pays_client": "Royaume-Uni",
+                    "code_iso_client": "44"
+                },
+                {
+                    "id_client": 1255,
+                    "nom_client": "Laurent Paris",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Gilles",
+                    "pays_client": "Côte d'Ivoire",
+                    "code_iso_client": "225"
+                },
+                {
+                    "id_client": 592,
+                    "nom_client": "Frédérique Maillard",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Marie-sur-Mer",
+                    "pays_client": "Inde",
+                    "code_iso_client": "91"
+                },
+                {
+                    "id_client": 2273,
+                    "nom_client": "Adèle Perret",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Rocher",
+                    "pays_client": "Liban",
+                    "code_iso_client": "961"
+                },
+                {
+                    "id_client": 564,
+                    "nom_client": "Anastasie de la Lenoir",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Riou",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4252,
+                    "nom_client": "Susan Barbier",
+                    "age_client": 26,
+                    "sexe_client": "F",
+                    "ville_client": "Ruiz",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 2115,
+                    "nom_client": "Thierry-Michel Martel",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Pierre",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1710,
+                    "nom_client": "Grégoire de la Royer",
+                    "age_client": 25,
+                    "sexe_client": "F",
+                    "ville_client": "MonnierVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3122,
+                    "nom_client": "Raymond Rodrigues-Pottier",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Richardboeuf",
+                    "pays_client": "Canada",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2898,
+                    "nom_client": "Cécile-Michelle Masson",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Inèsnec",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3526,
+                    "nom_client": "Laurence Colas",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Aurélie",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4533,
+                    "nom_client": "Thierry de la Delmas",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "Jacquesboeuf",
+                    "pays_client": "RDC",
+                    "code_iso_client": "243"
+                },
+                {
+                    "id_client": 4755,
+                    "nom_client": "Joseph-Tristan Guillot",
+                    "age_client": 25,
+                    "sexe_client": "M",
+                    "ville_client": "RodriguesVille",
+                    "pays_client": "Qatar",
+                    "code_iso_client": "974"
+                },
+                {
+                    "id_client": 2903,
+                    "nom_client": "Thibault Pages de la Rocher",
+                    "age_client": 25,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Thibault",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4263,
+                    "nom_client": "Juliette Martin",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Fernandez-sur-Lévy",
+                    "pays_client": "Cameroun",
+                    "code_iso_client": "237"
+                },
+                {
+                    "id_client": 4346,
+                    "nom_client": "Aimé-Jacques Muller",
+                    "age_client": 25,
+                    "sexe_client": "F",
+                    "ville_client": "Marques",
+                    "pays_client": "Maroc",
+                    "code_iso_client": "212"
+                },
+                {
+                    "id_client": 67,
+                    "nom_client": "Christophe Payet",
+                    "age_client": 26,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Sophiedan",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                }
+            ],
+            "query_sql": "SELECT * FROM clients WHERE age_client BETWEEN 25 AND 40 LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.44s | Base de données : 0.01s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits dont le nom contient le mot \"Phone\""
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Afficher les produits dont le nom contient le mot \"pl\""
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par carte bancaire."
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne toutes les commandes de la table commandes où la méthode de paiement est 'carte bancaire', permettant ainsi d'afficher les commandes payées par carte bancaire.",
+            "is_sql": true,
+            "df_resultat": [],
+            "query_sql": "SELECT * FROM commandes WHERE methode_paiement = 'carte bancaire' LIMIT 100",
+            "analytics_text": "Génération SQL (DeepSeek) : 1.45s | Base de données : 0.14s.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par carte "
+        },
+        {
+            "role": "assistant",
+            "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+            "is_sql": false,
+            "df_resultat": null,
+            "query_sql": null,
+            "analytics_text": "Détail technique : sqlalchemy.cyextension.immutabledict.immutabledict is not a sequence",
+            "status_ok": false
+        },
+        {
+            "role": "user",
+            "content": "Afficher les commandes payées par PayPal"
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête sélectionne toutes les commandes de la table commandes où la méthode de paiement est 'PayPal', permettant ainsi d'afficher les commandes payées par PayPal.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "id_commande": 3,
+                    "date_commande": 

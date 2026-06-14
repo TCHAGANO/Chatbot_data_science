@@ -1,10 +1,7 @@
 # database.py
-# Fichier situé à la racine : C:\Users\Bahissou TCHAGNAO\Desktop\Chatbot_project\Chatbot_data_science\database.py
-
 import streamlit as st
 from sqlalchemy import create_engine
-import psycopg2
-import urllib.parse  # Permet d'encoder proprement le caractère '@' du mot de passe
+import urllib.parse
 
 DB_HOST = "localhost"
 DB_PORT = "5432"
@@ -15,32 +12,15 @@ DB_PASS = "Bahiss@u02gnao"
 @st.cache_resource
 def initialiser_connexion():
     try:
-        # Encodage sécurisé du mot de passe pour éviter le conflit avec le caractère '@'
+        # 1. On protège le '@' du mot de passe
         password_encode = urllib.parse.quote_plus(DB_PASS)
 
-        # Construction de la chaîne de connexion avec le mot de passe sécurisé
-        connection_string = (
-            f"postgresql+psycopg2://"
-            f"{DB_USER}:{password_encode}@"
-            f"{DB_HOST}:{DB_PORT}/"
-            f"{DB_NAME}"
-        )
+        # 2. On crée l'URL propre avec le driver psycopg2
+        connection_string = f"postgresql+psycopg2://{DB_USER}:{password_encode}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
-        engine = create_engine(
-            connection_string,
-            pool_pre_ping=True,
-            pool_size=10,
-            max_overflow=20
-        )
-
-        # Test de validation de la connexion
-        with engine.connect():
-            pass
-
+        # 3. On génère le moteur SQLAlchemy
+        engine = create_engine(connection_string, pool_pre_ping=True)
         return engine
-
     except Exception as e:
-        st.error(
-            f"❌ Erreur PostgreSQL : {e}"
-        )
+        st.error(f"❌ Erreur de connexion : {e}")
         return None
