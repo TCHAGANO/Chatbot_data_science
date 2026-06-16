@@ -1,7 +1,7 @@
 # app.py
 # Fichier situé à la racine : C:\Users\Bahissou TCHAGNAO\Desktop\Chatbot_project\Chatbot_data_science\app.py
 
-from decimal import Decimal  # AJOUT IMPORTANT
+from decimal import Decimal
 from sqlalchemy import text
 import hashlib
 import re
@@ -17,15 +17,20 @@ from database import initialiser_connexion
 from llm import generer_requete_sql
 from sql_security import valider_requete_sql
 
+# ==================== TIMERS POUR DIAGNOSTIC ====================
+_start_tot = time.time()
+print(f"🔵 [TIMER] Démarrage du script : {_start_tot:.2f}")
+
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Assistant IA - Business Intelligence", page_icon="🤖", layout="wide")
+print(f"   - après set_page_config : {time.time() - _start_tot:.2f}s")
 
 # Création du dossier d'historique s'il n'existe pas
 HISTORY_DIR = "history"
 if not os.path.exists(HISTORY_DIR):
     os.makedirs(HISTORY_DIR)
 
-# Styles CSS personnalisés (Design épuré et Bento Grid)
+# Styles CSS personnalisés
 st.markdown("""
     <style>
         .stApp { background-color: #F8FAFC !important; color: #1E293B !important; }
@@ -109,11 +114,13 @@ st.markdown("""
         #MainMenu, footer, header {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
+print(f"   - après CSS : {time.time() - _start_tot:.2f}s")
 
 # Initialisation de la connexion à PostgreSQL
 engine = initialiser_connexion()
+print(f"   - après connexion DB : {time.time() - _start_tot:.2f}s")
 
-# Initialisation des variables de session (Session State)
+# Initialisation des variables de session
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "application_active" not in st.session_state:
@@ -121,19 +128,36 @@ if "application_active" not in st.session_state:
 if "current_chat_id" not in st.session_state:
     st.session_state.current_chat_id = f"chat_{int(time.time())}"
 if "sql_cache" not in st.session_state:
-    st.session_state.sql_cache = {}  # Cache pour les résultats SQL
+    st.session_state.sql_cache = {}
+print(f"   - après init session : {time.time() - _start_tot:.2f}s")
 
-# Fonction d'encodage personnalisée CORRIGÉE (gère Decimal, dates, DataFrames)
+# ==================== FONCTIONS UTILITAIRES ====================
+
 def serialiseur_json_personnalise(obj):
     if isinstance(obj, pd.DataFrame):
         return obj.to_dict(orient="records")
-    if isinstance(obj, Decimal):          # Conversion des décimaux en float
+    if isinstance(obj, Decimal):
         return float(obj)
-    if hasattr(obj, 'isoformat'):         # Dates
+    if hasattr(obj, 'isoformat'):
         return obj.isoformat()
     if isinstance(obj, (set, frozenset)):
         return list(obj)
     raise TypeError(f"L'objet de type {obj.__class__.__name__} n'est pas sérialisable en JSON")
+
+def deduplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Renomme les colonnes dupliquées en ajoutant _2, _3, etc."""
+    cols = list(df.columns)
+    seen = {}
+    new_cols = []
+    for col in cols:
+        if col not in seen:
+            seen[col] = 1
+            new_cols.append(col)
+        else:
+            seen[col] += 1
+            new_cols.append(f"{col}_{seen[col]}")
+    df.columns = new_cols
+    return df
 
 def sauvegarder_discussion_actuelle(titre_personnalise=None):
     if not st.session_state.messages:
@@ -150,10 +174,8 @@ def sauvegarder_discussion_actuelle(titre_personnalise=None):
         msg_copy = m.copy()
         if msg_copy.get("df_resultat") is not None and isinstance(msg_copy["df_resultat"], pd.DataFrame):
             df_temp = msg_copy["df_resultat"].copy()
-            # Convertir les dates en chaînes
             for col in df_temp.select_dtypes(include=['datetime', 'datetimetz']).columns:
                 df_temp[col] = df_temp[col].dt.strftime('%Y-%m-%d %H:%M:%S')
-            # Convertir les Decimal en float pour la sérialisation JSON
             for col in df_temp.select_dtypes(include=['object']).columns:
                 if df_temp[col].apply(lambda x: isinstance(x, Decimal)).any():
                     df_temp[col] = df_temp[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
@@ -205,8 +227,26 @@ def modal_quitter():
             st.session_state.application_active = False
             st.rerun()
 
-# --- SIDEBAR (Profil & Historique) ---
+print(f"   - après définitions fonctions : {time.time() - _start_tot:.2f}s")
+
+# ==================== SIDEBAR AVEC CACHE ====================
+@st.cache_data(ttl=60)
+def get_all_chats_cached():
+    history_files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
+    chats = []
+    for f in history_files:
+        cid = f.replace(".json", "")
+        try:
+            with open(os.path.join(HISTORY_DIR, f), "r", encoding="utf-8") as file_data:
+                js = json.load(file_data)
+                chats.append({"id": cid, "titre": js["titre"], "date": js["date"]})
+        except Exception:
+            pass
+    return sorted(chats, key=lambda x: x["date"], reverse=True)
+
+print(f"   - avant sidebar : {time.time() - _start_tot:.2f}s")
 with st.sidebar:
+    print(f"   - début sidebar : {time.time() - _start_tot:.2f}s")
     st.markdown('<div class="sidebar-profile-container">', unsafe_allow_html=True)
     
     if os.path.exists("ma_photo.jpg"):
@@ -242,20 +282,7 @@ with st.sidebar:
     st.markdown("<p style='color: #475569; font-size: 12px; font-weight: 600; margin-bottom:5px;'>🔍 RECHERCHER DANS L'HISTORIQUE</p>", unsafe_allow_html=True)
     search_query = st.text_input("Rechercher un mot clé...", label_visibility="collapsed", placeholder="Ex: chiffre d'affaires, clients...")
 
-    history_files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
-    all_chats = []
-
-    for f in history_files:
-        cid = f.replace(".json", "")
-        with open(os.path.join(HISTORY_DIR, f), "r", encoding="utf-8") as file_data:
-            try:
-                js = json.load(file_data)
-                all_chats.append({"id": cid, "titre": js["titre"], "date": js["date"]})
-            except Exception:
-                pass
-
-    all_chats = sorted(all_chats, key=lambda x: x["date"], reverse=True)
-
+    all_chats = get_all_chats_cached()
     if search_query:
         all_chats = [c for c in all_chats if search_query.lower() in c["titre"].lower()]
 
@@ -266,9 +293,7 @@ with st.sidebar:
             nom_bouton = f"💬 {chat['titre']}"
             if len(nom_bouton) > 28:
                 nom_bouton = nom_bouton[:25] + "..."
-
             type_bouton = "primary" if st.session_state.current_chat_id == chat["id"] else "secondary"
-
             if st.button(nom_bouton, key=f"hist_{chat['id']}", use_container_width=True, type=type_bouton):
                 charger_discussion(chat["id"])
                 st.rerun()
@@ -279,36 +304,35 @@ with st.sidebar:
     st.markdown("---")
     st.link_button("💼 Profil LinkedIn", "https://www.linkedin.com/in/bahissou-tchagnao-9a91492aa", use_container_width=True)
     st.link_button("💻 Repository GitHub", "https://github.com/TCHAGANO/Chatbot_data_science.git", use_container_width=True)
+    print(f"   - fin sidebar : {time.time() - _start_tot:.2f}s")
 
-
+print(f"   - avant affichage messages : {time.time() - _start_tot:.2f}s")
 # --- AFFICHAGE DE LA DISCUSSION ---
 for idx, msg in enumerate(st.session_state.messages):
     if msg["role"] == "user":
         with st.chat_message("user", avatar="👤"):
             st.markdown(msg["content"])
-
     elif msg["role"] == "assistant":
         statut_avatar = "🔵" if msg.get("status_ok", True) else "🔴"
-
         with st.chat_message("assistant", avatar=statut_avatar):
             if msg.get("is_sql", True) and msg.get("df_resultat") is not None:
                 tab1, tab2, tab3, tab4 = st.tabs(["📊 Résultat & Analytics", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
-
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
-                        st.warning("La base de données a retourné un tableau vide pour cette requête.")
+                        st.warning("Aucune donnée disponible pour cette requête.")
                     elif df.shape == (1, 1):
                         valeur_brute = df.iloc[0, 0]
                         nom_colonne = df.columns[0].replace('_', ' ').title()
-
-                        if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes']):
-                            st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                        if valeur_brute is None or (isinstance(valeur_brute, float) and pd.isna(valeur_brute)):
+                            st.metric(label=f"🔢 {nom_colonne}", value="Aucune donnée")
                         else:
-                            st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
+                            if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes']):
+                                st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                            else:
+                                st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
                     else:
                         st.dataframe(df, use_container_width=True)
-
                         csv_data = df.to_csv(index=False).encode('utf-8')
                         st.download_button(
                             label="📥 Extraire les données au format CSV",
@@ -317,25 +341,19 @@ for idx, msg in enumerate(st.session_state.messages):
                             mime="text/csv",
                             key=f"dl_{idx}"
                         )
-
                 with tab2:
                     st.code(msg.get("query_sql") or "Aucune requête SQL", language="sql")
-
                 with tab3:
                     st.info(msg.get("analytics_text", "Aucune métrique disponible."))
-
                 with tab4:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df is not None and not df.empty and df.shape != (1, 1):
                         st.markdown("### 📊 Générateur Visuel à la Demande")
-
                         if st.button("👁️ Générer l'analyse visuelle", key=f"btn_chart_{idx}"):
                             colonnes_num = df.select_dtypes(include=['number']).columns
-
                             if not colonnes_num.empty:
                                 col_val = colonnes_num[0]
                                 col_date = [c for c in df.columns if 'date' in c.lower() or 'annee' in c.lower() or 'mois' in c.lower()]
-
                                 if col_date:
                                     st.markdown(f"##### 📈 Évolution temporelle ({col_val})")
                                     st.line_chart(df.set_index(col_date[0])[col_val])
@@ -351,13 +369,13 @@ for idx, msg in enumerate(st.session_state.messages):
                 st.markdown(msg["content"])
                 if not msg.get("status_ok", True) and msg.get("analytics_text"):
                     st.error(msg["analytics_text"])
-
+print(f"   - après affichage messages : {time.time() - _start_tot:.2f}s")
 
 # --- ÉCRAN D'ACCUEIL (BENTO GRID) ---
 if len(st.session_state.messages) == 0:
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #3B82F6; font-weight: 600; margin-bottom: 0; font-size:14px;'>Welcome to BI Chatbot Pro</p>", unsafe_allow_html=True)
-    st.markdown("<h1 class='hero-title' style='margin-top: 0;'>How Can I Assist You Today?</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='hero-title' style='margin-top: 0;'>Bonjour ! je suis votre assistant conçu par Bahissou TCAGNAO pour vous aider dans votre analyse de données.Posez moi toutes vos questions ci-dessous.</h1>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     card_col1, card_col2, card_col3, card_col4 = st.columns(4)
@@ -370,8 +388,8 @@ if len(st.session_state.messages) == 0:
     with card_col4:
         st.markdown('<div class="bento-card card-orange"><div class="bento-title title-orange">💸 Analyse CA & Marge</div><div class="bento-desc">Calculez les profits et observez l\'impact des remises.</div></div>', unsafe_allow_html=True)
 
-
 # --- ZONE DE SAISIE DE L'UTILISATEUR ---
+print(f"   - avant champ saisie : {time.time() - _start_tot:.2f}s")
 if st.session_state.application_active:
     st.markdown("""
         <div style='display: flex; gap: 8px; margin-bottom: -10px; justify-content: center;'>
@@ -387,6 +405,7 @@ if st.session_state.application_active:
         st.session_state.messages.append({"role": "user", "content": question_utilisateur})
         st.rerun()
 
+print(f"   - avant traitement assistant : {time.time() - _start_tot:.2f}s")
 
 # --- LOGIQUE DE TRAITEMENT PAR L'ASSISTANT ---
 if st.session_state.messages and st.session_state.messages[-1]["role"] == "user" and st.session_state.application_active:
@@ -405,16 +424,12 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                 if requete_sql:
                     requete_sql = requete_sql.strip().rstrip(";")
-
-                    # Correction pour les recherches sur marque (ILIKE)
                     requete_sql = re.sub(r"\bmarque\s+LIKE\b", "marque ILIKE", requete_sql, flags=re.IGNORECASE)
 
-                    # Validation de sécurité du SQL généré
                     valide, erreur_validation = valider_requete_sql(requete_sql)
                     if not valide:
                         raise Exception(f"Validation SQL échouée : {erreur_validation}")
 
-                    # Ajout automatique d'une clause LIMIT si aucune agrégation ou limite n'est présente
                     if (
                         "LIMIT" not in requete_sql.upper()
                         and "SUM(" not in requete_sql.upper()
@@ -427,13 +442,11 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                     debut_sql = time.time()
 
-                    # Cache SQL : utiliser un hash de la requête
                     sql_hash = hashlib.md5(requete_sql.encode()).hexdigest()
                     if sql_hash in st.session_state.sql_cache:
                         df_resultat = st.session_state.sql_cache[sql_hash]
                         st.info("📦 Résultat récupéré depuis le cache (même requête déjà exécutée).")
                     else:
-                        # MÉTHODE ALTERNATIVE POUR ÉVITER LE BUG immutabledict
                         with engine.connect() as conn:
                             result = conn.execute(text(requete_sql))
                             cols = result.keys()
@@ -483,3 +496,5 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
                 })
                 sauvegarder_discussion_actuelle()
                 st.rerun()
+
+print(f"🔵 Fin du script : {time.time() - _start_tot:.2f}s")

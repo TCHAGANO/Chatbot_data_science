@@ -54,6 +54,14 @@ Exemples de questions et SQL associé :
   Commentaire : "Voici les produits dont la marque débute par la lettre A."
 
 - La colonne date_commande est de type DATE ou TIMESTAMP. Pour filtrer par année, utilise EXTRACT(YEAR FROM date_commande) = 2025.
+
 - Pour une année glissante, utilise date_commande >= CURRENT_DATE - INTERVAL '1 year'.
+
+
+- Lors d'une jointure entre tables, n'utilise JAMAIS SELECT *. Utilise des alias explicites pour différencier les colonnes homonymes.
+  Exemple : SELECT clients.id_client AS client_id, commandes.id_client AS commande_id, ...
+
+
+
 
 """

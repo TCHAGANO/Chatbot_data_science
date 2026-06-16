@@ -54,6 +54,52 @@ Exemples de questions et SQL associé :
   Commentaire : "Voici les produits dont la marque débute par la lettre A."
 
 - La colonne date_commande est de type DATE ou TIMESTAMP. Pour filtrer par année, utilise EXTRACT(YEAR FROM date_commande) = 2025.
+
 - Pour une année glissante, utilise date_commande >= CURRENT_DATE - INTERVAL '1 year'.
+
+
+- Lors d'une jointure entre tables, n'utilise JAMAIS SELECT *. Utilise des alias explicites pour différencier les colonnes homonymes.
+  Exemple : SELECT clients.id_client AS client_id, commandes.id_client AS commande_id, ...
+
+Règles pour les classements par groupe (Top N) :
+- Pour trouver le produit le plus vendu par pays (ou par catégorie), tu dois utiliser une fonction de fenêtrage (ROW_NUMBER) ou une sous-requête avec DISTINCT ON (PostgreSQL).
+- Exemple : "Produit le plus vendu par pays"
+  SQL :
+  WITH ventes_par_pays_produit AS (
+      SELECT 
+          c.pays_client,
+          p.nom_produit,
+          SUM(v.quantite) AS total_vendus,
+          ROW_NUMBER() OVER (PARTITION BY c.pays_client ORDER BY SUM(v.quantite) DESC) AS rang
+      FROM ventes v
+      JOIN commandes cmd ON v.id_commande = cmd.id_commande
+      JOIN clients c ON cmd.id_client = c.id_client
+      JOIN produits p ON v.id_produit = p.id_produit
+      GROUP BY c.pays_client, p.nom_produit
+  )
+  SELECT pays_client, nom_produit, total_vendus
+  FROM ventes_par_pays_produit
+  WHERE rang = 1;
+
+- Exemple : "Top 3 des produits les plus vendus dans chaque catégorie"
+  SQL :
+  WITH top_produits_categorie AS (
+      SELECT 
+          p.categorie,
+          p.nom_produit,
+          SUM(v.quantite) AS total_vendus,
+          ROW_NUMBER() OVER (PARTITION BY p.categorie ORDER BY SUM(v.quantite) DESC) AS rang
+      FROM ventes v
+      JOIN produits p ON v.id_produit = p.id_produit
+      GROUP BY p.categorie, p.nom_produit
+  )
+  SELECT categorie, nom_produit, total_vendus
+  FROM top_produits_categorie
+  WHERE rang <= 3
+  ORDER BY categorie, rang;
+
+- N'oublie pas d'utiliser les jointures nécessaires (ventes -> produits, commandes, clients).
+- N'inclus pas de point-virgule final dans la requête SQL.
+
 
 """

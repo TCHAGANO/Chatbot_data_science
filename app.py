@@ -1,7 +1,7 @@
 # app.py
 # Fichier situé à la racine : C:\Users\Bahissou TCHAGNAO\Desktop\Chatbot_project\Chatbot_data_science\app.py
 
-from decimal import Decimal  # AJOUT IMPORTANT
+from decimal import Decimal
 from sqlalchemy import text
 import hashlib
 import re
@@ -113,7 +113,7 @@ st.markdown("""
 # Initialisation de la connexion à PostgreSQL
 engine = initialiser_connexion()
 
-# Initialisation des variables de session (Session State)
+# Initialisation des variables de session
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "application_active" not in st.session_state:
@@ -121,19 +121,35 @@ if "application_active" not in st.session_state:
 if "current_chat_id" not in st.session_state:
     st.session_state.current_chat_id = f"chat_{int(time.time())}"
 if "sql_cache" not in st.session_state:
-    st.session_state.sql_cache = {}  # Cache pour les résultats SQL
+    st.session_state.sql_cache = {}
 
-# Fonction d'encodage personnalisée CORRIGÉE (gère Decimal, dates, DataFrames)
+# ==================== FONCTIONS UTILITAIRES ====================
+
 def serialiseur_json_personnalise(obj):
     if isinstance(obj, pd.DataFrame):
         return obj.to_dict(orient="records")
-    if isinstance(obj, Decimal):          # Conversion des décimaux en float
+    if isinstance(obj, Decimal):
         return float(obj)
-    if hasattr(obj, 'isoformat'):         # Dates
+    if hasattr(obj, 'isoformat'):
         return obj.isoformat()
     if isinstance(obj, (set, frozenset)):
         return list(obj)
     raise TypeError(f"L'objet de type {obj.__class__.__name__} n'est pas sérialisable en JSON")
+
+def deduplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Renomme les colonnes dupliquées en ajoutant _2, _3, etc."""
+    cols = list(df.columns)
+    seen = {}
+    new_cols = []
+    for col in cols:
+        if col not in seen:
+            seen[col] = 1
+            new_cols.append(col)
+        else:
+            seen[col] += 1
+            new_cols.append(f"{col}_{seen[col]}")
+    df.columns = new_cols
+    return df
 
 def sauvegarder_discussion_actuelle(titre_personnalise=None):
     if not st.session_state.messages:
@@ -150,11 +166,10 @@ def sauvegarder_discussion_actuelle(titre_personnalise=None):
         msg_copy = m.copy()
         if msg_copy.get("df_resultat") is not None and isinstance(msg_copy["df_resultat"], pd.DataFrame):
             df_temp = msg_copy["df_resultat"].copy()
-            # Convertir les dates en chaînes
             for col in df_temp.select_dtypes(include=['datetime', 'datetimetz']).columns:
                 df_temp[col] = df_temp[col].dt.strftime('%Y-%m-%d %H:%M:%S')
-            # Convertir les Decimal en float pour la sérialisation JSON
-            for col in df_temp.select_dtypes(include=['object']).columns:
+            # Correction du warning Pandas : inclure 'string' en plus de 'object'
+            for col in df_temp.select_dtypes(include=['object', 'string']).columns:
                 if df_temp[col].apply(lambda x: isinstance(x, Decimal)).any():
                     df_temp[col] = df_temp[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
             msg_copy["df_resultat"] = df_temp.to_dict(orient="records")
@@ -195,17 +210,52 @@ def modal_quitter():
 
     col_back, col_confirm = st.columns(2)
     with col_back:
-        if st.button("Annuler", use_container_width=True):
+        if st.button("Annuler", width="stretch"):
             st.rerun()
     with col_confirm:
-        if st.button("Oui, sauvegarder et quitter", type="primary", use_container_width=True):
+        if st.button("Oui, sauvegarder et quitter", type="primary", width="stretch"):
             sauvegarder_discussion_actuelle(titre_personnalise=nom_archive if nom_archive else None)
             st.session_state.messages = []
             st.session_state.current_chat_id = f"chat_{int(time.time())}"
             st.session_state.application_active = False
             st.rerun()
 
-# --- SIDEBAR (Profil & Historique) ---
+# ==================== DIALOGUE POUR SUPPRIMER TOUTES LES DISCUSSIONS ====================
+@st.dialog("⚠️ Confirmer la suppression définitive")
+def dialog_supprimer_tout():
+    st.warning("Cette action est **irréversible**. Toutes vos conversations sauvegardées seront définitivement supprimées.")
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("❌ Annuler", width="stretch"):
+            st.rerun()
+    with col2:
+        if st.button("🗑️ Oui, tout supprimer", type="primary", width="stretch"):
+            # Suppression de tous les fichiers JSON dans history/
+            for f in os.listdir(HISTORY_DIR):
+                if f.endswith(".json"):
+                    os.remove(os.path.join(HISTORY_DIR, f))
+            st.cache_data.clear()
+            st.session_state.messages = []
+            st.session_state.current_chat_id = f"chat_{int(time.time())}"
+            st.rerun()
+
+# ==================== SIDEBAR AVEC CACHE ET LIMITATION ====================
+
+@st.cache_data(ttl=60)
+def get_all_chats_cached():
+    """Retourne la liste triée de toutes les discussions (mise en cache)."""
+    history_files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
+    chats = []
+    for f in history_files:
+        cid = f.replace(".json", "")
+        try:
+            with open(os.path.join(HISTORY_DIR, f), "r", encoding="utf-8") as file_data:
+                js = json.load(file_data)
+                chats.append({"id": cid, "titre": js["titre"], "date": js["date"]})
+        except Exception:
+            pass
+    return sorted(chats, key=lambda x: x["date"], reverse=True)
+
 with st.sidebar:
     st.markdown('<div class="sidebar-profile-container">', unsafe_allow_html=True)
     
@@ -226,7 +276,7 @@ with st.sidebar:
 
     col_nav1, col_nav2 = st.columns(2)
     with col_nav1:
-        if st.button("🆕 New Chat", use_container_width=True):
+        if st.button("🆕 New Chat", width="stretch"):
             if st.session_state.messages:
                 sauvegarder_discussion_actuelle()
             st.session_state.messages = []
@@ -234,7 +284,7 @@ with st.sidebar:
             st.session_state.application_active = True
             st.rerun()
     with col_nav2:
-        if st.button("🚪 Close Chat", use_container_width=True, disabled=not st.session_state.messages):
+        if st.button("🚪 Close Chat", width="stretch", disabled=not st.session_state.messages):
             modal_quitter()
 
     st.markdown("---")
@@ -242,58 +292,61 @@ with st.sidebar:
     st.markdown("<p style='color: #475569; font-size: 12px; font-weight: 600; margin-bottom:5px;'>🔍 RECHERCHER DANS L'HISTORIQUE</p>", unsafe_allow_html=True)
     search_query = st.text_input("Rechercher un mot clé...", label_visibility="collapsed", placeholder="Ex: chiffre d'affaires, clients...")
 
-    history_files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
-    all_chats = []
-
-    for f in history_files:
-        cid = f.replace(".json", "")
-        with open(os.path.join(HISTORY_DIR, f), "r", encoding="utf-8") as file_data:
-            try:
-                js = json.load(file_data)
-                all_chats.append({"id": cid, "titre": js["titre"], "date": js["date"]})
-            except Exception:
-                pass
-
-    all_chats = sorted(all_chats, key=lambda x: x["date"], reverse=True)
-
+    all_chats = get_all_chats_cached()
     if search_query:
         all_chats = [c for c in all_chats if search_query.lower() in c["titre"].lower()]
 
     st.markdown("<p style='color: #475569; font-size: 12px; font-weight: 600; margin-top:15px; margin-bottom:5px;'>🕒 DISCUSSIONS RÉCENTES</p>", unsafe_allow_html=True)
 
-    if all_chats:
-        for chat in all_chats:
+    # Limitation à 20 affichages pour éviter le ralentissement
+    MAX_HISTORY = 20
+    afficher_chats = all_chats[:MAX_HISTORY]
+    nb_total = len(all_chats)
+
+    if afficher_chats:
+        for chat in afficher_chats:
             nom_bouton = f"💬 {chat['titre']}"
             if len(nom_bouton) > 28:
                 nom_bouton = nom_bouton[:25] + "..."
 
             type_bouton = "primary" if st.session_state.current_chat_id == chat["id"] else "secondary"
 
-            if st.button(nom_bouton, key=f"hist_{chat['id']}", use_container_width=True, type=type_bouton):
-                charger_discussion(chat["id"])
-                st.rerun()
+            # Deux colonnes : bouton de chargement et bouton de suppression
+            col1, col2 = st.columns([4, 1])
+            with col1:
+                if st.button(nom_bouton, key=f"hist_{chat['id']}", width="stretch", type=type_bouton):
+                    charger_discussion(chat["id"])
+                    st.rerun()
+            with col2:
+                if st.button("🗑", key=f"del_{chat['id']}", help="Supprimer cette discussion"):
+                    os.remove(os.path.join(HISTORY_DIR, f"{chat['id']}.json"))
+                    st.cache_data.clear()
+                    st.rerun()
+        if nb_total > MAX_HISTORY:
+            st.caption(f"{nb_total} discussions au total. Seules les {MAX_HISTORY} plus récentes sont affichées.")
     else:
         st.markdown("<p style='color: #94A3B8; font-size: 12px; font-style: italic;'>Aucun chat trouvé.</p>", unsafe_allow_html=True)
 
+    # Bouton "Tout supprimer" avec confirmation (placé avant les liens)
+    st.markdown("---")
+    if st.button("🗑️ Tout supprimer", width="stretch", type="secondary"):
+        dialog_supprimer_tout()
+
     st.markdown("<br>" * 2, unsafe_allow_html=True)
     st.markdown("---")
-    st.link_button("💼 Profil LinkedIn", "https://www.linkedin.com/in/bahissou-tchagnao-9a91492aa", use_container_width=True)
-    st.link_button("💻 Repository GitHub", "https://github.com/TCHAGANO/Chatbot_data_science.git", use_container_width=True)
+    st.link_button("💼 Profil LinkedIn", "https://www.linkedin.com/in/bahissou-tchagnao-9a91492aa", width="stretch")
+    st.link_button("💻 Repository GitHub", "https://github.com/TCHAGANO/Chatbot_data_science.git", width="stretch")
 
-
-# --- AFFICHAGE DE LA DISCUSSION ---
+# ==================== AFFICHAGE DE LA DISCUSSION ====================
 for idx, msg in enumerate(st.session_state.messages):
     if msg["role"] == "user":
         with st.chat_message("user", avatar="👤"):
             st.markdown(msg["content"])
-
     elif msg["role"] == "assistant":
         statut_avatar = "🔵" if msg.get("status_ok", True) else "🔴"
-
         with st.chat_message("assistant", avatar=statut_avatar):
             if msg.get("is_sql", True) and msg.get("df_resultat") is not None:
                 tab1, tab2, tab3, tab4 = st.tabs(["📊 Résultat & Analytics", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
-
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
@@ -301,14 +354,15 @@ for idx, msg in enumerate(st.session_state.messages):
                     elif df.shape == (1, 1):
                         valeur_brute = df.iloc[0, 0]
                         nom_colonne = df.columns[0].replace('_', ' ').title()
-
-                        if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes']):
-                            st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                        if valeur_brute is None or (isinstance(valeur_brute, float) and pd.isna(valeur_brute)):
+                            st.metric(label=f"🔢 {nom_colonne}", value="Aucune donnée")
                         else:
-                            st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
+                            if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes']):
+                                st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                            else:
+                                st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
                     else:
-                        st.dataframe(df, use_container_width=True)
-
+                        st.dataframe(df, width="stretch")
                         csv_data = df.to_csv(index=False).encode('utf-8')
                         st.download_button(
                             label="📥 Extraire les données au format CSV",
@@ -317,25 +371,19 @@ for idx, msg in enumerate(st.session_state.messages):
                             mime="text/csv",
                             key=f"dl_{idx}"
                         )
-
                 with tab2:
                     st.code(msg.get("query_sql") or "Aucune requête SQL", language="sql")
-
                 with tab3:
                     st.info(msg.get("analytics_text", "Aucune métrique disponible."))
-
                 with tab4:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df is not None and not df.empty and df.shape != (1, 1):
                         st.markdown("### 📊 Générateur Visuel à la Demande")
-
                         if st.button("👁️ Générer l'analyse visuelle", key=f"btn_chart_{idx}"):
                             colonnes_num = df.select_dtypes(include=['number']).columns
-
                             if not colonnes_num.empty:
                                 col_val = colonnes_num[0]
                                 col_date = [c for c in df.columns if 'date' in c.lower() or 'annee' in c.lower() or 'mois' in c.lower()]
-
                                 if col_date:
                                     st.markdown(f"##### 📈 Évolution temporelle ({col_val})")
                                     st.line_chart(df.set_index(col_date[0])[col_val])
@@ -352,12 +400,11 @@ for idx, msg in enumerate(st.session_state.messages):
                 if not msg.get("status_ok", True) and msg.get("analytics_text"):
                     st.error(msg["analytics_text"])
 
-
-# --- ÉCRAN D'ACCUEIL (BENTO GRID) ---
+# ==================== ÉCRAN D'ACCUEIL (BENTO GRID) ====================
 if len(st.session_state.messages) == 0:
     st.markdown("<br><br>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #3B82F6; font-weight: 600; margin-bottom: 0; font-size:14px;'>Welcome to BI Chatbot Pro</p>", unsafe_allow_html=True)
-    st.markdown("<h1 class='hero-title' style='margin-top: 0;'>How Can I Assist You Today?</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='hero-title' style='margin-top: 0;'>Bonjour ! je suis votre assistant conçu par Bahissou TCAGNAO pour vous aider dans votre analyse de données.Posez moi toutes vos questions ci-dessous</h1>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     card_col1, card_col2, card_col3, card_col4 = st.columns(4)
@@ -370,8 +417,7 @@ if len(st.session_state.messages) == 0:
     with card_col4:
         st.markdown('<div class="bento-card card-orange"><div class="bento-title title-orange">💸 Analyse CA & Marge</div><div class="bento-desc">Calculez les profits et observez l\'impact des remises.</div></div>', unsafe_allow_html=True)
 
-
-# --- ZONE DE SAISIE DE L'UTILISATEUR ---
+# ==================== ZONE DE SAISIE DE L'UTILISATEUR ====================
 if st.session_state.application_active:
     st.markdown("""
         <div style='display: flex; gap: 8px; margin-bottom: -10px; justify-content: center;'>
@@ -387,8 +433,7 @@ if st.session_state.application_active:
         st.session_state.messages.append({"role": "user", "content": question_utilisateur})
         st.rerun()
 
-
-# --- LOGIQUE DE TRAITEMENT PAR L'ASSISTANT ---
+# ==================== LOGIQUE DE TRAITEMENT PAR L'ASSISTANT ====================
 if st.session_state.messages and st.session_state.messages[-1]["role"] == "user" and st.session_state.application_active:
     with st.chat_message("assistant", avatar="🔵"):
         with st.spinner("🤖 Réflexion de l'assistant Groq..."):
@@ -405,16 +450,12 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                 if requete_sql:
                     requete_sql = requete_sql.strip().rstrip(";")
-
-                    # Correction pour les recherches sur marque (ILIKE)
                     requete_sql = re.sub(r"\bmarque\s+LIKE\b", "marque ILIKE", requete_sql, flags=re.IGNORECASE)
 
-                    # Validation de sécurité du SQL généré
                     valide, erreur_validation = valider_requete_sql(requete_sql)
                     if not valide:
                         raise Exception(f"Validation SQL échouée : {erreur_validation}")
 
-                    # Ajout automatique d'une clause LIMIT si aucune agrégation ou limite n'est présente
                     if (
                         "LIMIT" not in requete_sql.upper()
                         and "SUM(" not in requete_sql.upper()
@@ -427,18 +468,17 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                     debut_sql = time.time()
 
-                    # Cache SQL : utiliser un hash de la requête
                     sql_hash = hashlib.md5(requete_sql.encode()).hexdigest()
                     if sql_hash in st.session_state.sql_cache:
                         df_resultat = st.session_state.sql_cache[sql_hash]
                         st.info("📦 Résultat récupéré depuis le cache (même requête déjà exécutée).")
                     else:
-                        # MÉTHODE ALTERNATIVE POUR ÉVITER LE BUG immutabledict
                         with engine.connect() as conn:
                             result = conn.execute(text(requete_sql))
                             cols = result.keys()
                             rows = result.fetchall()
                             df_resultat = pd.DataFrame(rows, columns=cols)
+                        df_resultat = deduplicate_columns(df_resultat)
                         st.session_state.sql_cache[sql_hash] = df_resultat
 
                     fin_sql = time.time()
