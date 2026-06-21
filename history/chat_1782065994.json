@@ -1,0 +1,34 @@
+{
+    "titre": "Quel est le chiffre d'affaires...",
+    "date": "2026-06-21 20:20",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Quel est le chiffre d'affaires total généré depuis le début de l'année ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Je n'ai pas pu générer d'analyse pour cette demande.",
+            "analyse_poussee": "",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": null,
+            "analytics_text": "Aucune action SQL requise.",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Quel est le chiffre d'affaires total généré depuis le début de l'année ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Je n'ai pas pu générer d'analyse pour cette demande.",
+            "analyse_poussee": "",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": null,
+            "analytics_text": "Aucune action SQL requise.",
+            "status_ok": true
+        }
+    ]
+}

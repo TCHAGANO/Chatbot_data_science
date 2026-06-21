@@ -1,0 +1,20 @@
+{
+    "titre": "Comment le chiffre d'affaires ...",
+    "date": "2026-06-21 20:20",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Comment le chiffre d'affaires a-t-il évolué mois par mois au cours des deux dernières années ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Je n'ai pas pu générer d'analyse pour cette demande.",
+            "analyse_poussee": "",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": null,
+            "analytics_text": "Aucune action SQL requise.",
+            "status_ok": true
+        }
+    ]
+}

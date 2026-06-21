@@ -13,114 +13,108 @@ import time
 import json
 from datetime import datetime
 
-from database import initialiser_connexion
+from database_connexion import initialiser_connexion
 from llm import generer_requete_sql
 from sql_security import valider_requete_sql
 
-# ==================== TIMERS POUR DIAGNOSTIC ====================
-_start_tot = time.time()
-print(f"🔵 [TIMER] Démarrage du script : {_start_tot:.2f}")
-
-# Configuration de la page Streamlit
+# ==================== CONFIGURATION ====================
 st.set_page_config(page_title="Assistant IA - Business Intelligence", page_icon="🤖", layout="wide")
-print(f"   - après set_page_config : {time.time() - _start_tot:.2f}s")
 
-# Création du dossier d'historique s'il n'existe pas
+# Dossier d'historique
 HISTORY_DIR = "history"
 if not os.path.exists(HISTORY_DIR):
     os.makedirs(HISTORY_DIR)
 
-# Styles CSS personnalisés
+# ==================== STYLES CSS ====================
 st.markdown("""
-    <style>
-        .stApp { background-color: #F8FAFC !important; color: #1E293B !important; }
-        section[data-testid="stSidebar"] {
-            background-color: #FFFFFF !important;
-            border-right: 1px solid #E2E8F0 !important;
-        }
-        .bento-card {
-            background-color: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 16px;
-            padding: 20px;
-            min-height: 140px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: all 0.2s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-        .bento-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            border-color: #CBD5E1;
-        }
-        .bento-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-        }
-        .card-green::before { background: linear-gradient(90deg, #4ADE80, #22C55E); }
-        .card-blue::before { background: linear-gradient(90deg, #60A5FA, #3B82F6); }
-        .card-purple::before { background: linear-gradient(90deg, #C084FC, #A855F7); }
-        .card-orange::before { background: linear-gradient(90deg, #FB923C, #F97316); }
+<style>
+    .stApp { background-color: #F8FAFC !important; color: #1E293B !important; }
+    section[data-testid="stSidebar"] {
+        background-color: #FFFFFF !important;
+        border-right: 1px solid #E2E8F0 !important;
+    }
+    .bento-card {
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 16px;
+        padding: 20px;
+        min-height: 140px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .bento-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        border-color: #CBD5E1;
+    }
+    .bento-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 4px;
+    }
+    .card-green::before { background: linear-gradient(90deg, #4ADE80, #22C55E); }
+    .card-blue::before { background: linear-gradient(90deg, #60A5FA, #3B82F6); }
+    .card-purple::before { background: linear-gradient(90deg, #C084FC, #A855F7); }
+    .card-orange::before { background: linear-gradient(90deg, #FB923C, #F97316); }
 
-        .bento-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .title-green { color: #166534; }
-        .title-blue { color: #1E40AF; }
-        .title-purple { color: #6B21A8; }
-        .title-orange { color: #9A3412; }
+    .bento-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .title-green { color: #166534; }
+    .title-blue { color: #1E40AF; }
+    .title-purple { color: #6B21A8; }
+    .title-orange { color: #9A3412; }
 
-        .bento-desc { color: #64748B; font-size: 13px; line-height: 1.4; }
+    .bento-desc { color: #64748B; font-size: 13px; line-height: 1.4; }
+    .hero-title { font-size: 32px; font-weight: 700; color: #0F172A; text-align: center; margin-top: 20px; }
 
-        .hero-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0F172A;
-            text-align: center;
-            margin-top: 20px;
-        }
+    .sidebar-profile-container {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #F1F5F9;
+        margin-bottom: 15px;
+    }
+    .sidebar-profile-pic {
+        border-radius: 50%;
+        border: 3px solid #3B82F6;
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        box-shadow: 0 10px 15px -3px rgba(59,130,246,0.2);
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    div[data-baseweb="input"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+    }
+    div[data-baseweb="input"]:focus-within { border-color: #3B82F6 !important; }
+    #MainMenu, footer, header { visibility: hidden; }
 
-        .sidebar-profile-container {
-            text-align: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #F1F5F9;
-            margin-bottom: 15px;
-        }
-        .sidebar-profile-pic {
-            border-radius: 50%;
-            border: 3px solid #3B82F6;
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
-            display: block;
-            margin: 0 auto 10px auto;
-        }
-
-        div[data-baseweb="input"] {
-            background-color: #FFFFFF !important;
-            border: 1px solid #E2E8F0 !important;
-            border-radius: 14px !important;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
-        }
-        div[data-baseweb="input"]:focus-within {
-            border-color: #3B82F6 !important;
-        }
-
-        #MainMenu, footer, header {visibility: hidden;}
-    </style>
+    .nav-button {
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 10px !important;
+        padding: 8px 16px !important;
+        color: #1E293B !important;
+        font-weight: 500 !important;
+        transition: all 0.2s !important;
+    }
+    .nav-button:hover {
+        background-color: #F1F5F9 !important;
+        border-color: #94A3B8 !important;
+    }
+    .nav-button:disabled { opacity: 0.4 !important; cursor: not-allowed !important; }
+</style>
 """, unsafe_allow_html=True)
-print(f"   - après CSS : {time.time() - _start_tot:.2f}s")
 
-# Initialisation de la connexion à PostgreSQL
+# ==================== CONNEXION À LA BASE ====================
 engine = initialiser_connexion()
-print(f"   - après connexion DB : {time.time() - _start_tot:.2f}s")
 
-# Initialisation des variables de session
+# ==================== ÉTAT DE LA SESSION ====================
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "application_active" not in st.session_state:
@@ -129,7 +123,12 @@ if "current_chat_id" not in st.session_state:
     st.session_state.current_chat_id = f"chat_{int(time.time())}"
 if "sql_cache" not in st.session_state:
     st.session_state.sql_cache = {}
-print(f"   - après init session : {time.time() - _start_tot:.2f}s")
+
+# Navigation
+if "show_all_messages" not in st.session_state:
+    st.session_state.show_all_messages = True
+if "message_index" not in st.session_state:
+    st.session_state.message_index = -1
 
 # ==================== FONCTIONS UTILITAIRES ====================
 
@@ -142,10 +141,9 @@ def serialiseur_json_personnalise(obj):
         return obj.isoformat()
     if isinstance(obj, (set, frozenset)):
         return list(obj)
-    raise TypeError(f"L'objet de type {obj.__class__.__name__} n'est pas sérialisable en JSON")
+    raise TypeError(f"Type {obj.__class__.__name__} non sérialisable")
 
 def deduplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Renomme les colonnes dupliquées en ajoutant _2, _3, etc."""
     cols = list(df.columns)
     seen = {}
     new_cols = []
@@ -162,13 +160,11 @@ def deduplicate_columns(df: pd.DataFrame) -> pd.DataFrame:
 def sauvegarder_discussion_actuelle(titre_personnalise=None):
     if not st.session_state.messages:
         return
-
     if not titre_personnalise:
         premiere_question = st.session_state.messages[0]["content"]
         titre_personnalise = premiere_question[:30] + "..." if len(premiere_question) > 30 else premiere_question
 
     filepath = os.path.join(HISTORY_DIR, f"{st.session_state.current_chat_id}.json")
-
     messages_serialisables = []
     for m in st.session_state.messages:
         msg_copy = m.copy()
@@ -176,7 +172,7 @@ def sauvegarder_discussion_actuelle(titre_personnalise=None):
             df_temp = msg_copy["df_resultat"].copy()
             for col in df_temp.select_dtypes(include=['datetime', 'datetimetz']).columns:
                 df_temp[col] = df_temp[col].dt.strftime('%Y-%m-%d %H:%M:%S')
-            for col in df_temp.select_dtypes(include=['object']).columns:
+            for col in df_temp.select_dtypes(include=['object', 'string']).columns:
                 if df_temp[col].apply(lambda x: isinstance(x, Decimal)).any():
                     df_temp[col] = df_temp[col].apply(lambda x: float(x) if isinstance(x, Decimal) else x)
             msg_copy["df_resultat"] = df_temp.to_dict(orient="records")
@@ -187,7 +183,6 @@ def sauvegarder_discussion_actuelle(titre_personnalise=None):
         "date": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "messages": messages_serialisables
     }
-
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4, default=serialiseur_json_personnalise)
 
@@ -196,25 +191,21 @@ def charger_discussion(chat_id):
     if os.path.exists(filepath):
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
-
         messages_reconstruits = []
         for m in data["messages"]:
             if m.get("df_resultat") is not None and isinstance(m["df_resultat"], list):
                 m["df_resultat"] = pd.DataFrame(m["df_resultat"])
             messages_reconstruits.append(m)
-
         st.session_state.messages = messages_reconstruits
         st.session_state.current_chat_id = chat_id
         st.session_state.application_active = True
+        st.session_state.show_all_messages = True
+        st.session_state.message_index = -1
 
 @st.dialog("🚪 Confirmer la fermeture")
 def modal_quitter():
-    st.write("Voulez-vous vraiment clore cette session de chat ? Elle sera automatiquement archivée dans votre historique de gauche.")
-    nom_archive = st.text_input(
-        "Donner un nom spécifique à cette discussion (optionnel) :",
-        placeholder="Ex: Analyse Ventes France"
-    )
-
+    st.write("Voulez-vous vraiment clore cette session ? Elle sera archivée dans l'historique.")
+    nom_archive = st.text_input("Nom (optionnel) :", placeholder="Ex: Analyse Ventes France")
     col_back, col_confirm = st.columns(2)
     with col_back:
         if st.button("Annuler", use_container_width=True):
@@ -227,11 +218,28 @@ def modal_quitter():
             st.session_state.application_active = False
             st.rerun()
 
-print(f"   - après définitions fonctions : {time.time() - _start_tot:.2f}s")
+@st.dialog("⚠️ Confirmer la suppression définitive")
+def dialog_supprimer_tout():
+    st.warning("Cette action est irréversible. Toutes les conversations seront supprimées.")
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("❌ Annuler", use_container_width=True):
+            st.rerun()
+    with col2:
+        if st.button("🗑️ Oui, tout supprimer", type="primary", use_container_width=True):
+            for f in os.listdir(HISTORY_DIR):
+                if f.endswith(".json"):
+                    os.remove(os.path.join(HISTORY_DIR, f))
+            st.cache_data.clear()
+            st.session_state.messages = []
+            st.session_state.current_chat_id = f"chat_{int(time.time())}"
+            st.rerun()
 
-# ==================== SIDEBAR AVEC CACHE ====================
+# ==================== CACHE DE L'HISTORIQUE ====================
 @st.cache_data(ttl=60)
 def get_all_chats_cached():
+    if not os.path.exists(HISTORY_DIR):
+        return []
     history_files = [f for f in os.listdir(HISTORY_DIR) if f.endswith(".json")]
     chats = []
     for f in history_files:
@@ -244,11 +252,10 @@ def get_all_chats_cached():
             pass
     return sorted(chats, key=lambda x: x["date"], reverse=True)
 
-print(f"   - avant sidebar : {time.time() - _start_tot:.2f}s")
+# ==================== SIDEBAR ====================
 with st.sidebar:
-    print(f"   - début sidebar : {time.time() - _start_tot:.2f}s")
+    # Profil
     st.markdown('<div class="sidebar-profile-container">', unsafe_allow_html=True)
-    
     if os.path.exists("ma_photo.jpg"):
         with open("ma_photo.jpg", "rb") as img_file:
             encoded_img = base64.b64encode(img_file.read()).decode()
@@ -258,12 +265,12 @@ with st.sidebar:
             encoded_img = base64.b64encode(img_file.read()).decode()
         st.markdown(f'<img src="data:image/jpeg;base64,{encoded_img}" class="sidebar-profile-pic">', unsafe_allow_html=True)
     else:
-        st.markdown('<div style="font-size: 50px; margin-bottom:10px;">👤</div>', unsafe_allow_html=True)
-
-    st.markdown("<h3 style='color: #0F172A; font-size: 18px; font-weight:700; margin-bottom:0; text-align:center;'>📁 Aplot AI BI</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='color: #64748B; font-size: 13px; margin-top:0; text-align:center;'>Bahissou TCHAGNAO</p>", unsafe_allow_html=True)
+        st.markdown('<div style="font-size:50px; margin-bottom:10px;">👤</div>', unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#0F172A; font-size:18px; font-weight:700; text-align:center;'>📁 Aplot AI BI</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#64748B; font-size:13px; text-align:center;'>Bahissou TCHAGNAO</p>", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
+    # Navigation
     col_nav1, col_nav2 = st.columns(2)
     with col_nav1:
         if st.button("🆕 New Chat", use_container_width=True):
@@ -272,6 +279,8 @@ with st.sidebar:
             st.session_state.messages = []
             st.session_state.current_chat_id = f"chat_{int(time.time())}"
             st.session_state.application_active = True
+            st.session_state.show_all_messages = True
+            st.session_state.message_index = -1
             st.rerun()
     with col_nav2:
         if st.button("🚪 Close Chat", use_container_width=True, disabled=not st.session_state.messages):
@@ -279,36 +288,121 @@ with st.sidebar:
 
     st.markdown("---")
 
-    st.markdown("<p style='color: #475569; font-size: 12px; font-weight: 600; margin-bottom:5px;'>🔍 RECHERCHER DANS L'HISTORIQUE</p>", unsafe_allow_html=True)
+    # Recherche
+    st.markdown("<p style='color:#475569; font-size:12px; font-weight:600;'>🔍 RECHERCHER DANS L'HISTORIQUE</p>", unsafe_allow_html=True)
     search_query = st.text_input("Rechercher un mot clé...", label_visibility="collapsed", placeholder="Ex: chiffre d'affaires, clients...")
 
     all_chats = get_all_chats_cached()
     if search_query:
         all_chats = [c for c in all_chats if search_query.lower() in c["titre"].lower()]
 
-    st.markdown("<p style='color: #475569; font-size: 12px; font-weight: 600; margin-top:15px; margin-bottom:5px;'>🕒 DISCUSSIONS RÉCENTES</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#475569; font-size:12px; font-weight:600; margin-top:15px;'>🕒 DISCUSSIONS RÉCENTES</p>", unsafe_allow_html=True)
+    MAX_HISTORY = 20
+    afficher_chats = all_chats[:MAX_HISTORY]
+    nb_total = len(all_chats)
 
-    if all_chats:
-        for chat in all_chats:
+    if afficher_chats:
+        for chat in afficher_chats:
             nom_bouton = f"💬 {chat['titre']}"
             if len(nom_bouton) > 28:
                 nom_bouton = nom_bouton[:25] + "..."
             type_bouton = "primary" if st.session_state.current_chat_id == chat["id"] else "secondary"
-            if st.button(nom_bouton, key=f"hist_{chat['id']}", use_container_width=True, type=type_bouton):
-                charger_discussion(chat["id"])
-                st.rerun()
+            col1, col2 = st.columns([4, 1])
+            with col1:
+                if st.button(nom_bouton, key=f"hist_{chat['id']}", use_container_width=True, type=type_bouton):
+                    charger_discussion(chat["id"])
+                    st.rerun()
+            with col2:
+                if st.button("🗑", key=f"del_{chat['id']}", help="Supprimer cette discussion"):
+                    os.remove(os.path.join(HISTORY_DIR, f"{chat['id']}.json"))
+                    st.cache_data.clear()
+                    st.rerun()
+        if nb_total > MAX_HISTORY:
+            st.caption(f"{nb_total} discussions au total. Seules les {MAX_HISTORY} plus récentes sont affichées.")
     else:
-        st.markdown("<p style='color: #94A3B8; font-size: 12px; font-style: italic;'>Aucun chat trouvé.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='color:#94A3B8; font-size:12px; font-style:italic;'>Aucun chat trouvé.</p>", unsafe_allow_html=True)
 
-    st.markdown("<br>" * 2, unsafe_allow_html=True)
+    st.markdown("---")
+    if st.button("🗑️ Tout supprimer", use_container_width=True, type="secondary"):
+        dialog_supprimer_tout()
+
     st.markdown("---")
     st.link_button("💼 Profil LinkedIn", "https://www.linkedin.com/in/bahissou-tchagnao-9a91492aa", use_container_width=True)
     st.link_button("💻 Repository GitHub", "https://github.com/TCHAGANO/Chatbot_data_science.git", use_container_width=True)
-    print(f"   - fin sidebar : {time.time() - _start_tot:.2f}s")
 
-print(f"   - avant affichage messages : {time.time() - _start_tot:.2f}s")
-# --- AFFICHAGE DE LA DISCUSSION ---
-for idx, msg in enumerate(st.session_state.messages):
+    # ==================== ADMINISTRATION (AJOUT / SUPPRESSION) ====================
+    st.markdown("---")
+    with st.expander("🔐 Administration des clients", expanded=False):
+        admin_password = st.text_input("Mot de passe admin", type="password", key="admin_pass")
+        
+        access_granted = False
+        try:
+            if admin_password == st.secrets["ADMIN_PASSWORD"]:
+                st.success("✅ Accès autorisé")
+                access_granted = True
+            elif admin_password:
+                st.warning("⛔ Accès refusé.")
+        except KeyError:
+            st.error("❌ Mot de passe admin non configuré. Ajoute ADMIN_PASSWORD dans secrets.toml.")
+
+        if access_granted:
+            # Ajout
+            st.subheader("➕ Ajouter un client")
+            with st.form("form_ajout_client"):
+                nom = st.text_input("Nom complet")
+                age = st.number_input("Âge", min_value=0, max_value=120, step=1)
+                sexe = st.selectbox("Sexe", ["M", "F"])
+                ville = st.text_input("Ville")
+                pays = st.text_input("Pays")
+                code_iso = st.text_input("Code ISO (ex: FR, NG)", max_chars=3)
+                submitted = st.form_submit_button("Ajouter ce client")
+                if submitted:
+                    if not nom or not pays:
+                        st.error("Le nom et le pays sont obligatoires.")
+                    else:
+                        try:
+                            with engine.begin() as conn:
+                                conn.execute(
+                                    text("""
+                                        INSERT INTO clients (nom_client, age_client, sexe_client, ville_client, pays_client, code_iso_client)
+                                        VALUES (:nom, :age, :sexe, :ville, :pays, :code_iso)
+                                    """),
+                                    {"nom": nom, "age": age, "sexe": sexe, "ville": ville, "pays": pays, "code_iso": code_iso.upper()}
+                                )
+                            st.success(f"✅ Client '{nom}' ajouté !")
+                            time.sleep(1)
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"❌ Erreur : {e}")
+
+            st.markdown("---")
+
+            # Suppression
+            st.subheader("🗑️ Supprimer un client")
+            with engine.connect() as conn:
+                clients_df = pd.read_sql("SELECT id_client, nom_client FROM clients ORDER BY nom_client", conn)
+            if clients_df.empty:
+                st.info("Aucun client dans la base.")
+            else:
+                client_dict = dict(zip(clients_df["nom_client"], clients_df["id_client"]))
+                selected_name = st.selectbox("Choisir un client à supprimer", list(client_dict.keys()))
+                if st.button("🗑️ Supprimer définitivement", type="primary", use_container_width=True):
+                    client_id = client_dict[selected_name]
+                    try:
+                        with engine.begin() as conn:
+                            check = conn.execute(text("SELECT COUNT(*) FROM commandes WHERE id_client = :id"), {"id": client_id}).scalar()
+                            if check > 0:
+                                st.error(f"❌ Impossible : {selected_name} a {check} commande(s) associée(s).")
+                            else:
+                                conn.execute(text("DELETE FROM clients WHERE id_client = :id"), {"id": client_id})
+                                st.success(f"✅ Client '{selected_name}' supprimé !")
+                                time.sleep(1)
+                                st.rerun()
+                    except Exception as e:
+                        st.error(f"❌ Erreur : {e}")
+
+# ==================== FONCTION D'AFFICHAGE D'UN MESSAGE ====================
+def afficher_message(msg):
     if msg["role"] == "user":
         with st.chat_message("user", avatar="👤"):
             st.markdown(msg["content"])
@@ -320,7 +414,7 @@ for idx, msg in enumerate(st.session_state.messages):
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
-                        st.warning("Aucune donnée disponible pour cette requête.")
+                        st.warning("Aucune donnée disponible.")
                     elif df.shape == (1, 1):
                         valeur_brute = df.iloc[0, 0]
                         nom_colonne = df.columns[0].replace('_', ' ').title()
@@ -339,7 +433,7 @@ for idx, msg in enumerate(st.session_state.messages):
                             data=csv_data,
                             file_name="extraction_bi_chatbot.csv",
                             mime="text/csv",
-                            key=f"dl_{idx}"
+                            key=f"dl_{hash(str(msg))}"
                         )
                 with tab2:
                     st.code(msg.get("query_sql") or "Aucune requête SQL", language="sql")
@@ -349,7 +443,7 @@ for idx, msg in enumerate(st.session_state.messages):
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df is not None and not df.empty and df.shape != (1, 1):
                         st.markdown("### 📊 Générateur Visuel à la Demande")
-                        if st.button("👁️ Générer l'analyse visuelle", key=f"btn_chart_{idx}"):
+                        if st.button("👁️ Générer l'analyse visuelle", key=f"btn_chart_{hash(str(msg))}"):
                             colonnes_num = df.select_dtypes(include=['number']).columns
                             if not colonnes_num.empty:
                                 col_val = colonnes_num[0]
@@ -362,52 +456,160 @@ for idx, msg in enumerate(st.session_state.messages):
                                     st.markdown(f"##### 📊 Analyse comparative par {col_axe_x.replace('_', ' ')}")
                                     st.bar_chart(df.set_index(col_axe_x)[col_val])
                             else:
-                                st.warning("Les données extraites ne contiennent pas d'indicateurs numériques exploitables.")
+                                st.warning("Pas d'indicateur numérique exploitable.")
                     else:
-                        st.info("Cette réponse ne contient pas le format requis pour générer un graphique.")
+                        st.info("Pas assez de données pour générer un graphique.")
             else:
                 st.markdown(msg["content"])
                 if not msg.get("status_ok", True) and msg.get("analytics_text"):
                     st.error(msg["analytics_text"])
-print(f"   - après affichage messages : {time.time() - _start_tot:.2f}s")
 
-# --- ÉCRAN D'ACCUEIL (BENTO GRID) ---
+# ==================== AFFICHAGE DE LA DISCUSSION ====================
+messages = st.session_state.messages
+total = len(messages)
+
+if total > 0:
+    if st.session_state.show_all_messages:
+        for msg in messages:
+            afficher_message(msg)
+    else:
+        idx = st.session_state.message_index
+        if 0 <= idx < total:
+            afficher_message(messages[idx])
+        else:
+            st.session_state.show_all_messages = True
+            st.session_state.message_index = -1
+            st.rerun()
+
+    # Barre de navigation
+    if total > 1:
+        st.markdown("---")
+        if st.session_state.show_all_messages:
+            if st.button("🔍 Naviguer dans les messages (un par un)", use_container_width=True):
+                st.session_state.show_all_messages = False
+                st.session_state.message_index = total - 1
+                st.rerun()
+        else:
+            col_prev, col_info, col_next, col_back = st.columns([1, 2, 1, 2])
+            with col_prev:
+                if st.button("◀️ Précédent", use_container_width=True, disabled=(st.session_state.message_index <= 0)):
+                    st.session_state.message_index -= 1
+                    st.rerun()
+            with col_info:
+                st.markdown(f"<p style='text-align:center; margin:0; font-weight:500;'>Message {st.session_state.message_index+1} / {total}</p>", unsafe_allow_html=True)
+            with col_next:
+                if st.button("Suivant ▶️", use_container_width=True, disabled=(st.session_state.message_index >= total-1)):
+                    st.session_state.message_index += 1
+                    st.rerun()
+            with col_back:
+                if st.button("📋 Voir tous les messages", use_container_width=True):
+                    st.session_state.show_all_messages = True
+                    st.session_state.message_index = -1
+                    st.rerun()
+
+# ==================== PAGE D'ACCUEIL (BENTO GRID) ====================
 if len(st.session_state.messages) == 0:
     st.markdown("<br><br>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #3B82F6; font-weight: 600; margin-bottom: 0; font-size:14px;'>Welcome to BI Chatbot Pro</p>", unsafe_allow_html=True)
-    st.markdown("<h1 class='hero-title' style='margin-top: 0;'>Bonjour ! je suis votre assistant conçu par Bahissou TCAGNAO pour vous aider dans votre analyse de données.Posez moi toutes vos questions ci-dessous.</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align:center; color:#3B82F6; font-weight:600; font-size:14px;'>Welcome to BI Chatbot Pro</p>", unsafe_allow_html=True)
+    st.markdown("<h1 class='hero-title'>Bonjour ! je suis votre assistant IA. Comment puis-je vous aider ?</h1>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
-    card_col1, card_col2, card_col3, card_col4 = st.columns(4)
-    with card_col1:
-        st.markdown('<div class="bento-card card-green"><div class="bento-title title-green">📊 Volume Global</div><div class="bento-desc">Déterminez le nombre exact de clients ou de commandes.</div></div>', unsafe_allow_html=True)
-    with card_col2:
-        st.markdown('<div class="bento-card card-blue"><div class="bento-title title-blue">🏆 Top Performances</div><div class="bento-desc">Trouvez la référence produit ou la marque la plus vendue.</div></div>', unsafe_allow_html=True)
-    with card_col3:
-        st.markdown('<div class="bento-card card-purple"><div class="bento-title title-purple">🎯 Profils Clients</div><div class="bento-desc">Analysez la répartition des acheteurs par ville ou sexe.</div></div>', unsafe_allow_html=True)
-    with card_col4:
-        st.markdown('<div class="bento-card card-orange"><div class="bento-title title-orange">💸 Analyse CA & Marge</div><div class="bento-desc">Calculez les profits et observez l\'impact des remises.</div></div>', unsafe_allow_html=True)
+    CARDS = [
+        {"title": "📊 Volume Global", "desc": "Déterminez le nombre exact de clients ou de commandes.",
+         "question": "Donne-moi le nombre total de clients et le nombre total de commandes."},
+        {"title": "🏆 Top Performances", "desc": "Trouvez la référence produit ou la marque la plus vendue.",
+         "question": "Quels sont les 10 produits les plus vendus ?"},
+        {"title": "🎯 Profils Clients", "desc": "Analysez la répartition des acheteurs par ville ou sexe.",
+         "question": "Affiche la répartition des clients par sexe et par pays."},
+        {"title": "💸 Analyse CA & Marge", "desc": "Calculez les profits et observez l'impact des remises.",
+         "question": "Calcule le chiffre d'affaires total, le profit total et la marge moyenne."}
+    ]
 
-# --- ZONE DE SAISIE DE L'UTILISATEUR ---
-print(f"   - avant champ saisie : {time.time() - _start_tot:.2f}s")
+    cols = st.columns(4)
+    for idx, card in enumerate(CARDS):
+        with cols[idx]:
+            label = f"**{card['title']}**\n\n{card['desc']}"
+            if st.button(label, key=f"bento_{idx}", use_container_width=True):
+                st.session_state.messages.append({"role": "user", "content": card["question"]})
+                st.session_state.show_all_messages = True
+                st.session_state.message_index = -1
+                st.rerun()
+
+    # CSS pour les boutons Bento
+    st.markdown("""
+    <style>
+        .stButton > button {
+            background-color: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
+            border-radius: 16px !important;
+            padding: 20px !important;
+            min-height: 140px !important;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03) !important;
+            transition: all 0.2s ease-in-out !important;
+            position: relative !important;
+            overflow: hidden !important;
+            text-align: left !important;
+            font-weight: normal !important;
+            color: #1E293B !important;
+            width: 100% !important;
+            height: auto !important;
+            white-space: normal !important;
+            line-height: 1.5 !important;
+            font-size: 14px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: flex-start !important;
+            cursor: pointer !important;
+        }
+        .stButton > button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1) !important;
+            border-color: #CBD5E1 !important;
+        }
+        .stButton > button::before {
+            content: "" !important;
+            position: absolute !important;
+            top: 0 !important; left: 0 !important; right: 0 !important;
+            height: 5px !important;
+            border-radius: 16px 16px 0 0 !important;
+        }
+        #bento_0::before { background: linear-gradient(90deg, #4ADE80, #22C55E) !important; }
+        #bento_1::before { background: linear-gradient(90deg, #60A5FA, #3B82F6) !important; }
+        #bento_2::before { background: linear-gradient(90deg, #C084FC, #A855F7) !important; }
+        #bento_3::before { background: linear-gradient(90deg, #FB923C, #F97316) !important; }
+        .stButton > button strong {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            margin-bottom: 4px !important;
+            display: block !important;
+        }
+        .stButton > button p {
+            margin: 0 !important;
+            color: #64748B !important;
+            font-size: 13px !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+# ==================== ZONE DE SAISIE ====================
 if st.session_state.application_active:
     st.markdown("""
-        <div style='display: flex; gap: 8px; margin-bottom: -10px; justify-content: center;'>
-            <span style='background: #E2E8F0; color: #475569; font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 500;'>⚡ Fast Mode (Groq)</span>
-            <span style='background: #E2E8F0; color: #475569; font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 500;'>🔍 Deep SQL Check</span>
-            <span style='background: #E2E8F0; color: #475569; font-size: 11px; padding: 4px 12px; border-radius: 20px; font-weight: 500;'>🕒 Session Tracker</span>
-        </div>
+    <div style='display:flex; gap:8px; margin-bottom:-10px; justify-content:center;'>
+        <span style='background:#E2E8F0; color:#475569; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:500;'>⚡ Fast Mode (Groq)</span>
+        <span style='background:#E2E8F0; color:#475569; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:500;'>🔍 Deep SQL Check</span>
+        <span style='background:#E2E8F0; color:#475569; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:500;'>🕒 Session Tracker</span>
+    </div>
     """, unsafe_allow_html=True)
 
     question_utilisateur = st.chat_input("Posez votre question...")
-
     if question_utilisateur:
         st.session_state.messages.append({"role": "user", "content": question_utilisateur})
+        st.session_state.show_all_messages = True
+        st.session_state.message_index = -1
         st.rerun()
 
-print(f"   - avant traitement assistant : {time.time() - _start_tot:.2f}s")
-
-# --- LOGIQUE DE TRAITEMENT PAR L'ASSISTANT ---
+# ==================== TRAITEMENT DE L'ASSISTANT ====================
 if st.session_state.messages and st.session_state.messages[-1]["role"] == "user" and st.session_state.application_active:
     with st.chat_message("assistant", avatar="🔵"):
         with st.spinner("🤖 Réflexion de l'assistant Groq..."):
@@ -424,34 +626,32 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                 if requete_sql:
                     requete_sql = requete_sql.strip().rstrip(";")
+                    # Sécurité : Forcer ILIKE pour PostgreSQL si nécessaire
                     requete_sql = re.sub(r"\bmarque\s+LIKE\b", "marque ILIKE", requete_sql, flags=re.IGNORECASE)
 
                     valide, erreur_validation = valider_requete_sql(requete_sql)
                     if not valide:
                         raise Exception(f"Validation SQL échouée : {erreur_validation}")
 
-                    if (
-                        "LIMIT" not in requete_sql.upper()
-                        and "SUM(" not in requete_sql.upper()
-                        and "COUNT(" not in requete_sql.upper()
-                        and "AVG(" not in requete_sql.upper()
-                        and "MIN(" not in requete_sql.upper()
-                        and "MAX(" not in requete_sql.upper()
-                    ):
+                    # Protection contre les tables trop volumineuses (limite par défaut si pas d'agrégation)
+                    mots_cles_agreg = ["SUM(", "COUNT(", "AVG(", "MIN(", "MAX("]
+                    if "LIMIT" not in requete_sql.upper() and not any(x in requete_sql.upper() for x in mots_cles_agreg):
                         requete_sql += " LIMIT 100"
 
                     debut_sql = time.time()
 
+                    # Système de cache local pour éviter les requêtes DB identiques successives
                     sql_hash = hashlib.md5(requete_sql.encode()).hexdigest()
                     if sql_hash in st.session_state.sql_cache:
                         df_resultat = st.session_state.sql_cache[sql_hash]
-                        st.info("📦 Résultat récupéré depuis le cache (même requête déjà exécutée).")
+                        st.info("📦 Résultat récupéré depuis le cache.")
                     else:
                         with engine.connect() as conn:
                             result = conn.execute(text(requete_sql))
                             cols = result.keys()
                             rows = result.fetchall()
                             df_resultat = pd.DataFrame(rows, columns=cols)
+                        df_resultat = deduplicate_columns(df_resultat)
                         st.session_state.sql_cache[sql_hash] = df_resultat
 
                     fin_sql = time.time()
@@ -471,30 +671,22 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
                         "status_ok": True
                     })
                 else:
+                    # Cas où l'assistant répond directement par du texte sans code SQL généré
                     st.session_state.messages.append({
                         "role": "assistant",
                         "content": phrase_commentaire,
                         "is_sql": False,
-                        "df_resultat": None,
-                        "query_sql": None,
-                        "analytics_text": "Aucune requête SQL nécessaire.",
                         "status_ok": True
                     })
-
-                sauvegarder_discussion_actuelle()
                 st.rerun()
 
             except Exception as e:
+                # Gestion propre des anomalies et affichage direct de l'erreur dans le flux
                 st.session_state.messages.append({
                     "role": "assistant",
-                    "content": "⚠️ Une erreur est survenue lors de l'exécution.",
+                    "content": "⚠️ Une erreur est survenue lors de l'exécution de votre demande.",
                     "is_sql": False,
-                    "df_resultat": None,
-                    "query_sql": None,
-                    "analytics_text": f"Détail technique : {str(e)}",
+                    "analytics_text": str(e),
                     "status_ok": False
                 })
-                sauvegarder_discussion_actuelle()
                 st.rerun()
-
-print(f"🔵 Fin du script : {time.time() - _start_tot:.2f}s")
