@@ -1,0 +1,45 @@
+{
+    "titre": "Le total pour **Count** s'élèv...",
+    "date": "2026-06-24 13:47",
+    "messages": [
+        {
+            "role": "assistant",
+            "content": "Le total pour **Count** s'élève à **5001**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(*) FROM clients",
+            "df_resultat": [
+                {
+                    "count": 5001
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.152s (LLM: 3.83s).",
+            "status_ok": true
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Count** s'élève à **1014**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(*) FROM clients WHERE pays_client IN ('France')",
+            "df_resultat": [
+                {
+                    "count": 1014
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.015s (LLM: 1.28s).",
+            "status_ok": true
+        },
+        {
+            "role": "assistant",
+            "content": "Aucune donnée n'est disponible pour l'indicateur **Sum**.",
+            "is_sql": true,
+            "query_sql": "SELECT SUM(v.montant_ventes) FROM ventes v JOIN commandes cmd ON v.id_commande = cmd.id_commande WHERE EXTRACT(MONTH FROM cmd.date_commande) = 1 AND EXTRACT(YEAR FROM cmd.date_commande) = 2025",
+            "df_resultat": [
+                {
+                    "sum": null
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.181s (LLM: 1.23s).",
+            "status_ok": true
+        }
+    ]
+}

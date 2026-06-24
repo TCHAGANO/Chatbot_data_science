@@ -13,7 +13,7 @@ import json
 from datetime import datetime
 
 from database_connexion import initialiser_connexion
-from llm import generer_requete_sql  
+from llm import generer_requete_sql  # Assure-toi d'importer une fonction de chat secondaire si disponible, sinon on utilise le client LLM standard
 from sql_security import valider_requete_sql
 
 # ==================== CONFIGURATION ====================
@@ -416,16 +416,23 @@ def afficher_message(msg):
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
-                        st.warning("Aucune donnée disponible.")
+                        st.warning("Aucune donnée ne correspond à votre recherche.")
                     elif df.shape == (1, 1):
                         valeur_brute = df.iloc[0, 0]
                         nom_colonne = df.columns[0].replace('_', ' ').title()
+                        # ✅ Correction : Vérifier si la valeur est None ou NaN
                         if valeur_brute is None or (isinstance(valeur_brute, float) and pd.isna(valeur_brute)):
                             st.metric(label=f"🔢 {nom_colonne}", value="Aucune donnée")
                         else:
-                            if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes', 'ca']):
-                                st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                            # ✅ Formatage sécurisé selon le type
+                            if isinstance(valeur_brute, float):
+                                # Si c'est un montant financier, afficher avec 2 décimales
+                                if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes', 'ca', 'chiffre_affaires']):
+                                    st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                                else:
+                                    st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,.2f}")
                             else:
+                                # Pour les entiers ou autres types
                                 st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
                     else:
                         st.dataframe(df, use_container_width=True)
@@ -462,10 +469,8 @@ def afficher_message(msg):
                     else:
                         st.info("Pas assez de données pour générer un graphique.")
             else:
-                if not msg.get("status_ok", True):
-                    # Cache proprement l'erreur brute PostgreSQL derrière un expander pliable
-                    with st.expander("🛠️ Détails techniques de l'erreur (Dev uniquement)"):
-                        st.code(msg.get("analytics_text"), language="python")
+                if not msg.get("status_ok", True) and msg.get("analytics_text"):
+                    st.error(msg["analytics_text"])
 
 # ==================== AFFICHAGE DE LA DISCUSSION ====================
 messages = st.session_state.messages
@@ -596,7 +601,6 @@ if len(st.session_state.messages) == 0:
     """, unsafe_allow_html=True)
 
 # ==================== ZONE DE SAISIE ====================
-# ==================== ZONE DE SAISIE ====================
 if st.session_state.application_active:
     st.markdown("""
     <div style='display:flex; gap:8px; margin-bottom:-10px; justify-content:center;'>
@@ -611,94 +615,96 @@ if st.session_state.application_active:
         st.session_state.messages.append({"role": "user", "content": question_utilisateur})
         st.session_state.show_all_messages = True
         st.session_state.message_index = -1
-        
-        # 1. Interception Identité
-        questions_perso = ["qui t'a conçu", "qui t'a cree", "qui est ton createur", "qui t'a fait", "tu es humain", "qui es-tu"]
-        if any(q in question_utilisateur.lower() for q in questions_perso):
-            response_texte = "J'ai été conçu et développé par Bahissou ! C'est lui qui m'a connecté à cette base de données pour que je puisse t'aider à l'analyser. 🚀"
-            st.session_state.messages.append({"role": "assistant", "content": response_texte, "is_sql": False})
-            st.rerun()
-            
-        else:
-            # 2. Génération et exécution SQL (Étape 1)
-            with st.spinner("Analyse de votre demande et génération SQL..."):
-                try:
-                    # Appel de ton module LLM pour obtenir la requête SQL
-                    query_sql = generer_requete_sql(question_utilisateur)
-                    
-                    # Validation de sécurité
-                    if not valider_requete_sql(query_sql):
-                        st.session_state.messages.append({
-                            "role": "assistant", 
-                            "content": "⚠️ Requête SQL bloquée pour des raisons de sécurité.",
-                            "status_ok": False,
-                            "is_sql": False
-                        })
-                        st.rerun()
+        st.rerun()
 
-                    # Exécution sur PostgreSQL via SQLAlchemy
-                    with engine.connect() as conn:
-                        df_resultat = pd.read_sql(text(query_sql), conn)
+# ==================== TRAITEMENT DE L'ASSISTANT ====================
+if st.session_state.messages and st.session_state.messages[-1]["role"] == "user" and st.session_state.application_active:
+    with st.chat_message("assistant", avatar="🔵"):
+        with st.spinner("🤖 Réflexion de l'assistant Groq..."):
+            try:
+                debut_llm = time.time()
+                reponse_structuree = generer_requete_sql(st.session_state.messages)
+                fin_llm = time.time()
+
+                if not isinstance(reponse_structuree, dict):
+                    raise Exception(f"Réponse inattendue du LLM : {type(reponse_structuree)}")
+
+                requete_sql = reponse_structuree.get("sql")
+                phrase_commentaire = reponse_structuree.get("commentaire", "Voici les résultats de votre recherche :")
+
+                df_resultat = pd.DataFrame()
+                analytics_text = f"⚡ Analyse complétée (LLM: {(fin_llm - debut_llm):.2f}s)."
+                phrase_metier = phrase_commentaire
+
+                if requete_sql:
+                    requete_sql = requete_sql.strip().rstrip(";")
+                    requete_sql = re.sub(r"\bmarque\s+LIKE\b", "marque ILIKE", requete_sql, flags=re.IGNORECASE)
+
+                    valide, erreur_validation = valider_requete_sql(requete_sql)
+                    if not valide:
+                        raise Exception(f"Validation SQL échouée : {erreur_validation}")
+
+                    mots_cles_agreg = ["SUM(", "COUNT(", "AVG(", "MIN(", "MAX("]
+                    if "LIMIT" not in requete_sql.upper() and not any(x in requete_sql.upper() for x in mots_cles_agreg):
+                        requete_sql += " LIMIT 100"
+
+                    debut_sql = time.time()
+                    sql_hash = hashlib.md5(requete_sql.encode()).hexdigest()
+                    
+                    if sql_hash in st.session_state.sql_cache:
+                        df_resultat = st.session_state.sql_cache[sql_hash]
+                        st.info("📦 Résultat récupéré depuis le cache.")
+                    else:
+                        with engine.connect() as conn:
+                            result = conn.execute(text(requete_sql))
+                            cols = result.keys()
+                            rows = result.fetchall()
+                            df_resultat = pd.DataFrame(rows, columns=cols)
                         df_resultat = deduplicate_columns(df_resultat)
+                        st.session_state.sql_cache[sql_hash] = df_resultat
 
-                    # 3. ÉTAPE 2 : Synthèse IA textuelle finale bridée (Sécurité Mathématique)
-                    from llm import client
-                    
-                    donnees_apercu = df_resultat.head(5).to_string()
-                    
-                    prompt_synthese = f"""
-                    Tu es un expert en Business Intelligence et Data Science rigoureux. Analyse les données suivantes issues de la base PostgreSQL pour répondre à la question de l'utilisateur.
-                    
-                    Question utilisateur : {question_utilisateur}
-                    Requête SQL exécutée : {query_sql}
-                    Données obtenues :
-                    {donnees_apercu}
-                    
-                    ---
-                    CONSIGNES DE SÉCURITÉ MATHÉMATIQUE STRICTES :
-                    1. Tu dois UNIQUEMENT citer les chiffres exacts présents dans les données fournies.
-                    2. INTERDICTION ABSOLUE d'inventer, d'estimer ou de calculer de tête des pourcentages d'évolution (ex: +33%) ou des ratios si ces calculs ne sont pas déjà explicitement écrits dans les données ci-dessus.
-                    3. Si l'utilisateur demande une évolution ou un calcul complexe que le tableau ne contient pas textuellement, réponds simplement en analysant les valeurs brutes ou signale poliment que le calcul précis n'est pas disponible.
-                    ---
-                    
-                    Génère une réponse au format JSON strict contenant deux clés :
-                    1. "synthese_courte" : Une phrase claire, factuelle et directe résumant le constat principal (sans inventer de métriques).
-                    2. "analyse_detaillee" : Une analyse BI détaillée mise en forme en Markdown (s'appuyant uniquement sur les colonnes existantes).
-                    """
-                    
-                    reponse_groq = client.chat.completions.create(
-                        model="llama-3.1-8b-instant",
-                        messages=[{"role": "user", "content": prompt_synthese}],
-                        temperature=0.0,  # Strictement déterministe
-                        response_format={"type": "json_object"}
-                    )
-                    
-                    # Extraction du JSON généré par Groq
-                    resultat_json = json.loads(reponse_groq.choices[0].message.content)
-                    synthese = resultat_json.get("synthese_courte", "")
-                    analyse = resultat_json.get("analyse_detaillee", "")
+                    fin_sql = time.time()
+                    analytics_text = f"⚡ Requête exécutée en {(fin_sql - debut_sql):.3f}s (LLM: {(fin_llm - debut_llm):.2f}s)."
 
-                    # 4. Enregistrement du message complet de l'assistant dans le session_state
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": synthese,          # Texte principal affiché directement
-                        "query_sql": query_sql,        # Affiché dans l'onglet Code SQL
-                        "df_resultat": df_resultat,    # Affiché dans l'onglet Données Brutes
-                        "analytics_text": analyse,     # Affiché dans l'onglet Métriques IA
-                        "is_sql": True,
-                        "status_ok": True
-                    })
-                    
-                    # Sauvegarde automatique de l'historique
-                    sauvegarder_discussion_actuelle()
-                    st.rerun()
+                    # Génération de la réponse factuelle
+                    if not df_resultat.empty:
+                        if df_resultat.shape == (1, 1):
+                            valeur = df_resultat.iloc[0, 0]
+                            nom_colonne = df_resultat.columns[0].replace('_', ' ').title()
+                            if valeur is None or (isinstance(valeur, float) and pd.isna(valeur)):
+                                phrase_metier = f"Aucune donnée n'est disponible pour l'indicateur **{nom_colonne}**."
+                            else:
+                                if any(x in df_resultat.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes', 'ca', 'chiffre_affaires']):
+                                    phrase_metier = f"Le résultat pour **{nom_colonne}** est de **{valeur:,.2f} €**."
+                                else:
+                                    phrase_metier = f"Le total pour **{nom_colonne}** s'élève à **{valeur:}**."
+                        else:
+                            phrase_metier = phrase_commentaire
+                    else:
+                        phrase_metier = "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche."
 
-                except Exception as e:
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": "❌ Une erreur est survenue lors du traitement de vos données.",
-                        "analytics_text": str(e),
-                        "is_sql": False,
-                        "status_ok": False
-                    })
-                    st.rerun()
+                # ✅ AJOUT : Le message assistant est AJOUTÉ (pas écrasé)
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": phrase_metier,
+                    "is_sql": True if requete_sql else False,
+                    "query_sql": requete_sql,
+                    "df_resultat": df_resultat,
+                    "analytics_text": analytics_text,
+                    "status_ok": True
+                })
+
+            except Exception as e:
+                # ✅ AJOUT : Le message d'erreur est AJOUTÉ
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": "Désolé, je rencontre des difficultés techniques à traiter ou analyser cette demande.",
+                    "is_sql": False,
+                    "query_sql": None,
+                    "df_resultat": None,
+                    "analytics_text": f"Erreur : {str(e)}",
+                    "status_ok": False
+                })
+            
+            sauvegarder_discussion_actuelle()
+            st.rerun()

@@ -1,0 +1,554 @@
+{
+    "titre": "le nombre de clients en france",
+    "date": "2026-06-24 16:48",
+    "messages": [
+        {
+            "role": "user",
+            "content": "le nombre de clients en france"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **1014**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c WHERE c.code_iso_client = '33'",
+            "df_resultat": [
+                {
+                    "nb_clients": 1014
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.074s (LLM: 1.33s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Quels produits marchent mal ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Les produits les moins vendus sont listés.",
+            "is_sql": true,
+            "query_sql": "SELECT p.id_produit, p.nom_produit, SUM(v.quantite) AS total_vendu FROM ventes v JOIN produits p ON v.id_produit = p.id_produit GROUP BY p.id_produit, p.nom_produit ORDER BY total_vendu ASC LIMIT 100",
+            "df_resultat": [
+                {
+                    "id_produit": 8419,
+                    "nom_produit": "Samsung Chaussures plante",
+                    "total_vendu": 46
+                },
+                {
+                    "id_produit": 6449,
+                    "nom_produit": "Apple Shampoing comment",
+                    "total_vendu": 51
+                },
+                {
+                    "id_produit": 9844,
+                    "nom_produit": "Navarro Ro Casque soir",
+                    "total_vendu": 54
+                },
+                {
+                    "id_produit": 5612,
+                    "nom_produit": "Dyson Décoration empêcher",
+                    "total_vendu": 57
+                },
+                {
+                    "id_produit": 14195,
+                    "nom_produit": "Adidas Lit fois",
+                    "total_vendu": 59
+                },
+                {
+                    "id_produit": 14553,
+                    "nom_produit": "Vidal SARL Tapis yoga erreur",
+                    "total_vendu": 59
+                },
+                {
+                    "id_produit": 14212,
+                    "nom_produit": "Blin S.A.S Lampe rêve",
+                    "total_vendu": 60
+                },
+                {
+                    "id_produit": 6425,
+                    "nom_produit": "Puma Tapis yoga siège",
+                    "total_vendu": 60
+                },
+                {
+                    "id_produit": 6093,
+                    "nom_produit": "L'Oréal Chaise durant",
+                    "total_vendu": 60
+                },
+                {
+                    "id_produit": 9289,
+                    "nom_produit": "Apple Tapis yoga subir",
+                    "total_vendu": 60
+                },
+                {
+                    "id_produit": 8406,
+                    "nom_produit": "Chauveau Parfum papa",
+                    "total_vendu": 61
+                },
+                {
+                    "id_produit": 5882,
+                    "nom_produit": "Decathlon Crème falloir",
+                    "total_vendu": 61
+                },
+                {
+                    "id_produit": 2358,
+                    "nom_produit": "L'Oréal Ordinateur sec",
+                    "total_vendu": 61
+                },
+                {
+                    "id_produit": 14559,
+                    "nom_produit": "Dyson Casque environ",
+                    "total_vendu": 61
+                },
+                {
+                    "id_produit": 12000,
+                    "nom_produit": "Puma Smartphone étroit",
+                    "total_vendu": 61
+                },
+                {
+                    "id_produit": 2120,
+                    "nom_produit": "Grenier Va Chaussures vieillard",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 4372,
+                    "nom_produit": "Adidas Table annoncer",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 1632,
+                    "nom_produit": "Adidas Ordinateur signe",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 11158,
+                    "nom_produit": "Puma Tablette problème",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 2718,
+                    "nom_produit": "Decathlon Smartphone chacun",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 7782,
+                    "nom_produit": "Gillet S.A Table beau",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 7476,
+                    "nom_produit": "Adidas Lampe dame",
+                    "total_vendu": 62
+                },
+                {
+                    "id_produit": 295,
+                    "nom_produit": "Philippe Pantalon année",
+                    "total_vendu": 63
+                },
+                {
+                    "id_produit": 3450,
+                    "nom_produit": "Philips Décoration juge",
+                    "total_vendu": 63
+                },
+                {
+                    "id_produit": 12566,
+                    "nom_produit": "Philips Chaise vert",
+                    "total_vendu": 64
+                },
+                {
+                    "id_produit": 2335,
+                    "nom_produit": "Puma Décoration rouler",
+                    "total_vendu": 64
+                },
+                {
+                    "id_produit": 6203,
+                    "nom_produit": "Denis Ballon haut",
+                    "total_vendu": 64
+                },
+                {
+                    "id_produit": 4576,
+                    "nom_produit": "Nike Tapis yoga chef",
+                    "total_vendu": 64
+                },
+                {
+                    "id_produit": 2146,
+                    "nom_produit": "Nike Décoration quelque",
+                    "total_vendu": 65
+                },
+                {
+                    "id_produit": 11033,
+                    "nom_produit": "Dyson Manteau représenter",
+                    "total_vendu": 65
+                },
+                {
+                    "id_produit": 13661,
+                    "nom_produit": "Adidas Maquillage habitant",
+                    "total_vendu": 65
+                },
+                {
+                    "id_produit": 13858,
+                    "nom_produit": "Puma Robe sien",
+                    "total_vendu": 65
+                },
+                {
+                    "id_produit": 12954,
+                    "nom_produit": "Bernier Lit changer",
+                    "total_vendu": 66
+                },
+                {
+                    "id_produit": 1844,
+                    "nom_produit": "Decathlon Raquette reposer",
+                    "total_vendu": 66
+                },
+                {
+                    "id_produit": 4533,
+                    "nom_produit": "Philips Vélo te",
+                    "total_vendu": 66
+                },
+                {
+                    "id_produit": 6485,
+                    "nom_produit": "Philips T-shirt matin",
+                    "total_vendu": 68
+                },
+                {
+                    "id_produit": 11108,
+                    "nom_produit": "Dyson Ballon faux",
+                    "total_vendu": 68
+                },
+                {
+                    "id_produit": 10254,
+                    "nom_produit": "Decathlon Shampoing curieux",
+                    "total_vendu": 68
+                },
+                {
+                    "id_produit": 7454,
+                    "nom_produit": "Coste Desc Parfum sourire",
+                    "total_vendu": 68
+                },
+                {
+                    "id_produit": 3637,
+                    "nom_produit": "Puma Shampoing imposer",
+                    "total_vendu": 69
+                },
+                {
+                    "id_produit": 12362,
+                    "nom_produit": "Sony Tapis yoga entendre",
+                    "total_vendu": 69
+                },
+                {
+                    "id_produit": 8054,
+                    "nom_produit": "Puma Lit occasion",
+                    "total_vendu": 69
+                },
+                {
+                    "id_produit": 7327,
+                    "nom_produit": "Muller S.A Chaussures traîner",
+                    "total_vendu": 69
+                },
+                {
+                    "id_produit": 1683,
+                    "nom_produit": "Puma Casque toute",
+                    "total_vendu": 69
+                },
+                {
+                    "id_produit": 10588,
+                    "nom_produit": "Dyson T-shirt hôtel",
+                    "total_vendu": 70
+                },
+                {
+                    "id_produit": 9499,
+                    "nom_produit": "Apple Lampe instant",
+                    "total_vendu": 70
+                },
+                {
+                    "id_produit": 6668,
+                    "nom_produit": "Dyson Gants tu",
+                    "total_vendu": 70
+                },
+                {
+                    "id_produit": 12252,
+                    "nom_produit": "Dyson Robe impression",
+                    "total_vendu": 71
+                },
+                {
+                    "id_produit": 10475,
+                    "nom_produit": "Lambert Gé Ordinateur valeur",
+                    "total_vendu": 71
+                },
+                {
+                    "id_produit": 14632,
+                    "nom_produit": "L'Oréal Décoration dent",
+                    "total_vendu": 71
+                },
+                {
+                    "id_produit": 6612,
+                    "nom_produit": "Sony Shampoing protéger",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 6175,
+                    "nom_produit": "Sanchez Chaussures baisser",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 3623,
+                    "nom_produit": "Olivier Raquette bas",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 7096,
+                    "nom_produit": "Dyson Décoration oublier",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 13407,
+                    "nom_produit": "Decathlon Chargeur vaincre",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 9102,
+                    "nom_produit": "L'Oréal Raquette puis",
+                    "total_vendu": 72
+                },
+                {
+                    "id_produit": 2264,
+                    "nom_produit": "Sony Casque solitude",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 3671,
+                    "nom_produit": "L'Oréal Lit arriver",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 11259,
+                    "nom_produit": "Sony Gants ciel",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 8303,
+                    "nom_produit": "Masse S.A. Smartphone autant",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 6235,
+                    "nom_produit": "Sony Pantalon jaune",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 7688,
+                    "nom_produit": "L'Oréal Robe supposer",
+                    "total_vendu": 73
+                },
+                {
+                    "id_produit": 11213,
+                    "nom_produit": "Guillet SA Tablette profond",
+                    "total_vendu": 74
+                },
+                {
+                    "id_produit": 5801,
+                    "nom_produit": "Sony Vélo verre",
+                    "total_vendu": 74
+                },
+                {
+                    "id_produit": 14255,
+                    "nom_produit": "Ollivier Chargeur témoin",
+                    "total_vendu": 74
+                },
+                {
+                    "id_produit": 12563,
+                    "nom_produit": "Apple Pantalon fin",
+                    "total_vendu": 75
+                },
+                {
+                    "id_produit": 7010,
+                    "nom_produit": "Samsung Ballon accorder",
+                    "total_vendu": 75
+                },
+                {
+                    "id_produit": 1857,
+                    "nom_produit": "Decathlon Raquette celui",
+                    "total_vendu": 75
+                },
+                {
+                    "id_produit": 3619,
+                    "nom_produit": "Auger Mich Décoration longtemps",
+                    "total_vendu": 75
+                },
+                {
+                    "id_produit": 13695,
+                    "nom_produit": "Puma Parfum compte",
+                    "total_vendu": 75
+                },
+                {
+                    "id_produit": 10694,
+                    "nom_produit": "Philips Casque même",
+                    "total_vendu": 76
+                },
+                {
+                    "id_produit": 11616,
+                    "nom_produit": "Barbier S. Gants malade",
+                    "total_vendu": 76
+                },
+                {
+                    "id_produit": 5933,
+                    "nom_produit": "Pruvost S. Chaise sourire",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 2219,
+                    "nom_produit": "Dufour Mon Ordinateur cour",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 5834,
+                    "nom_produit": "Nike Chaise naissance",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 9243,
+                    "nom_produit": "Lemaître Shampoing appeler",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 8801,
+                    "nom_produit": "L'Oréal Pantalon énergie",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 9513,
+                    "nom_produit": "Morin Raquette importer",
+                    "total_vendu": 77
+                },
+                {
+                    "id_produit": 8288,
+                    "nom_produit": "Apple Crème son",
+                    "total_vendu": 78
+                },
+                {
+                    "id_produit": 9791,
+                    "nom_produit": "Philips Tapis yoga corde",
+                    "total_vendu": 78
+                },
+                {
+                    "id_produit": 6858,
+                    "nom_produit": "Apple Shampoing portier",
+                    "total_vendu": 78
+                },
+                {
+                    "id_produit": 10284,
+                    "nom_produit": "Peltier Ge Ordinateur mieux",
+                    "total_vendu": 78
+                },
+                {
+                    "id_produit": 18,
+                    "nom_produit": "L'Oréal Chaussures l'un",
+                    "total_vendu": 78
+                },
+                {
+                    "id_produit": 7375,
+                    "nom_produit": "Martel Geo Brosse pain",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 5794,
+                    "nom_produit": "Pinto Lampe d'autres",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 7049,
+                    "nom_produit": "Étienne SA Ordinateur joie",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 5309,
+                    "nom_produit": "Adidas Raquette nombre",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 7459,
+                    "nom_produit": "Dyson Chargeur celui",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 3373,
+                    "nom_produit": "Decathlon Chaussures ensemble",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 7733,
+                    "nom_produit": "Sony Shampoing distance",
+                    "total_vendu": 79
+                },
+                {
+                    "id_produit": 8089,
+                    "nom_produit": "L'Oréal Raquette premier",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 11923,
+                    "nom_produit": "Dyson Tapis yoga empire",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 12056,
+                    "nom_produit": "Adidas T-shirt sou",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 9202,
+                    "nom_produit": "Charles Tapis yoga silence",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 2103,
+                    "nom_produit": "Sony Vélo sac",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 14958,
+                    "nom_produit": "Philips Tapis yoga beaux",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 179,
+                    "nom_produit": "Philips Chaise lever",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 7300,
+                    "nom_produit": "Dyson Tapis yoga joue",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 5896,
+                    "nom_produit": "Samsung Smartphone chair",
+                    "total_vendu": 80
+                },
+                {
+                    "id_produit": 6337,
+                    "nom_produit": "Dyson Parfum papier",
+                    "total_vendu": 80
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.185s (LLM: 0.84s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne le nombre de  clients  du togo"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **71**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c WHERE c.code_iso_client = '228'",
+            "df_resultat": [
+                {
+                    "nb_clients": 71
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.003s (LLM: 0.97s).",
+            "status_ok": true
+        }
+    ]
+}

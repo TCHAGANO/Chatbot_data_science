@@ -1,0 +1,144 @@
+{
+    "titre": "Le chiffre d'affaires par pays...",
+    "date": "2026-06-24 13:52",
+    "messages": [
+        {
+            "role": "assistant",
+            "content": "Le chiffre d'affaires par pays est calculé en additionnant les montants de vente pour chaque pays.",
+            "is_sql": true,
+            "query_sql": "SELECT SUM(ventes.montant_ventes) AS chiffre_affaires, clients.pays_client FROM ventes JOIN commandes ON ventes.id_commande = commandes.id_commande JOIN clients ON commandes.id_client = clients.id_client GROUP BY clients.pays_client",
+            "df_resultat": [
+                {
+                    "chiffre_affaires": 4973066.24,
+                    "pays_client": "Afrique du Sud"
+                },
+                {
+                    "chiffre_affaires": 6540777.4,
+                    "pays_client": "Allemagne"
+                },
+                {
+                    "chiffre_affaires": 6732995.65,
+                    "pays_client": "Arabie Saoudite"
+                },
+                {
+                    "chiffre_affaires": 6016168.32,
+                    "pays_client": "Argentine"
+                },
+                {
+                    "chiffre_affaires": 7694731.94,
+                    "pays_client": "Australie"
+                },
+                {
+                    "chiffre_affaires": 4405398.05,
+                    "pays_client": "Bénin"
+                },
+                {
+                    "chiffre_affaires": 6806700.37,
+                    "pays_client": "Brésil"
+                },
+                {
+                    "chiffre_affaires": 4356354.79,
+                    "pays_client": "Burkina Faso"
+                },
+                {
+                    "chiffre_affaires": 5366868.71,
+                    "pays_client": "Cameroun"
+                },
+                {
+                    "chiffre_affaires": 7280736.6,
+                    "pays_client": "Canada"
+                },
+                {
+                    "chiffre_affaires": 6369019.26,
+                    "pays_client": "Chine"
+                },
+                {
+                    "chiffre_affaires": 4456794.39,
+                    "pays_client": "Congo"
+                },
+                {
+                    "chiffre_affaires": 4541892.59,
+                    "pays_client": "Côte d'Ivoire"
+                },
+                {
+                    "chiffre_affaires": 9550138.15,
+                    "pays_client": "Espagne"
+                },
+                {
+                    "chiffre_affaires": 105870763.92,
+                    "pays_client": "États-Unis"
+                },
+                {
+                    "chiffre_affaires": 73234341.99,
+                    "pays_client": "France"
+                },
+                {
+                    "chiffre_affaires": 5489999.54,
+                    "pays_client": "Ghana"
+                },
+                {
+                    "chiffre_affaires": 6428514.64,
+                    "pays_client": "Inde"
+                },
+                {
+                    "chiffre_affaires": 5981896.46,
+                    "pays_client": "Italie"
+                },
+                {
+                    "chiffre_affaires": 8021874.84,
+                    "pays_client": "Japon"
+                },
+                {
+                    "chiffre_affaires": 178688527.14,
+                    "pays_client": "Koweït"
+                },
+                {
+                    "chiffre_affaires": 6615514.75,
+                    "pays_client": "Liban"
+                },
+                {
+                    "chiffre_affaires": 5643228.84,
+                    "pays_client": "Mali"
+                },
+                {
+                    "chiffre_affaires": 5975858.51,
+                    "pays_client": "Maroc"
+                },
+                {
+                    "chiffre_affaires": 5242411.84,
+                    "pays_client": "Niger"
+                },
+                {
+                    "chiffre_affaires": 5769326.29,
+                    "pays_client": "Nigeria"
+                },
+                {
+                    "chiffre_affaires": 208637777.09,
+                    "pays_client": "Qatar"
+                },
+                {
+                    "chiffre_affaires": 5154586.51,
+                    "pays_client": "RDC"
+                },
+                {
+                    "chiffre_affaires": 7973580.79,
+                    "pays_client": "Royaume-Uni"
+                },
+                {
+                    "chiffre_affaires": 5972121.91,
+                    "pays_client": "Sénégal"
+                },
+                {
+                    "chiffre_affaires": 4406933.17,
+                    "pays_client": "Tchad"
+                },
+                {
+                    "chiffre_affaires": 5046632.02,
+                    "pays_client": "Togo"
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.487s (LLM: 3.51s).",
+            "status_ok": true
+        }
+    ]
+}

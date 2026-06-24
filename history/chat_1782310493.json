@@ -1,0 +1,57 @@
+{
+    "titre": "Donne moi  le nombre de client...",
+    "date": "2026-06-24 16:16",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Donne moi  le nombre de clients"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nombre De Clients** s'élève à **5001**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT id_client) AS nombre_de_clients FROM clients",
+            "df_resultat": [
+                {
+                    "nombre_de_clients": 5001
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.065s (LLM: 1.91s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi  le nombre  de clients  du  togo"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **0**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c WHERE c.code_iso_client = 'TG'",
+            "df_resultat": [
+                {
+                    "nb_clients": 0
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.012s (LLM: 0.82s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi le nombre de clients de  france "
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **0**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c WHERE c.code_iso_client = 'FR'",
+            "df_resultat": [
+                {
+                    "nb_clients": 0
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.003s (LLM: 1.09s).",
+            "status_ok": true
+        }
+    ]
+}

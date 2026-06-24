@@ -1,0 +1,24 @@
+{
+    "titre": "est ce que les clients du togo...",
+    "date": "2026-06-22 15:17",
+    "messages": [
+        {
+            "role": "user",
+            "content": "est ce que les clients du togo sont plus nombreux que les clients de la France ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Cette requête compare le nombre de clients au Togo et en France en utilisant des expressions conditionnelles pour compter les clients de chaque pays.",
+            "is_sql": true,
+            "df_resultat": [
+                {
+                    "togo": 71,
+                    "france": 1014
+                }
+            ],
+            "query_sql": "SELECT COUNT(CASE WHEN pays_client = 'Togo' THEN 1 END) AS togo, COUNT(CASE WHEN pays_client = 'France' THEN 1 END) AS france FROM clients",
+            "analytics_text": "Génération SQL (Groq) : 4.67s | Base de données : 0.18s.",
+            "status_ok": true
+        }
+    ]
+}

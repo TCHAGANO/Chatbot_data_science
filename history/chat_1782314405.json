@@ -1,0 +1,23 @@
+{
+    "titre": "donne le nombre de clients du ...",
+    "date": "2026-06-24 17:20",
+    "messages": [
+        {
+            "role": "user",
+            "content": "donne le nombre de clients du togo"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **71**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c WHERE c.code_iso_client = '228'",
+            "df_resultat": [
+                {
+                    "nb_clients": 71
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.066s (LLM: 3.27s).",
+            "status_ok": true
+        }
+    ]
+}

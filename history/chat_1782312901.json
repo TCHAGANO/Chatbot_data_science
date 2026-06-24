@@ -1,0 +1,1829 @@
+{
+    "titre": "clients",
+    "date": "2026-06-24 16:59",
+    "messages": [
+        {
+            "role": "user",
+            "content": "clients"
+        },
+        {
+            "role": "assistant",
+            "content": "Voici les 100 premiers clients de la base de données.",
+            "is_sql": true,
+            "query_sql": "SELECT * FROM clients LIMIT 100",
+            "df_resultat": [
+                {
+                    "id_client": 3540,
+                    "nom_client": "Éléonore Lopes",
+                    "age_client": 46,
+                    "sexe_client": "M",
+                    "ville_client": "Roche-sur-Mer",
+                    "pays_client": "Togo",
+                    "code_iso_client": "228"
+                },
+                {
+                    "id_client": 1,
+                    "nom_client": "Bahissou TCHAGNAO",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Berthelotnec",
+                    "pays_client": "Koweït",
+                    "code_iso_client": "965"
+                },
+                {
+                    "id_client": 936,
+                    "nom_client": "Xavier Michel",
+                    "age_client": 37,
+                    "sexe_client": "M",
+                    "ville_client": "Lemonnier",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 386,
+                    "nom_client": "Valentine Mathieu",
+                    "age_client": 22,
+                    "sexe_client": "F",
+                    "ville_client": "Saint SusanVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1424,
+                    "nom_client": "Josette Chevallier",
+                    "age_client": 47,
+                    "sexe_client": "M",
+                    "ville_client": "Guilbert-sur-Ferreira",
+                    "pays_client": "Niger",
+                    "code_iso_client": "227"
+                },
+                {
+                    "id_client": 4238,
+                    "nom_client": "Alfred Grondin",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Valette",
+                    "pays_client": "Afrique du Sud",
+                    "code_iso_client": "27"
+                },
+                {
+                    "id_client": 122,
+                    "nom_client": "Patricia Perrot",
+                    "age_client": 18,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Claire",
+                    "pays_client": "Niger",
+                    "code_iso_client": "227"
+                },
+                {
+                    "id_client": 232,
+                    "nom_client": "Édith Guillou",
+                    "age_client": 69,
+                    "sexe_client": "M",
+                    "ville_client": "Rodriguesboeuf",
+                    "pays_client": "Côte d'Ivoire",
+                    "code_iso_client": "225"
+                },
+                {
+                    "id_client": 4750,
+                    "nom_client": "Frédéric Masse-Hebert",
+                    "age_client": 44,
+                    "sexe_client": "F",
+                    "ville_client": "Saint PauletteBourg",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1860,
+                    "nom_client": "Claire de la Becker",
+                    "age_client": 47,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Élodie",
+                    "pays_client": "Bénin",
+                    "code_iso_client": "229"
+                },
+                {
+                    "id_client": 1019,
+                    "nom_client": "Patricia Lefort",
+                    "age_client": 24,
+                    "sexe_client": "F",
+                    "ville_client": "Marin-sur-Thierry",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 3380,
+                    "nom_client": "Danielle Meyer-Garcia",
+                    "age_client": 76,
+                    "sexe_client": "M",
+                    "ville_client": "Perrin",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1527,
+                    "nom_client": "Étienne Meunier",
+                    "age_client": 41,
+                    "sexe_client": "M",
+                    "ville_client": "Albert-sur-Toussaint",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2689,
+                    "nom_client": "Monique-Éléonore Barthelemy",
+                    "age_client": 19,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Adrienboeuf",
+                    "pays_client": "Togo",
+                    "code_iso_client": "228"
+                },
+                {
+                    "id_client": 3832,
+                    "nom_client": "Michelle Roy",
+                    "age_client": 67,
+                    "sexe_client": "M",
+                    "ville_client": "Tanguy",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 2888,
+                    "nom_client": "Adrienne Roy-Grégoire",
+                    "age_client": 64,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Maggie",
+                    "pays_client": "Royaume-Uni",
+                    "code_iso_client": "44"
+                },
+                {
+                    "id_client": 1988,
+                    "nom_client": "Suzanne Blanc-Lecomte",
+                    "age_client": 72,
+                    "sexe_client": "F",
+                    "ville_client": "Henry",
+                    "pays_client": "Afrique du Sud",
+                    "code_iso_client": "27"
+                },
+                {
+                    "id_client": 2,
+                    "nom_client": "Gidelcia",
+                    "age_client": 28,
+                    "sexe_client": "F",
+                    "ville_client": "Sanchez",
+                    "pays_client": "Qatar",
+                    "code_iso_client": "974"
+                },
+                {
+                    "id_client": 2125,
+                    "nom_client": "Juliette Gay de Labbé",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "David",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2957,
+                    "nom_client": "Marcel Diallo",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Goncalves",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4538,
+                    "nom_client": "François du Delannoy",
+                    "age_client": 26,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Roland-la-Forêt",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2816,
+                    "nom_client": "Franck Le Marchal",
+                    "age_client": 64,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Noémi",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2000,
+                    "nom_client": "Xavier de Hardy",
+                    "age_client": 58,
+                    "sexe_client": "F",
+                    "ville_client": "Tessier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3080,
+                    "nom_client": "Hugues de Leclerc",
+                    "age_client": 65,
+                    "sexe_client": "F",
+                    "ville_client": "Bazin",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1810,
+                    "nom_client": "Thierry Royer",
+                    "age_client": 73,
+                    "sexe_client": "F",
+                    "ville_client": "Boutin-sur-Mer",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1443,
+                    "nom_client": "Guy Bernier",
+                    "age_client": 42,
+                    "sexe_client": "M",
+                    "ville_client": "Reynaud",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 663,
+                    "nom_client": "Christophe Le Brunel",
+                    "age_client": 64,
+                    "sexe_client": "M",
+                    "ville_client": "BoulayVille",
+                    "pays_client": "RDC",
+                    "code_iso_client": "243"
+                },
+                {
+                    "id_client": 3556,
+                    "nom_client": "Adrienne Lesage",
+                    "age_client": 56,
+                    "sexe_client": "F",
+                    "ville_client": "Martineaunec",
+                    "pays_client": "Maroc",
+                    "code_iso_client": "212"
+                },
+                {
+                    "id_client": 893,
+                    "nom_client": "Claude Lenoir",
+                    "age_client": 61,
+                    "sexe_client": "F",
+                    "ville_client": "Dupuis-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2163,
+                    "nom_client": "Gilles Diaz",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Dupuis",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 2410,
+                    "nom_client": "Élodie Ribeiro",
+                    "age_client": 30,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Pierre",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4966,
+                    "nom_client": "Aimé Georges",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Denis",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 3985,
+                    "nom_client": "Rémy-Isaac Labbé",
+                    "age_client": 53,
+                    "sexe_client": "M",
+                    "ville_client": "BouchetBourg",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3585,
+                    "nom_client": "Maggie Hervé",
+                    "age_client": 58,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Margot",
+                    "pays_client": "Sénégal",
+                    "code_iso_client": "221"
+                },
+                {
+                    "id_client": 4,
+                    "nom_client": "Gilbert Imbert",
+                    "age_client": 32,
+                    "sexe_client": "F",
+                    "ville_client": "Leroux-sur-Henry",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1177,
+                    "nom_client": "Françoise Gérard-Hoareau",
+                    "age_client": 58,
+                    "sexe_client": "F",
+                    "ville_client": "Michelboeuf",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1143,
+                    "nom_client": "Clémence Traore-Cordier",
+                    "age_client": 33,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Michelle-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1775,
+                    "nom_client": "Élisabeth Maury",
+                    "age_client": 54,
+                    "sexe_client": "F",
+                    "ville_client": "Fischer",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1150,
+                    "nom_client": "Benjamin Peron",
+                    "age_client": 54,
+                    "sexe_client": "F",
+                    "ville_client": "Benard",
+                    "pays_client": "Liban",
+                    "code_iso_client": "961"
+                },
+                {
+                    "id_client": 4020,
+                    "nom_client": "Odette Le Humbert",
+                    "age_client": 44,
+                    "sexe_client": "F",
+                    "ville_client": "Lecomte",
+                    "pays_client": "Italie",
+                    "code_iso_client": "39"
+                },
+                {
+                    "id_client": 3771,
+                    "nom_client": "Paul Charrier",
+                    "age_client": 24,
+                    "sexe_client": "M",
+                    "ville_client": "DuvalVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2151,
+                    "nom_client": "Vincent Fontaine",
+                    "age_client": 65,
+                    "sexe_client": "F",
+                    "ville_client": "Saint SophieVille",
+                    "pays_client": "Allemagne",
+                    "code_iso_client": "49"
+                },
+                {
+                    "id_client": 159,
+                    "nom_client": "Charlotte Monnier",
+                    "age_client": 78,
+                    "sexe_client": "F",
+                    "ville_client": "Charpentier",
+                    "pays_client": "Liban",
+                    "code_iso_client": "961"
+                },
+                {
+                    "id_client": 3846,
+                    "nom_client": "Maurice Ferreira",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Dufour",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 4675,
+                    "nom_client": "Sophie Descamps-Cousin",
+                    "age_client": 49,
+                    "sexe_client": "F",
+                    "ville_client": "ChauvetVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 395,
+                    "nom_client": "Emmanuel Lefort-Gauthier",
+                    "age_client": 20,
+                    "sexe_client": "F",
+                    "ville_client": "Barbe-la-Forêt",
+                    "pays_client": "Allemagne",
+                    "code_iso_client": "49"
+                },
+                {
+                    "id_client": 1272,
+                    "nom_client": "Grégoire-Arthur Berthelot",
+                    "age_client": 71,
+                    "sexe_client": "F",
+                    "ville_client": "Dubois-sur-Lacroix",
+                    "pays_client": "Mali",
+                    "code_iso_client": "223"
+                },
+                {
+                    "id_client": 4465,
+                    "nom_client": "Clémence Godard-Martel",
+                    "age_client": 26,
+                    "sexe_client": "M",
+                    "ville_client": "Meyer",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 3149,
+                    "nom_client": "Céline Devaux",
+                    "age_client": 43,
+                    "sexe_client": "M",
+                    "ville_client": "Rémy",
+                    "pays_client": "Afrique du Sud",
+                    "code_iso_client": "27"
+                },
+                {
+                    "id_client": 303,
+                    "nom_client": "Margot Ferreira",
+                    "age_client": 79,
+                    "sexe_client": "F",
+                    "ville_client": "Rodrigues",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1218,
+                    "nom_client": "Dominique Voisin",
+                    "age_client": 34,
+                    "sexe_client": "F",
+                    "ville_client": "Gauthier",
+                    "pays_client": "Argentine",
+                    "code_iso_client": "54"
+                },
+                {
+                    "id_client": 141,
+                    "nom_client": "Frédéric Baudry",
+                    "age_client": 42,
+                    "sexe_client": "M",
+                    "ville_client": "Raymond",
+                    "pays_client": "Allemagne",
+                    "code_iso_client": "49"
+                },
+                {
+                    "id_client": 661,
+                    "nom_client": "Céline Dos Santos",
+                    "age_client": 78,
+                    "sexe_client": "F",
+                    "ville_client": "Neveu",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 2341,
+                    "nom_client": "Patrick Traore",
+                    "age_client": 48,
+                    "sexe_client": "F",
+                    "ville_client": "Saint YvesBourg",
+                    "pays_client": "Argentine",
+                    "code_iso_client": "54"
+                },
+                {
+                    "id_client": 2208,
+                    "nom_client": "Benjamin Caron-Aubry",
+                    "age_client": 53,
+                    "sexe_client": "F",
+                    "ville_client": "Meyer",
+                    "pays_client": "Australie",
+                    "code_iso_client": "61"
+                },
+                {
+                    "id_client": 2181,
+                    "nom_client": "Alain de Charles",
+                    "age_client": 19,
+                    "sexe_client": "F",
+                    "ville_client": "Pichon",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1474,
+                    "nom_client": "Michelle Thomas",
+                    "age_client": 42,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Bertrand",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4410,
+                    "nom_client": "Geneviève Mace",
+                    "age_client": 41,
+                    "sexe_client": "F",
+                    "ville_client": "Thomas",
+                    "pays_client": "Bénin",
+                    "code_iso_client": "229"
+                },
+                {
+                    "id_client": 3028,
+                    "nom_client": "Christelle Raymond",
+                    "age_client": 67,
+                    "sexe_client": "M",
+                    "ville_client": "Guillou",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3851,
+                    "nom_client": "Timothée Camus",
+                    "age_client": 30,
+                    "sexe_client": "M",
+                    "ville_client": "Prévost-la-Forêt",
+                    "pays_client": "Sénégal",
+                    "code_iso_client": "221"
+                },
+                {
+                    "id_client": 407,
+                    "nom_client": "Philippe Martinez",
+                    "age_client": 74,
+                    "sexe_client": "F",
+                    "ville_client": "Godard",
+                    "pays_client": "Sénégal",
+                    "code_iso_client": "221"
+                },
+                {
+                    "id_client": 2572,
+                    "nom_client": "Adèle Legendre",
+                    "age_client": 77,
+                    "sexe_client": "M",
+                    "ville_client": "Sainte Denisboeuf",
+                    "pays_client": "Arabie Saoudite",
+                    "code_iso_client": "966"
+                },
+                {
+                    "id_client": 3176,
+                    "nom_client": "Anouk Le Brunel",
+                    "age_client": 33,
+                    "sexe_client": "M",
+                    "ville_client": "Meyer-sur-Mer",
+                    "pays_client": "Argentine",
+                    "code_iso_client": "54"
+                },
+                {
+                    "id_client": 1628,
+                    "nom_client": "Guillaume Lamy",
+                    "age_client": 28,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Victordan",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3062,
+                    "nom_client": "Joseph Prévost",
+                    "age_client": 71,
+                    "sexe_client": "F",
+                    "ville_client": "Faivre",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 1428,
+                    "nom_client": "Geneviève Lesage",
+                    "age_client": 51,
+                    "sexe_client": "M",
+                    "ville_client": "Techer",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1132,
+                    "nom_client": "Benjamin Grégoire",
+                    "age_client": 60,
+                    "sexe_client": "F",
+                    "ville_client": "Saint AnastasieVille",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2697,
+                    "nom_client": "Adélaïde Alves",
+                    "age_client": 54,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Thibaut",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 2368,
+                    "nom_client": "Thérèse Julien",
+                    "age_client": 35,
+                    "sexe_client": "M",
+                    "ville_client": "Saint HuguesVille",
+                    "pays_client": "Congo",
+                    "code_iso_client": "242"
+                },
+                {
+                    "id_client": 4873,
+                    "nom_client": "Guillaume Lombard",
+                    "age_client": 47,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Véronique",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 2807,
+                    "nom_client": "Nicolas Couturier",
+                    "age_client": 42,
+                    "sexe_client": "M",
+                    "ville_client": "Cordier",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1001,
+                    "nom_client": "Noémi Fournier",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Couturier-sur-Mer",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 197,
+                    "nom_client": "Hugues Mercier Le Lemoine",
+                    "age_client": 77,
+                    "sexe_client": "M",
+                    "ville_client": "BonneauVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3627,
+                    "nom_client": "Alexandrie Lecoq du Letellier",
+                    "age_client": 71,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Jacquesnec",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 3035,
+                    "nom_client": "Aimé Mercier",
+                    "age_client": 37,
+                    "sexe_client": "F",
+                    "ville_client": "Weiss",
+                    "pays_client": "Cameroun",
+                    "code_iso_client": "237"
+                },
+                {
+                    "id_client": 1246,
+                    "nom_client": "Frédéric Andre",
+                    "age_client": 46,
+                    "sexe_client": "M",
+                    "ville_client": "Saint Rémy",
+                    "pays_client": "Inde",
+                    "code_iso_client": "91"
+                },
+                {
+                    "id_client": 3308,
+                    "nom_client": "Catherine Fabre",
+                    "age_client": 20,
+                    "sexe_client": "M",
+                    "ville_client": "Marchal",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                },
+                {
+                    "id_client": 2974,
+                    "nom_client": "Margot Tessier de Morin",
+                    "age_client": 67,
+                    "sexe_client": "M",
+                    "ville_client": "Moreau",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1529,
+                    "nom_client": "Véronique Coste",
+                    "age_client": 38,
+                    "sexe_client": "M",
+                    "ville_client": "Evrard-la-Forêt",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 1294,
+                    "nom_client": "Laure Moreau",
+                    "age_client": 76,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Marcelle",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1644,
+                    "nom_client": "Michelle Mendès-Lejeune",
+                    "age_client": 29,
+                    "sexe_client": "F",
+                    "ville_client": "Saint XavierVille",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 4111,
+                    "nom_client": "Suzanne Perez",
+                    "age_client": 31,
+                    "sexe_client": "M",
+                    "ville_client": "Hamon",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4155,
+                    "nom_client": "Éléonore Traore",
+                    "age_client": 52,
+                    "sexe_client": "F",
+                    "ville_client": "Nicolas",
+                    "pays_client": "Brésil",
+                    "code_iso_client": "55"
+                },
+                {
+                    "id_client": 3965,
+                    "nom_client": "Adélaïde Bertrand",
+                    "age_client": 36,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Raymond",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2016,
+                    "nom_client": "Michel Da Silva de Raynaud",
+                    "age_client": 37,
+                    "sexe_client": "M",
+                    "ville_client": "Bouchet-sur-Lopez",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 3593,
+                    "nom_client": "Françoise Traore Le Humbert",
+                    "age_client": 49,
+                    "sexe_client": "M",
+                    "ville_client": "Lambertnec",
+                    "pays_client": "Maroc",
+                    "code_iso_client": "212"
+                },
+                {
+                    "id_client": 3063,
+                    "nom_client": "Alain du Lebon",
+                    "age_client": 47,
+                    "sexe_client": "F",
+                    "ville_client": "CharpentierBourg",
+                    "pays_client": "Niger",
+                    "code_iso_client": "227"
+                },
+                {
+                    "id_client": 4762,
+                    "nom_client": "Thérèse Guyot",
+                    "age_client": 69,
+                    "sexe_client": "F",
+                    "ville_client": "Besnarddan",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 2383,
+                    "nom_client": "Pierre-Édouard Labbé",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "LamyVille",
+                    "pays_client": "Espagne",
+                    "code_iso_client": "34"
+                },
+                {
+                    "id_client": 1573,
+                    "nom_client": "Valérie du Mendès",
+                    "age_client": 62,
+                    "sexe_client": "M",
+                    "ville_client": "Devaux-les-Bains",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 4752,
+                    "nom_client": "Paul Da Costa",
+                    "age_client": 65,
+                    "sexe_client": "F",
+                    "ville_client": "Saint Adélaïde",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3769,
+                    "nom_client": "Juliette Dupuy",
+                    "age_client": 54,
+                    "sexe_client": "F",
+                    "ville_client": "Labbé",
+                    "pays_client": "Liban",
+                    "code_iso_client": "961"
+                },
+                {
+                    "id_client": 1266,
+                    "nom_client": "René De Sousa",
+                    "age_client": 23,
+                    "sexe_client": "F",
+                    "ville_client": "HoareauBourg",
+                    "pays_client": "Inde",
+                    "code_iso_client": "91"
+                },
+                {
+                    "id_client": 3648,
+                    "nom_client": "François Masse",
+                    "age_client": 39,
+                    "sexe_client": "F",
+                    "ville_client": "JoubertVille",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1807,
+                    "nom_client": "Alexandrie Schmitt",
+                    "age_client": 40,
+                    "sexe_client": "F",
+                    "ville_client": "Poiriernec",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 2882,
+                    "nom_client": "Catherine-Corinne Le Roux",
+                    "age_client": 27,
+                    "sexe_client": "F",
+                    "ville_client": "Sainte Jacqueline-sur-Mer",
+                    "pays_client": "Japon",
+                    "code_iso_client": "81"
+                },
+                {
+                    "id_client": 1190,
+                    "nom_client": "Olivier Leconte",
+                    "age_client": 74,
+                    "sexe_client": "F",
+                    "ville_client": "Maurice",
+                    "pays_client": "Nigeria",
+                    "code_iso_client": "234"
+                },
+                {
+                    "id_client": 3146,
+                    "nom_client": "Odette Robin",
+                    "age_client": 18,
+                    "sexe_client": "F",
+                    "ville_client": "Reynaud-sur-Ramos",
+                    "pays_client": "France",
+                    "code_iso_client": "33"
+                },
+                {
+                    "id_client": 3923,
+                    "nom_client": "Agnès Laroche Le Regnier",
+                    "age_client": 71,
+                    "sexe_client": "M",
+                    "ville_client": "Hebert-la-Forêt",
+                    "pays_client": "États-Unis",
+                    "code_iso_client": "1"
+                },
+                {
+                    "id_client": 1092,
+                    "nom_client": "Rémy de la Guibert",
+                    "age_client": 70,
+                    "sexe_client": "F",
+                    "ville_client": "Dumas",
+                    "pays_client": "Chine",
+                    "code_iso_client": "86"
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.059s (LLM: 1.41s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "commandes"
+        },
+        {
+            "role": "assistant",
+            "content": "Voici les 100 premières commandes de la base de données.",
+            "is_sql": true,
+            "query_sql": "SELECT id_commande, date_commande, id_client, id_magasin, methode_paiement, mode_livraison FROM commandes LIMIT 100",
+            "df_resultat": [
+                {
+                    "id_commande": 1,
+                    "date_commande": "2022-03-22 00:00:00",
+                    "id_client": 3540,
+                    "id_magasin": 37,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 2,
+                    "date_commande": "2022-02-06 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 21,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 3,
+                    "date_commande": "2022-10-09 00:00:00",
+                    "id_client": 936,
+                    "id_magasin": 16,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 4,
+                    "date_commande": "2022-03-03 00:00:00",
+                    "id_client": 386,
+                    "id_magasin": 24,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 5,
+                    "date_commande": "2024-07-29 00:00:00",
+                    "id_client": 1424,
+                    "id_magasin": 19,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 6,
+                    "date_commande": "2023-10-23 00:00:00",
+                    "id_client": 4238,
+                    "id_magasin": 44,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 7,
+                    "date_commande": "2023-09-17 00:00:00",
+                    "id_client": 122,
+                    "id_magasin": 89,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 8,
+                    "date_commande": "2024-04-02 00:00:00",
+                    "id_client": 232,
+                    "id_magasin": 19,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 9,
+                    "date_commande": "2024-11-23 00:00:00",
+                    "id_client": 4750,
+                    "id_magasin": 3,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 10,
+                    "date_commande": "2024-07-14 00:00:00",
+                    "id_client": 1860,
+                    "id_magasin": 13,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 11,
+                    "date_commande": "2022-06-11 00:00:00",
+                    "id_client": 1019,
+                    "id_magasin": 36,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 12,
+                    "date_commande": "2022-01-20 00:00:00",
+                    "id_client": 3380,
+                    "id_magasin": 47,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 13,
+                    "date_commande": "2022-01-01 00:00:00",
+                    "id_client": 1527,
+                    "id_magasin": 7,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 14,
+                    "date_commande": "2022-02-08 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 49,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 15,
+                    "date_commande": "2023-09-04 00:00:00",
+                    "id_client": 2689,
+                    "id_magasin": 38,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 16,
+                    "date_commande": "2022-10-17 00:00:00",
+                    "id_client": 3832,
+                    "id_magasin": 8,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 17,
+                    "date_commande": "2023-03-15 00:00:00",
+                    "id_client": 2888,
+                    "id_magasin": 74,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 18,
+                    "date_commande": "2023-03-24 00:00:00",
+                    "id_client": 1988,
+                    "id_magasin": 16,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 19,
+                    "date_commande": "2022-03-16 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 42,
+                    "methode_paiement": "Cryptomonnaie",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 20,
+                    "date_commande": "2024-07-29 00:00:00",
+                    "id_client": 2125,
+                    "id_magasin": 71,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 21,
+                    "date_commande": "2022-02-10 00:00:00",
+                    "id_client": 2957,
+                    "id_magasin": 61,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 22,
+                    "date_commande": "2024-05-18 00:00:00",
+                    "id_client": 4538,
+                    "id_magasin": 46,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 23,
+                    "date_commande": "2023-11-25 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 32,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 24,
+                    "date_commande": "2022-02-11 00:00:00",
+                    "id_client": 2816,
+                    "id_magasin": 87,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Retrait magasin"
+                },
+                {
+                    "id_commande": 25,
+                    "date_commande": "2024-10-16 00:00:00",
+                    "id_client": 2000,
+                    "id_magasin": 2,
+                    "methode_paiement": "Cryptomonnaie",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 26,
+                    "date_commande": "2023-08-29 00:00:00",
+                    "id_client": 3080,
+                    "id_magasin": 49,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 27,
+                    "date_commande": "2024-07-12 00:00:00",
+                    "id_client": 1810,
+                    "id_magasin": 24,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 28,
+                    "date_commande": "2023-08-19 00:00:00",
+                    "id_client": 1443,
+                    "id_magasin": 60,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 29,
+                    "date_commande": "2023-04-25 00:00:00",
+                    "id_client": 663,
+                    "id_magasin": 34,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 30,
+                    "date_commande": "2023-07-29 00:00:00",
+                    "id_client": 3556,
+                    "id_magasin": 21,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 31,
+                    "date_commande": "2024-02-13 00:00:00",
+                    "id_client": 893,
+                    "id_magasin": 49,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 32,
+                    "date_commande": "2024-03-30 00:00:00",
+                    "id_client": 2163,
+                    "id_magasin": 96,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 33,
+                    "date_commande": "2023-03-05 00:00:00",
+                    "id_client": 2410,
+                    "id_magasin": 8,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 34,
+                    "date_commande": "2024-11-02 00:00:00",
+                    "id_client": 4966,
+                    "id_magasin": 4,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 35,
+                    "date_commande": "2023-10-28 00:00:00",
+                    "id_client": 3985,
+                    "id_magasin": 31,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 36,
+                    "date_commande": "2022-06-20 00:00:00",
+                    "id_client": 3585,
+                    "id_magasin": 21,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 37,
+                    "date_commande": "2024-10-03 00:00:00",
+                    "id_client": 4,
+                    "id_magasin": 31,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 38,
+                    "date_commande": "2022-05-31 00:00:00",
+                    "id_client": 1177,
+                    "id_magasin": 7,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 39,
+                    "date_commande": "2022-10-27 00:00:00",
+                    "id_client": 1143,
+                    "id_magasin": 9,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Retrait magasin"
+                },
+                {
+                    "id_commande": 40,
+                    "date_commande": "2022-02-12 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 16,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 41,
+                    "date_commande": "2023-12-04 00:00:00",
+                    "id_client": 1775,
+                    "id_magasin": 49,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 42,
+                    "date_commande": "2023-03-08 00:00:00",
+                    "id_client": 1150,
+                    "id_magasin": 87,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 43,
+                    "date_commande": "2024-09-22 00:00:00",
+                    "id_client": 4020,
+                    "id_magasin": 7,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 44,
+                    "date_commande": "2022-11-10 00:00:00",
+                    "id_client": 3771,
+                    "id_magasin": 85,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 45,
+                    "date_commande": "2023-05-14 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 54,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 46,
+                    "date_commande": "2023-12-22 00:00:00",
+                    "id_client": 2410,
+                    "id_magasin": 64,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 47,
+                    "date_commande": "2022-07-11 00:00:00",
+                    "id_client": 2151,
+                    "id_magasin": 21,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 48,
+                    "date_commande": "2022-11-24 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 71,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 49,
+                    "date_commande": "2024-01-12 00:00:00",
+                    "id_client": 159,
+                    "id_magasin": 100,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 50,
+                    "date_commande": "2024-06-09 00:00:00",
+                    "id_client": 3846,
+                    "id_magasin": 46,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 51,
+                    "date_commande": "2023-06-16 00:00:00",
+                    "id_client": 4675,
+                    "id_magasin": 9,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 52,
+                    "date_commande": "2022-12-30 00:00:00",
+                    "id_client": 395,
+                    "id_magasin": 69,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 53,
+                    "date_commande": "2023-07-23 00:00:00",
+                    "id_client": 1272,
+                    "id_magasin": 87,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 54,
+                    "date_commande": "2022-11-18 00:00:00",
+                    "id_client": 4465,
+                    "id_magasin": 58,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 55,
+                    "date_commande": "2024-12-20 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 44,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 56,
+                    "date_commande": "2022-05-03 00:00:00",
+                    "id_client": 3149,
+                    "id_magasin": 16,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 57,
+                    "date_commande": "2023-11-25 00:00:00",
+                    "id_client": 303,
+                    "id_magasin": 4,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 58,
+                    "date_commande": "2024-09-25 00:00:00",
+                    "id_client": 1218,
+                    "id_magasin": 16,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 59,
+                    "date_commande": "2024-06-07 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 9,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 60,
+                    "date_commande": "2022-10-15 00:00:00",
+                    "id_client": 141,
+                    "id_magasin": 80,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 61,
+                    "date_commande": "2023-01-08 00:00:00",
+                    "id_client": 661,
+                    "id_magasin": 90,
+                    "methode_paiement": "Cryptomonnaie",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 62,
+                    "date_commande": "2023-02-24 00:00:00",
+                    "id_client": 2341,
+                    "id_magasin": 90,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 63,
+                    "date_commande": "2024-07-07 00:00:00",
+                    "id_client": 2208,
+                    "id_magasin": 94,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 64,
+                    "date_commande": "2024-08-09 00:00:00",
+                    "id_client": 2181,
+                    "id_magasin": 65,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 65,
+                    "date_commande": "2024-06-06 00:00:00",
+                    "id_client": 1474,
+                    "id_magasin": 54,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 66,
+                    "date_commande": "2023-08-23 00:00:00",
+                    "id_client": 4410,
+                    "id_magasin": 62,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 67,
+                    "date_commande": "2023-07-21 00:00:00",
+                    "id_client": 3028,
+                    "id_magasin": 46,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 68,
+                    "date_commande": "2024-02-21 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 31,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 69,
+                    "date_commande": "2024-05-27 00:00:00",
+                    "id_client": 3851,
+                    "id_magasin": 45,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 70,
+                    "date_commande": "2022-06-25 00:00:00",
+                    "id_client": 407,
+                    "id_magasin": 37,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 71,
+                    "date_commande": "2022-10-17 00:00:00",
+                    "id_client": 2572,
+                    "id_magasin": 31,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Retrait magasin"
+                },
+                {
+                    "id_commande": 72,
+                    "date_commande": "2024-10-17 00:00:00",
+                    "id_client": 3176,
+                    "id_magasin": 96,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 73,
+                    "date_commande": "2022-11-17 00:00:00",
+                    "id_client": 1628,
+                    "id_magasin": 54,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 74,
+                    "date_commande": "2022-01-19 00:00:00",
+                    "id_client": 3062,
+                    "id_magasin": 16,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 75,
+                    "date_commande": "2024-05-02 00:00:00",
+                    "id_client": 1428,
+                    "id_magasin": 71,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 76,
+                    "date_commande": "2023-11-29 00:00:00",
+                    "id_client": 1132,
+                    "id_magasin": 44,
+                    "methode_paiement": "Cryptomonnaie",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 77,
+                    "date_commande": "2023-08-13 00:00:00",
+                    "id_client": 2697,
+                    "id_magasin": 90,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 78,
+                    "date_commande": "2024-08-10 00:00:00",
+                    "id_client": 2368,
+                    "id_magasin": 49,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 79,
+                    "date_commande": "2023-05-20 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 60,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 80,
+                    "date_commande": "2024-06-27 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 90,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 81,
+                    "date_commande": "2023-05-26 00:00:00",
+                    "id_client": 4873,
+                    "id_magasin": 71,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 82,
+                    "date_commande": "2022-08-07 00:00:00",
+                    "id_client": 2807,
+                    "id_magasin": 84,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 83,
+                    "date_commande": "2024-04-11 00:00:00",
+                    "id_client": 1001,
+                    "id_magasin": 18,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 84,
+                    "date_commande": "2023-05-26 00:00:00",
+                    "id_client": 197,
+                    "id_magasin": 21,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 85,
+                    "date_commande": "2022-10-08 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 29,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Retrait magasin"
+                },
+                {
+                    "id_commande": 86,
+                    "date_commande": "2024-12-13 00:00:00",
+                    "id_client": 3627,
+                    "id_magasin": 93,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 87,
+                    "date_commande": "2022-11-28 00:00:00",
+                    "id_client": 1,
+                    "id_magasin": 75,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 88,
+                    "date_commande": "2022-11-25 00:00:00",
+                    "id_client": 3035,
+                    "id_magasin": 54,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 89,
+                    "date_commande": "2023-08-09 00:00:00",
+                    "id_client": 1246,
+                    "id_magasin": 94,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 90,
+                    "date_commande": "2022-10-18 00:00:00",
+                    "id_client": 3308,
+                    "id_magasin": 49,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 91,
+                    "date_commande": "2024-01-16 00:00:00",
+                    "id_client": 2974,
+                    "id_magasin": 31,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 92,
+                    "date_commande": "2023-12-03 00:00:00",
+                    "id_client": 1529,
+                    "id_magasin": 65,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 93,
+                    "date_commande": "2024-11-06 00:00:00",
+                    "id_client": 1294,
+                    "id_magasin": 62,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 94,
+                    "date_commande": "2022-06-13 00:00:00",
+                    "id_client": 1644,
+                    "id_magasin": 71,
+                    "methode_paiement": "PayPal",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 95,
+                    "date_commande": "2024-02-16 00:00:00",
+                    "id_client": 4111,
+                    "id_magasin": 74,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 96,
+                    "date_commande": "2024-08-22 00:00:00",
+                    "id_client": 2,
+                    "id_magasin": 61,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 97,
+                    "date_commande": "2024-07-15 00:00:00",
+                    "id_client": 4155,
+                    "id_magasin": 35,
+                    "methode_paiement": "Virement",
+                    "mode_livraison": "Standard"
+                },
+                {
+                    "id_commande": 98,
+                    "date_commande": "2024-11-10 00:00:00",
+                    "id_client": 3965,
+                    "id_magasin": 79,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "24h"
+                },
+                {
+                    "id_commande": 99,
+                    "date_commande": "2023-06-07 00:00:00",
+                    "id_client": 2016,
+                    "id_magasin": 84,
+                    "methode_paiement": "Espèces",
+                    "mode_livraison": "Express"
+                },
+                {
+                    "id_commande": 100,
+                    "date_commande": "2023-04-17 00:00:00",
+                    "id_client": 3593,
+                    "id_magasin": 29,
+                    "methode_paiement": "Carte",
+                    "mode_livraison": "Standard"
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.008s (LLM: 0.85s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "les 2  commandes récentes et  leurs  propriétaire "
+        },
+        {
+            "role": "assistant",
+            "content": "Les deux commandes les plus récentes sont celles de...",
+            "is_sql": true,
+            "query_sql": "SELECT c.id_commande, c.date_commande, cl.nom_client, cl.id_client FROM commandes c JOIN clients cl ON c.id_client = cl.id_client ORDER BY c.date_commande DESC LIMIT 2",
+            "df_resultat": [
+                {
+                    "id_commande": 500001,
+                    "date_commande": "2026-06-18 23:45:00",
+                    "nom_client": "LIGNONGO Fedege",
+                    "id_client": 5001
+                },
+                {
+                    "id_commande": 72018,
+                    "date_commande": "2024-12-30 00:00:00",
+                    "nom_client": "Jacques-Auguste Brunet",
+                    "id_client": 4213
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.176s (LLM: 0.85s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "nombre de clients  togolais"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **71**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT id_client) AS nb_clients FROM clients WHERE code_iso_client = '228'",
+            "df_resultat": [
+                {
+                    "nb_clients": 71
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.005s (LLM: 0.79s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "quel  pays  a  plus  de clients "
+        },
+        {
+            "role": "assistant",
+            "content": "La France a le plus de clients avec 450 clients.",
+            "is_sql": true,
+            "query_sql": "SELECT code_iso_client, COUNT(id_client) AS nb_clients FROM clients GROUP BY code_iso_client ORDER BY nb_clients DESC LIMIT 1",
+            "df_resultat": [
+                {
+                    "code_iso_client": "1",
+                    "nb_clients": 1570
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.009s (LLM: 1.13s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "nombre   de clients  Français  "
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **1014**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT id_client) AS nb_clients FROM clients WHERE code_iso_client = '33'",
+            "df_resultat": [
+                {
+                    "nb_clients": 1014
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.009s (LLM: 0.94s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "c'est  quoi le code iso  de la France  ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Code Iso Client** s'élève à **33**.",
+            "is_sql": true,
+            "query_sql": "SELECT code_iso_client FROM clients WHERE pays_client = 'France' LIMIT 1",
+            "df_resultat": [
+                {
+                    "code_iso_client": "33"
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.003s (LLM: 0.85s).",
+            "status_ok": true
+        }
+    ]
+}
