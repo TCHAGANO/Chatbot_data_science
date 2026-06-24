@@ -26,7 +26,7 @@ def generer_requete_sql(messages_historique):
     
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="llama-3.1-70b-versatile",
             messages=messages,
             temperature=0.1,
             response_format={'type': 'json_object'}
