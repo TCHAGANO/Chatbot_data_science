@@ -6,18 +6,11 @@ try:
     # 1. Lecture du fichier CSV global
     csv_path = r"C:\Users\Bahissou TCHAGNAO\Desktop\Chatbot_project\Chatbot_data_science\chatbot_data.csv"
     print("🔄 Lecture du dataset CSV...")
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, dtype=str)
 
-    # 2. Connexion PostgreSQL
-    password = urllib.parse.quote_plus("Bahiss@u02gnao")
-    engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/chatbot_db")
-    print("✅ Connexion à PostgreSQL établie avec succès !")
-
-    # 3. Vidage de sécurité
-    print("\n🧹 Nettoyage des anciennes données dans la base...")
-    with engine.connect() as connexion:
-        connexion.execute(text("TRUNCATE TABLE ventes, commandes, magasins, produits, clients RESTART IDENTITY CASCADE;"))
-        connexion.commit()
+    # 2. Connexion PostgreSQL (LIGNE MODIFIÉE ICI POUR NEON CLOUD)
+    engine = create_engine("postgresql://neondb_owner:npg_DIa8Lj4OifuZ@ep-autumn-dust-at2s18do-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require")
+    print("✅ Connexion à NEON CLOUD établie avec succès !")
 
     # 4. Extraction et injection
     print("\n✂️ Extraction et injection des données...")
@@ -61,7 +54,7 @@ try:
     ]].drop_duplicates()
     df_ventes.to_sql("ventes", engine, if_exists="append", index=False)
 
-    print("\n🎉 TOUTES LES TABLES ONT ÉTÉ SYNCHRONISÉES ET REMPLIES AVEC SUCCÈS !")
+    print("\n🎉 TOUTES LES TABLES ONT ÉTÉ SYNCHRONISÉES ET REMPLIES AVEC SUCCÈS SUR NEON !")
 
 except Exception as e:
     print("\n❌ Une erreur est survenue lors du chargement :")
