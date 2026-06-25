@@ -412,7 +412,7 @@ def afficher_message(msg):
             st.markdown(msg["content"])
             
             if msg.get("is_sql", True) and msg.get("df_resultat") is not None:
-                tab1, tab2, tab3, tab4 = st.tabs(["📊 Données Brutes", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
+                tab1, tab2, tab3, tab4 = st.tabs(["📊 Résultats", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
@@ -437,13 +437,13 @@ def afficher_message(msg):
                     else:
                         st.dataframe(df, use_container_width=True)
                         csv_data = df.to_csv(index=False).encode('utf-8')
-                        st.download_button(
-                            label="📥 Extraire les données au format CSV",
-                            data=csv_data,
-                            file_name="extraction_bi_chatbot.csv",
-                            mime="text/csv",
-                            key=f"dl_{hash(str(msg))}"
-                        )
+                        #st.download_button(
+                           # label="📥 Extraire les données au format CSV",
+                           # data=csv_data,
+                           # file_name="extraction_bi_chatbot.csv",
+                           # mime="text/csv",
+                           # key=f"dl_{hash(str(msg))}"
+                       # )
                 with tab2:
                     st.code(msg.get("query_sql") or "Aucune requête SQL", language="sql")
                 with tab3:

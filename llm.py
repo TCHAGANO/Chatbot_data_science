@@ -5,7 +5,7 @@ from prompts import PROMPT_SYSTEME
 
 def generer_requete_sql(messages_historique):
     """
-    Analyse l'historique de discussion avec Llama-3 via l'API de Groq
+    Analyse l'historique de discussion avec le modèle via l'API de Groq
     et renvoie un dictionnaire JSON structuré.
     """
     client = OpenAI(
@@ -17,7 +17,7 @@ def generer_requete_sql(messages_historique):
     
     for msg in messages_historique:
         role = msg["role"]
-        if role == "model":
+        if role == "model" or role == "assistant":
             role = "assistant"
         messages.append({
             "role": role,
@@ -26,7 +26,7 @@ def generer_requete_sql(messages_historique):
     
     try:
         response = client.chat.completions.create(
-             model="openai/gpt-oss-120b"",
+            model="openai/gpt-oss-120b",
             messages=messages,
             temperature=0.1,
             response_format={'type': 'json_object'}

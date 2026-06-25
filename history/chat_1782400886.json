@@ -1,0 +1,30 @@
+{
+    "titre": "est ce que les produits de bea...",
+    "date": "2026-06-25 17:21",
+    "messages": [
+        {
+            "role": "user",
+            "content": "est ce que les produits de beauté se vendent en France plus que les produits électroniques ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Les produits de beauté se vendent davantage que les produits électroniques en France.",
+            "is_sql": true,
+            "query_sql": "WITH agg AS ( SELECT CASE WHEN p.categorie ILIKE '%beauté%' THEN 'beauté' WHEN p.categorie ILIKE '%electronique%' THEN 'electronique' END AS cat, SUM(v.quantite) AS total_quantite, SUM(v.montant_ventes) AS total_ca FROM ventes v JOIN commandes cmd ON v.id_commande = cmd.id_commande JOIN clients cl ON cmd.id_client = cl.id_client JOIN produits p ON v.id_produit = p.id_produit WHERE cl.code_iso_client = '33' AND (p.categorie ILIKE '%beauté%' OR p.categorie ILIKE '%electronique%') GROUP BY cat ) SELECT c.cat, COALESCE(a.total_quantite,0) AS total_quantite, COALESCE(a.total_ca,0) AS total_ca FROM (VALUES ('beauté'), ('electronique')) AS c(cat) LEFT JOIN agg a ON a.cat = c.cat ORDER BY total_quantite DESC",
+            "df_resultat": [
+                {
+                    "cat": "beauté",
+                    "total_quantite": 62650,
+                    "total_ca": 14993455.67
+                },
+                {
+                    "cat": "electronique",
+                    "total_quantite": 0,
+                    "total_ca": 0.0
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.230s (LLM: 5.82s).",
+            "status_ok": true
+        }
+    ]
+}

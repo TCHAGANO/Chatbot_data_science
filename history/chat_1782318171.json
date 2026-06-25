@@ -1,0 +1,19 @@
+{
+    "titre": "donne moi  le nombre client de...",
+    "date": "2026-06-24 18:23",
+    "messages": [
+        {
+            "role": "user",
+            "content": "donne moi  le nombre client de la base "
+        },
+        {
+            "role": "assistant",
+            "content": "Erreur technique : Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kv09785afsfv6cyrejs6k6yx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96658, Requested 3667. Please try again in 4m40.8s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 1.21s).",
+            "status_ok": true
+        }
+    ]
+}

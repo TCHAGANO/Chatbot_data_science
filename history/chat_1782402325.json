@@ -1,0 +1,36 @@
+{
+    "titre": "nombre de clients",
+    "date": "2026-06-25 17:45",
+    "messages": [
+        {
+            "role": "user",
+            "content": "nombre de clients"
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser votre demande ? (période, produit, pays, etc.)",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 2.21s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "nombes de clients  dans la base"
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **5001**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT c.id_client) AS nb_clients FROM clients c",
+            "df_resultat": [
+                {
+                    "nb_clients": 5001
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.067s (LLM: 1.20s).",
+            "status_ok": true
+        }
+    ]
+}

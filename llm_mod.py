@@ -33,7 +33,8 @@ def generer_requete_sql(messages_historique):
     try:
         # Appel du puissant modèle de Meta (Llama 3) hébergé par Groq
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",  # Modèle gratuit et ultra-rapide
+            # Dans llm.py
+            model="openai/gpt-oss-120b",  # Modèle gratuit et ultra-rapide
             messages=messages,
             temperature=0.1,  
             response_format={

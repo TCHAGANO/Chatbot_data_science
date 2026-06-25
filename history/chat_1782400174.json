@@ -1,0 +1,24 @@
+{
+    "titre": "est ce que les produits de bea...",
+    "date": "2026-06-25 17:09",
+    "messages": [
+        {
+            "role": "user",
+            "content": "est ce que les produits de beauté se vendent en France plus que les produits électroniques ?"
+        },
+        {
+            "role": "assistant",
+            "content": "En France, les produits de beauté ont vendu X unités contre Y unités pour les électroniques ; les beautés se vendent davantage.",
+            "is_sql": true,
+            "query_sql": "SELECT SUM(CASE WHEN p.categorie ILIKE '%beauty%' OR p.categorie ILIKE '%beauté%' THEN v.quantite ELSE 0 END) AS volume_beaute,\n       SUM(CASE WHEN p.categorie ILIKE '%electronique%' OR p.categorie ILIKE '%electronic%' THEN v.quantite ELSE 0 END) AS volume_electronique\nFROM ventes v\nJOIN commandes cmd ON v.id_commande = cmd.id_commande\nJOIN clients cl ON cmd.id_client = cl.id_client\nJOIN produits p ON v.id_produit = p.id_produit\nWHERE cl.code_iso_client = '33'",
+            "df_resultat": [
+                {
+                    "volume_beaute": 62650,
+                    "volume_electronique": 0
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.285s (LLM: 2.99s).",
+            "status_ok": true
+        }
+    ]
+}

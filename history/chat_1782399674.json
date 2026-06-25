@@ -1,0 +1,92 @@
+{
+    "titre": "Donne moi les clients qui ache...",
+    "date": "2026-06-25 17:02",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Donne moi les clients qui achete le plus les produits"
+        },
+        {
+            "role": "assistant",
+            "content": "Les 5 clients qui ont dépensé le plus sont affichés avec leur chiffre d'affaires total.",
+            "is_sql": true,
+            "query_sql": "SELECT c.id_client, c.nom_client, SUM(v.montant_ventes) AS ca_total FROM clients c JOIN commandes cmd ON cmd.id_client = c.id_client JOIN ventes v ON v.id_commande = cmd.id_commande GROUP BY c.id_client, c.nom_client ORDER BY ca_total DESC LIMIT 5",
+            "df_resultat": [
+                {
+                    "id_client": 2,
+                    "nom_client": "Gidelcia",
+                    "ca_total": 202366439.2
+                },
+                {
+                    "id_client": 1,
+                    "nom_client": "Bahissou TCHAGNAO",
+                    "ca_total": 172491550.6
+                },
+                {
+                    "id_client": 2593,
+                    "nom_client": "Alex Cousin-Boucher",
+                    "ca_total": 117189.92
+                },
+                {
+                    "id_client": 1201,
+                    "nom_client": "Étienne Lambert de la Muller",
+                    "ca_total": 112140.75
+                },
+                {
+                    "id_client": 1443,
+                    "nom_client": "Guy Bernier",
+                    "ca_total": 110027.17
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.408s (LLM: 2.74s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "Donne le chiffre par  ville  en france"
+        },
+        {
+            "role": "assistant",
+            "content": "Les 5 villes françaises où le chiffre d'affaires est le plus élevé.",
+            "is_sql": true,
+            "query_sql": "SELECT cl.ville_client, SUM(v.montant_ventes) AS ca_ville FROM ventes v JOIN commandes c ON v.id_commande = c.id_commande JOIN clients cl ON c.id_client = cl.id_client WHERE cl.code_iso_client = '33' GROUP BY cl.ville_client ORDER BY ca_ville DESC LIMIT 5",
+            "df_resultat": [
+                {
+                    "ville_client": "Laine",
+                    "ca_ville": 462122.99
+                },
+                {
+                    "ville_client": "Costa",
+                    "ca_ville": 443514.94
+                },
+                {
+                    "ville_client": "Girard",
+                    "ca_ville": 320508.56
+                },
+                {
+                    "ville_client": "Raynaud",
+                    "ca_ville": 291185.66
+                },
+                {
+                    "ville_client": "Saint Isaac",
+                    "ca_ville": 247996.72
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.191s (LLM: 2.15s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "est  ce que les produits  de beauté  se vendent  en France  plus que les produits électroniques  ?"
+        },
+        {
+            "role": "assistant",
+            "content": "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche.",
+            "is_sql": true,
+            "query_sql": "SELECT CASE WHEN p.categorie ILIKE '%beauty%' THEN 'Beauté' WHEN p.categorie ILIKE '%electronique%' THEN 'Électronique' END AS categorie, SUM(v.montant_ventes) AS ca_total FROM ventes v JOIN commandes cmd ON v.id_commande = cmd.id_commande JOIN clients cl ON cmd.id_client = cl.id_client JOIN produits p ON v.id_produit = p.id_produit WHERE cl.code_iso_client = '33' AND (p.categorie ILIKE '%beauty%' OR p.categorie ILIKE '%electronique%') GROUP BY categorie",
+            "df_resultat": [],
+            "analytics_text": "⚡ Requête exécutée en 0.084s (LLM: 1.86s).",
+            "status_ok": true
+        }
+    ]
+}
