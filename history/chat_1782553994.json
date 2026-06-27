@@ -1,0 +1,32 @@
+{
+    "titre": "L'âge moyen et la catégorie de...",
+    "date": "2026-06-27 11:54",
+    "messages": [
+        {
+            "role": "user",
+            "content": "L'âge moyen et la catégorie de clientèle sont affichés ci‑dessous."
+        },
+        {
+            "role": "assistant",
+            "content": "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche.",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 2.19s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi l'age moyen des clients et dis moi si la clientèle est pluto jeune ou vieille ?"
+        },
+        {
+            "role": "assistant",
+            "content": "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche.",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 1.51s).",
+            "status_ok": true
+        }
+    ]
+}

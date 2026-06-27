@@ -664,24 +664,23 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
                         st.session_state.sql_cache[sql_hash] = df_resultat
 
                     fin_sql = time.time()
+
+
+                 
                     analytics_text = f"⚡ Requête exécutée en {(fin_sql - debut_sql):.3f}s (LLM: {(fin_llm - debut_llm):.2f}s)."
 
-                    # Génération de la réponse factuelle
+                    # ✅ Génération de la réponse naturelle
                     if not df_resultat.empty:
                         if df_resultat.shape == (1, 1):
                             valeur = df_resultat.iloc[0, 0]
-                            nom_colonne = df_resultat.columns[0].replace('_', ' ').title()
                             if valeur is None or (isinstance(valeur, float) and pd.isna(valeur)):
-                                phrase_metier = f"Aucune donnée n'est disponible pour l'indicateur **{nom_colonne}**."
+                                phrase_metier = "Aucune donnée ne correspond à votre recherche."
                             else:
-                                if any(x in df_resultat.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes', 'ca', 'chiffre_affaires']):
-                                    phrase_metier = f"Le résultat pour **{nom_colonne}** est de **{valeur:,.2f} €**."
-                                else:
-                                    phrase_metier = f"Le total pour **{nom_colonne}** s'élève à **{valeur:}**."
+                                phrase_metier = phrase_commentaire
                         else:
                             phrase_metier = phrase_commentaire
                     else:
-                        phrase_metier = "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche."
+                        phrase_metier = "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche."   
 
                 # ✅ AJOUT : Le message assistant est AJOUTÉ (pas écrasé)
                 st.session_state.messages.append({

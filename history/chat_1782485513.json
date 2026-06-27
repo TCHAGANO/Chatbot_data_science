@@ -1,0 +1,476 @@
+{
+    "titre": " Donne moi  le nombre de clien...",
+    "date": "2026-06-26 16:59",
+    "messages": [
+        {
+            "role": "user",
+            "content": " Donne moi  le nombre de clients  dans la base   "
+        },
+        {
+            "role": "assistant",
+            "content": "Le total pour **Nb Clients** s'élève à **5001**.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT cl.id_client) AS nb_clients FROM clients cl",
+            "df_resultat": [
+                {
+                    "nb_clients": 5001
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.019s (LLM: 1.72s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi  les client  qui  achète moins  "
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser votre demande ? (période, produit, pays, etc.)",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 2.82s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi  les clients  qui achete  moins les produits"
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser le code ISO du pays (ex: '33', '228', '49') pour filtrer les clients ?",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 1.66s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi les clients qui achete moins les produits  de beauté"
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser le code ISO du pays (ex: '33', '228', '49') pour filtrer les clients ?",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 1.84s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "donne moi  le chiffre d'affaire  par  ville en france"
+        },
+        {
+            "role": "assistant",
+            "content": "Chiffre d'affaires total par ville en France, trié décroissant",
+            "is_sql": true,
+            "query_sql": "SELECT c.ville_client AS ville, SUM(v.montant_ventes) AS chiffre_affaire FROM ventes v JOIN commandes co ON v.id_commande = co.id_commande JOIN clients c ON co.id_client = c.id_client WHERE c.code_iso_client = '33' GROUP BY c.ville_client ORDER BY chiffre_affaire DESC LIMIT 100",
+            "df_resultat": [
+                {
+                    "ville": "Laine",
+                    "chiffre_affaire": 462122.99
+                },
+                {
+                    "ville": "Costa",
+                    "chiffre_affaire": 443514.94
+                },
+                {
+                    "ville": "Girard",
+                    "chiffre_affaire": 320508.56
+                },
+                {
+                    "ville": "Raynaud",
+                    "chiffre_affaire": 291185.66
+                },
+                {
+                    "ville": "Saint Isaac",
+                    "chiffre_affaire": 247996.72
+                },
+                {
+                    "ville": "Rolland",
+                    "chiffre_affaire": 247953.62
+                },
+                {
+                    "ville": "Hubert",
+                    "chiffre_affaire": 244772.28
+                },
+                {
+                    "ville": "Besson",
+                    "chiffre_affaire": 243286.4
+                },
+                {
+                    "ville": "Maillet",
+                    "chiffre_affaire": 242698.88
+                },
+                {
+                    "ville": "Maillard",
+                    "chiffre_affaire": 241825.73
+                },
+                {
+                    "ville": "Bourgeois",
+                    "chiffre_affaire": 240272.41
+                },
+                {
+                    "ville": "Imbert",
+                    "chiffre_affaire": 237267.35
+                },
+                {
+                    "ville": "Poulain",
+                    "chiffre_affaire": 234172.35
+                },
+                {
+                    "ville": "Didier",
+                    "chiffre_affaire": 230050.45
+                },
+                {
+                    "ville": "Gomez",
+                    "chiffre_affaire": 229826.58
+                },
+                {
+                    "ville": "Gillet",
+                    "chiffre_affaire": 227265.27
+                },
+                {
+                    "ville": "Sauvage",
+                    "chiffre_affaire": 226239.99
+                },
+                {
+                    "ville": "Aubert",
+                    "chiffre_affaire": 225459.81
+                },
+                {
+                    "ville": "Hebert",
+                    "chiffre_affaire": 221804.01
+                },
+                {
+                    "ville": "Lombard",
+                    "chiffre_affaire": 220563.32
+                },
+                {
+                    "ville": "Lopez",
+                    "chiffre_affaire": 218987.03
+                },
+                {
+                    "ville": "Gallet",
+                    "chiffre_affaire": 215162.76
+                },
+                {
+                    "ville": "Brunet",
+                    "chiffre_affaire": 214354.88
+                },
+                {
+                    "ville": "Laroche",
+                    "chiffre_affaire": 214079.71
+                },
+                {
+                    "ville": "Mercier",
+                    "chiffre_affaire": 212915.98
+                },
+                {
+                    "ville": "Faivre",
+                    "chiffre_affaire": 211441.76
+                },
+                {
+                    "ville": "Thomas",
+                    "chiffre_affaire": 210788.58
+                },
+                {
+                    "ville": "Mace",
+                    "chiffre_affaire": 209713.46
+                },
+                {
+                    "ville": "Perrin",
+                    "chiffre_affaire": 209624.54
+                },
+                {
+                    "ville": "Gauthier",
+                    "chiffre_affaire": 206208.5
+                },
+                {
+                    "ville": "Techer",
+                    "chiffre_affaire": 200161.46
+                },
+                {
+                    "ville": "Grégoire",
+                    "chiffre_affaire": 199754.86
+                },
+                {
+                    "ville": "Barbe",
+                    "chiffre_affaire": 198144.76
+                },
+                {
+                    "ville": "Brunel",
+                    "chiffre_affaire": 190507.2
+                },
+                {
+                    "ville": "Parent",
+                    "chiffre_affaire": 187814.61
+                },
+                {
+                    "ville": "Coste",
+                    "chiffre_affaire": 175352.15
+                },
+                {
+                    "ville": "Saint WilliamBourg",
+                    "chiffre_affaire": 170559.13
+                },
+                {
+                    "ville": "Leroux-la-Forêt",
+                    "chiffre_affaire": 169900.66
+                },
+                {
+                    "ville": "Le Gall",
+                    "chiffre_affaire": 168950.48
+                },
+                {
+                    "ville": "Royboeuf",
+                    "chiffre_affaire": 168047.06
+                },
+                {
+                    "ville": "Dias",
+                    "chiffre_affaire": 167856.32
+                },
+                {
+                    "ville": "Sainte Benoît",
+                    "chiffre_affaire": 165111.08
+                },
+                {
+                    "ville": "Martinez",
+                    "chiffre_affaire": 164748.7
+                },
+                {
+                    "ville": "Barbier",
+                    "chiffre_affaire": 162989.9
+                },
+                {
+                    "ville": "Guillet",
+                    "chiffre_affaire": 162443.11
+                },
+                {
+                    "ville": "Jacquot",
+                    "chiffre_affaire": 161339.01
+                },
+                {
+                    "ville": "Hervé",
+                    "chiffre_affaire": 160311.85
+                },
+                {
+                    "ville": "Lévy",
+                    "chiffre_affaire": 160151.64
+                },
+                {
+                    "ville": "Legendre-sur-Mer",
+                    "chiffre_affaire": 159814.82
+                },
+                {
+                    "ville": "Nicolas",
+                    "chiffre_affaire": 159428.93
+                },
+                {
+                    "ville": "Mathieu-les-Bains",
+                    "chiffre_affaire": 159194.08
+                },
+                {
+                    "ville": "Wagner",
+                    "chiffre_affaire": 159085.6
+                },
+                {
+                    "ville": "Baron",
+                    "chiffre_affaire": 158850.16
+                },
+                {
+                    "ville": "Foucher",
+                    "chiffre_affaire": 158558.25
+                },
+                {
+                    "ville": "Weiss",
+                    "chiffre_affaire": 158316.23
+                },
+                {
+                    "ville": "Bazinnec",
+                    "chiffre_affaire": 156144.2
+                },
+                {
+                    "ville": "Blin",
+                    "chiffre_affaire": 155801.48
+                },
+                {
+                    "ville": "Buisson",
+                    "chiffre_affaire": 153853.11
+                },
+                {
+                    "ville": "Payet-la-Forêt",
+                    "chiffre_affaire": 153023.47
+                },
+                {
+                    "ville": "Giraud",
+                    "chiffre_affaire": 152643.14
+                },
+                {
+                    "ville": "AlexandreBourg",
+                    "chiffre_affaire": 152594.83
+                },
+                {
+                    "ville": "Pascal",
+                    "chiffre_affaire": 151608.01
+                },
+                {
+                    "ville": "Lemoine",
+                    "chiffre_affaire": 151393.55
+                },
+                {
+                    "ville": "Saint Robert",
+                    "chiffre_affaire": 150067.72
+                },
+                {
+                    "ville": "Vincent",
+                    "chiffre_affaire": 149859.73
+                },
+                {
+                    "ville": "Pasquier",
+                    "chiffre_affaire": 149679.41
+                },
+                {
+                    "ville": "LemonnierVille",
+                    "chiffre_affaire": 149505.18
+                },
+                {
+                    "ville": "Sainte Lorraine",
+                    "chiffre_affaire": 148008.21
+                },
+                {
+                    "ville": "Valette",
+                    "chiffre_affaire": 146723.37
+                },
+                {
+                    "ville": "Lebreton",
+                    "chiffre_affaire": 146592.24
+                },
+                {
+                    "ville": "Fischer",
+                    "chiffre_affaire": 146349.41
+                },
+                {
+                    "ville": "Vaillant",
+                    "chiffre_affaire": 146172.88
+                },
+                {
+                    "ville": "Normand",
+                    "chiffre_affaire": 145653.31
+                },
+                {
+                    "ville": "Blot",
+                    "chiffre_affaire": 145636.4
+                },
+                {
+                    "ville": "Gimenez",
+                    "chiffre_affaire": 145571.57
+                },
+                {
+                    "ville": "Hubert-sur-Mer",
+                    "chiffre_affaire": 145380.65
+                },
+                {
+                    "ville": "Sainte Pierre",
+                    "chiffre_affaire": 145009.6
+                },
+                {
+                    "ville": "Cordier",
+                    "chiffre_affaire": 144616.04
+                },
+                {
+                    "ville": "Neveu",
+                    "chiffre_affaire": 144564.35
+                },
+                {
+                    "ville": "Lacombe",
+                    "chiffre_affaire": 143354.02
+                },
+                {
+                    "ville": "Saint Robertnec",
+                    "chiffre_affaire": 142462.28
+                },
+                {
+                    "ville": "Hamel",
+                    "chiffre_affaire": 142444.34
+                },
+                {
+                    "ville": "Legrand-sur-Mer",
+                    "chiffre_affaire": 142314.79
+                },
+                {
+                    "ville": "Dijoux",
+                    "chiffre_affaire": 141875.62
+                },
+                {
+                    "ville": "Joseph",
+                    "chiffre_affaire": 141516.01
+                },
+                {
+                    "ville": "Roy",
+                    "chiffre_affaire": 141288.63
+                },
+                {
+                    "ville": "Pinto",
+                    "chiffre_affaire": 140280.26
+                },
+                {
+                    "ville": "Lopes",
+                    "chiffre_affaire": 139714.79
+                },
+                {
+                    "ville": "Gilles",
+                    "chiffre_affaire": 138479.37
+                },
+                {
+                    "ville": "Legrand",
+                    "chiffre_affaire": 138135.36
+                },
+                {
+                    "ville": "Sainte Anaïs",
+                    "chiffre_affaire": 137697.18
+                },
+                {
+                    "ville": "Grégoirenec",
+                    "chiffre_affaire": 137529.31
+                },
+                {
+                    "ville": "Saint Raymond",
+                    "chiffre_affaire": 136735.41
+                },
+                {
+                    "ville": "Marty",
+                    "chiffre_affaire": 135453.84
+                },
+                {
+                    "ville": "Deschamps",
+                    "chiffre_affaire": 135140.75
+                },
+                {
+                    "ville": "Leconte",
+                    "chiffre_affaire": 134703.6
+                },
+                {
+                    "ville": "Thibault",
+                    "chiffre_affaire": 134104.53
+                },
+                {
+                    "ville": "Renault-les-Bains",
+                    "chiffre_affaire": 132983.72
+                },
+                {
+                    "ville": "Ruiz",
+                    "chiffre_affaire": 132853.44
+                },
+                {
+                    "ville": "Hoarau",
+                    "chiffre_affaire": 132768.18
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.187s (LLM: 1.86s).",
+            "status_ok": true
+        }
+    ]
+}

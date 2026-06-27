@@ -1,0 +1,23 @@
+{
+    "titre": "Quel est le chiffre d'affaires...",
+    "date": "2026-06-27 09:52",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Quel est le chiffre d'affaires total généré ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Le résultat pour **Chiffre Affaires** est de **735,245,532.71 €**.",
+            "is_sql": true,
+            "query_sql": "SELECT SUM(v.montant_ventes) AS chiffre_affaires FROM ventes v",
+            "df_resultat": [
+                {
+                    "chiffre_affaires": 735245532.71
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.516s (LLM: 5.76s).",
+            "status_ok": true
+        }
+    ]
+}

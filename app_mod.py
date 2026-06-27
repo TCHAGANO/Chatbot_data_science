@@ -1,4 +1,3 @@
-# app.py
 # Fichier situé à la racine : C:\Users\Bahissou TCHAGNAO\Desktop\Chatbot_project\Chatbot_data_science\app.py
 
 from decimal import Decimal
@@ -14,7 +13,7 @@ import json
 from datetime import datetime
 
 from database_connexion import initialiser_connexion
-from llm import generer_requete_sql
+from llm import generer_requete_sql  # Assure-toi d'importer une fonction de chat secondaire si disponible, sinon on utilise le client LLM standard
 from sql_security import valider_requete_sql
 
 # ==================== CONFIGURATION ====================
@@ -409,32 +408,42 @@ def afficher_message(msg):
     elif msg["role"] == "assistant":
         statut_avatar = "🔵" if msg.get("status_ok", True) else "🔴"
         with st.chat_message("assistant", avatar=statut_avatar):
+            # Affichage de la réponse rédigée en texte naturel par l'IA
+            st.markdown(msg["content"])
+            
             if msg.get("is_sql", True) and msg.get("df_resultat") is not None:
-                tab1, tab2, tab3, tab4 = st.tabs(["📊 Résultat & Analytics", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
+                tab1, tab2, tab3, tab4 = st.tabs(["📊 Résultats", "🗄 Code SQL", "🤖 Métriques IA", "📈 Visualisation Graphique"])
                 with tab1:
                     df = pd.DataFrame(msg["df_resultat"]) if isinstance(msg["df_resultat"], list) else msg["df_resultat"]
                     if df.empty:
-                        st.warning("Aucune donnée disponible.")
+                        st.warning("Aucune donnée ne correspond à votre recherche.")
                     elif df.shape == (1, 1):
                         valeur_brute = df.iloc[0, 0]
                         nom_colonne = df.columns[0].replace('_', ' ').title()
+                        # ✅ Correction : Vérifier si la valeur est None ou NaN
                         if valeur_brute is None or (isinstance(valeur_brute, float) and pd.isna(valeur_brute)):
                             st.metric(label=f"🔢 {nom_colonne}", value="Aucune donnée")
                         else:
-                            if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes']):
-                                st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                            # ✅ Formatage sécurisé selon le type
+                            if isinstance(valeur_brute, float):
+                                # Si c'est un montant financier, afficher avec 2 décimales
+                                if any(x in df.columns[0].lower() for x in ['montant', 'profit', 'prix', 'ventes', 'ca', 'chiffre_affaires']):
+                                    st.metric(label=f"💰 {nom_colonne}", value=f"{valeur_brute:,.2f} €")
+                                else:
+                                    st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,.2f}")
                             else:
+                                # Pour les entiers ou autres types
                                 st.metric(label=f"🔢 {nom_colonne}", value=f"{valeur_brute:,}")
                     else:
                         st.dataframe(df, use_container_width=True)
                         csv_data = df.to_csv(index=False).encode('utf-8')
-                        st.download_button(
-                            label="📥 Extraire les données au format CSV",
-                            data=csv_data,
-                            file_name="extraction_bi_chatbot.csv",
-                            mime="text/csv",
-                            key=f"dl_{hash(str(msg))}"
-                        )
+                        #st.download_button(
+                           # label="📥 Extraire les données au format CSV",
+                           # data=csv_data,
+                           # file_name="extraction_bi_chatbot.csv",
+                           # mime="text/csv",
+                           # key=f"dl_{hash(str(msg))}"
+                       # )
                 with tab2:
                     st.code(msg.get("query_sql") or "Aucune requête SQL", language="sql")
                 with tab3:
@@ -460,7 +469,6 @@ def afficher_message(msg):
                     else:
                         st.info("Pas assez de données pour générer un graphique.")
             else:
-                st.markdown(msg["content"])
                 if not msg.get("status_ok", True) and msg.get("analytics_text"):
                     st.error(msg["analytics_text"])
 
@@ -622,26 +630,27 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
                     raise Exception(f"Réponse inattendue du LLM : {type(reponse_structuree)}")
 
                 requete_sql = reponse_structuree.get("sql")
-                phrase_commentaire = reponse_structuree.get("commentaire", "Voici les résultats :")
+                phrase_commentaire = reponse_structuree.get("commentaire", "Voici les résultats de votre recherche :")
+
+                df_resultat = pd.DataFrame()
+                analytics_text = f"⚡ Analyse complétée (LLM: {(fin_llm - debut_llm):.2f}s)."
+                phrase_metier = phrase_commentaire
 
                 if requete_sql:
                     requete_sql = requete_sql.strip().rstrip(";")
-                    # Sécurité : Forcer ILIKE pour PostgreSQL si nécessaire
                     requete_sql = re.sub(r"\bmarque\s+LIKE\b", "marque ILIKE", requete_sql, flags=re.IGNORECASE)
 
                     valide, erreur_validation = valider_requete_sql(requete_sql)
                     if not valide:
                         raise Exception(f"Validation SQL échouée : {erreur_validation}")
 
-                    # Protection contre les tables trop volumineuses (limite par défaut si pas d'agrégation)
                     mots_cles_agreg = ["SUM(", "COUNT(", "AVG(", "MIN(", "MAX("]
                     if "LIMIT" not in requete_sql.upper() and not any(x in requete_sql.upper() for x in mots_cles_agreg):
                         requete_sql += " LIMIT 100"
 
                     debut_sql = time.time()
-
-                    # Système de cache local pour éviter les requêtes DB identiques successives
                     sql_hash = hashlib.md5(requete_sql.encode()).hexdigest()
+                    
                     if sql_hash in st.session_state.sql_cache:
                         df_resultat = st.session_state.sql_cache[sql_hash]
                         st.info("📦 Résultat récupéré depuis le cache.")
@@ -656,37 +665,45 @@ if st.session_state.messages and st.session_state.messages[-1]["role"] == "user"
 
                     fin_sql = time.time()
 
-                    txt_performance = (
-                        f"Génération SQL (Groq) : {round(fin_llm - debut_llm, 2)}s | "
-                        f"Base de données : {round(fin_sql - debut_sql, 2)}s."
-                    )
 
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": phrase_commentaire,
-                        "is_sql": True,
-                        "df_resultat": df_resultat,
-                        "query_sql": requete_sql,
-                        "analytics_text": txt_performance,
-                        "status_ok": True
-                    })
-                else:
-                    # Cas où l'assistant répond directement par du texte sans code SQL généré
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": phrase_commentaire,
-                        "is_sql": False,
-                        "status_ok": True
-                    })
-                st.rerun()
+                 
+                    analytics_text = f"⚡ Requête exécutée en {(fin_sql - debut_sql):.3f}s (LLM: {(fin_llm - debut_llm):.2f}s)."
 
-            except Exception as e:
-                # Gestion propre des anomalies et affichage direct de l'erreur dans le flux
+                    # ✅ Génération de la réponse naturelle
+                    if not df_resultat.empty:
+                        if df_resultat.shape == (1, 1):
+                            valeur = df_resultat.iloc[0, 0]
+                            if valeur is None or (isinstance(valeur, float) and pd.isna(valeur)):
+                                phrase_metier = "Aucune donnée ne correspond à votre recherche."
+                            else:
+                                phrase_metier = phrase_commentaire
+                        else:
+                            phrase_metier = phrase_commentaire
+                    else:
+                        phrase_metier = "La requête a été exécutée avec succès, mais aucun résultat ne correspond à votre recherche."   
+
+                # ✅ AJOUT : Le message assistant est AJOUTÉ (pas écrasé)
                 st.session_state.messages.append({
                     "role": "assistant",
-                    "content": "⚠️ Une erreur est survenue lors de l'exécution de votre demande.",
+                    "content": phrase_metier,
+                    "is_sql": True if requete_sql else False,
+                    "query_sql": requete_sql,
+                    "df_resultat": df_resultat,
+                    "analytics_text": analytics_text,
+                    "status_ok": True
+                })
+
+            except Exception as e:
+                # ✅ AJOUT : Le message d'erreur est AJOUTÉ
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": "Désolé, je rencontre des difficultés techniques à traiter ou analyser cette demande.",
                     "is_sql": False,
-                    "analytics_text": str(e),
+                    "query_sql": None,
+                    "df_resultat": None,
+                    "analytics_text": f"Erreur : {str(e)}",
                     "status_ok": False
                 })
-                st.rerun()
+            
+            sauvegarder_discussion_actuelle()
+            st.rerun()

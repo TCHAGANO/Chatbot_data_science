@@ -1,0 +1,45 @@
+{
+    "titre": "Est ce que les jeunes achètent...",
+    "date": "2026-06-26 18:28",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Est ce que les jeunes achètent plus les produits électronique plu que les veux ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser votre demande ? (définir l'âge des \"jeunes\" et des \"vieux\", période, etc.)",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 3.69s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "qui achete  plus  les produits electronique  entre les jeunes  et les veiux  ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Pouvez-vous préciser les tranches d'âge pour les jeunes et les vieux, ainsi que la période souhaitée ?",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 1.29s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "qui achete plus les produits electronique entre les jeunes et les vieux ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Erreur technique : Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kv09785afsfv6cyrejs6k6yx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198299, Requested 2018. Please try again in 2m16.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+            "is_sql": false,
+            "query_sql": null,
+            "df_resultat": [],
+            "analytics_text": "⚡ Analyse complétée (LLM: 0.38s).",
+            "status_ok": true
+        }
+    ]
+}

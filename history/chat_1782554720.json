@@ -1,0 +1,40 @@
+{
+    "titre": "donne moi l'age moyen des clie...",
+    "date": "2026-06-27 12:06",
+    "messages": [
+        {
+            "role": "user",
+            "content": "donne moi l'age moyen des clients et dis moi si la clientèle est pluto jeune ou vieille ?"
+        },
+        {
+            "role": "assistant",
+            "content": "L'âge moyen des clients est calculé, la clientèle semble plutôt jeune.",
+            "is_sql": true,
+            "query_sql": "SELECT AVG(c.age_client) AS age_moyen FROM clients c",
+            "df_resultat": [
+                {
+                    "age_moyen": 48.892821435712854
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.093s (LLM: 3.01s).",
+            "status_ok": true
+        },
+        {
+            "role": "user",
+            "content": "nombre de clients dans la base"
+        },
+        {
+            "role": "assistant",
+            "content": "Le nombre total de clients s'affiche ci-dessous.",
+            "is_sql": true,
+            "query_sql": "SELECT COUNT(DISTINCT cl.id_client) AS nb_clients FROM clients cl",
+            "df_resultat": [
+                {
+                    "nb_clients": 5001
+                }
+            ],
+            "analytics_text": "⚡ Requête exécutée en 0.005s (LLM: 1.83s).",
+            "status_ok": true
+        }
+    ]
+}
